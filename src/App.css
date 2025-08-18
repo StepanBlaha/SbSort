@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+html, body, #root, .App{
+  min-height: fit-content;
+  height: 100%;
+}
+
+
+
+body.modal-open {
+  overflow: hidden;
+}
