@@ -85,17 +85,22 @@ const BubbleSort = () => {
                                     <p className={styles.DataTitle}>Data type</p>
                                     <div className={styles.DataTypesGroup}>
                                         <div className={`${styles.PrimaryButton} ${dataType === "number" ? styles.SelectedType : ""}`} onClick={()=>setDataType("number")}>
-                                            <p>Step</p>
+                                            <p>Numbers</p>
                                         </div>
                                         <div className={`${styles.PrimaryButton} ${dataType === "letter" ? styles.SelectedType : ""}`} onClick={()=>setDataType("letter")}>
-                                            <p>Reset</p>
+                                            <p>Letters</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                         </div>
-                        <div className={styles.DataDiv}></div>
+                        <div className={styles.DataDiv}>
+                            <p className={styles.DataTitle}>Visualization</p>
+                            <div className={styles.DataContent}>
+                                <div className={styles.VisualizationGraph}></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
