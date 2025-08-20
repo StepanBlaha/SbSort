@@ -1,0 +1,22 @@
+.Visualizer{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    gap: 1px;
+    border: 1px solid;
+    align-items: flex-end;
+    padding: 10px;
+    padding-bottom: 0;
+}
+.Block{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: blue;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    max-height: 100% !important;
+}
+.ActiveBlock{
+    background-color: rgb(167, 167, 167) !important;
+}

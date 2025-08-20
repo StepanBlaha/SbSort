@@ -1,16 +1,36 @@
 import React from "react"
 import styles from "./BubbleSort.module.css"
 import { Play, Pause } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import RangeSlider from "../../components/range/Range"
-
+import Visualizer from "../../components/visualizer/Visualizer"
 
 
 const BubbleSort = () => {
     const [ numbers, setNumbers ] = useState<string>()
-
+    const [ play, setPlay ] = useState<boolean>(false)
     const [ dataType, setDataType ] = useState<"number" | "letter">("number")
+    const [reset, setReset] = useState<boolean>(false)
+    
 
+    const [ speed, setSpeed ] = useState<number>(10)
+
+    const [ num, setNum] = useState<number[]>([1, 5, 1, 2, 3, 8, 9, 1, 3, 1, 2])
+    const [ error, setError ] = useState<string>()
+
+
+    useEffect(() => {
+        try {
+            console.log(numbers)
+            const nums = numbers?.split(",").filter(n=>!isNaN(Number(n))).filter(n=>n.trim() !== "").map((n,i)=>Number(n))
+            console.log(nums)
+            if (nums && nums !== num) {
+                setNum(nums)
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    },[numbers])
     return (
         <>
             <div className={styles.Page}>
@@ -48,11 +68,11 @@ const BubbleSort = () => {
                                 <input type="text" className={styles.NumberInput} value={numbers} onChange={(e) => setNumbers(e.target.value)} />
                                 <div className={styles.ConsoleButtons}>
                                     <div className={styles.ConsoleButtonsGroup}>
-                                        <div className={styles.PlayButton}>
+                                        <div className={styles.PlayButton} onClick={()=>setPlay(true)}>
                                             <Play  fill="#ffffff"/>
                                             <p>Play</p>
                                         </div>
-                                        <div className={styles.PrimaryButton}>
+                                        <div className={styles.PrimaryButton} onClick={()=>setPlay(false)}>
                                             <Pause fill="#333333" />
                                         </div>
                                     </div>
@@ -61,7 +81,11 @@ const BubbleSort = () => {
                                         <div className={styles.PrimaryButton}>
                                             <p>Step</p>
                                         </div>
-                                        <div className={styles.PrimaryButton}>
+                                        <div className={styles.PrimaryButton} onClick={() => {
+                                            setReset(true);
+                                            setTimeout(() => setReset(false), 0);
+                                            setPlay(false);             // stop any running sort first
+                                        }}>
                                             <p>Reset</p>
                                         </div>
                                     </div>
@@ -73,11 +97,11 @@ const BubbleSort = () => {
                                 <div className={styles.Speed}>
                                     <p className={styles.SpeedTitle}>Speed</p>
                                     <RangeSlider
-                                        min={0}
-                                        max={200}
-                                        step={10}
-                                        defaultValue={100}
-                                        onChange={(val) => console.log("Slider value:", val)}
+                                        min={1}
+                                        max={40}
+                                        step={1}
+                                        defaultValue={5}
+                                        onChange={(val) => setSpeed(val)}
                                     />
                                 </div>
 
@@ -98,7 +122,16 @@ const BubbleSort = () => {
                         <div className={styles.DataDiv}>
                             <p className={styles.DataTitle}>Visualization</p>
                             <div className={styles.DataContent}>
-                                <div className={styles.VisualizationGraph}></div>
+                                <div className={styles.VisualizationGraph}>
+                                    <Visualizer
+                                        numbers={num}
+                                        className={styles.Visualizer}
+                                        play={play}
+                                        reset={reset}
+                                        speed={speed}
+                                    
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>

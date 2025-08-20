@@ -125,6 +125,15 @@
     display: flex;
     border: 1px solid;
     min-height: 120px;
+    gap: 20px;
+}
+@media(max-width: 800px){
+    .ContentWrap{
+        flex-direction: column;
+    }
+    .Console{
+        width: 100% !important;
+    }
 }
 .Console{
     width: 40%;
@@ -154,6 +163,7 @@
     display: flex;
     flex-direction: column;
     padding-left: 10px;
+    padding-right: 10px;
     gap: 30px;
 }
 .NumberInput{
@@ -390,7 +400,6 @@
     display: flex;
     border: 1px solid;
     flex-direction: column;
-    background-color: green;
     gap: 30px;
 }
 
@@ -419,11 +428,15 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-
     border-radius: 12px;
     border: 1px solid;
+    overflow: hidden;
 }
-
+.Visualizer{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
 
 
 
