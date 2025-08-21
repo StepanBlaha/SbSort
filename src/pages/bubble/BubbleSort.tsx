@@ -16,7 +16,9 @@ const BubbleSort = () => {
     const [ speed, setSpeed ] = useState<number>(10)
 
     const [ num, setNum] = useState<number[]>([1, 5, 1, 2, 3, 8, 9, 1, 3, 1, 2])
-    const [ error, setError ] = useState<string>()
+    const [error, setError] = useState<string>()
+    
+    const [step, setStep] = useState<boolean>(false)
 
 
     useEffect(() => {
@@ -31,6 +33,8 @@ const BubbleSort = () => {
             console.log(error)
         }
     },[numbers])
+
+
     return (
         <>
             <div className={styles.Page}>
@@ -78,7 +82,10 @@ const BubbleSort = () => {
                                     </div>
 
                                     <div className={styles.ConsoleButtonsGroup}>
-                                        <div className={styles.PrimaryButton}>
+                                        <div className={styles.PrimaryButton} onClick={() => {
+                                        setStep(true);
+                                        setTimeout(() => setStep(false), 0); // reset step flag
+                                    }}>
                                             <p>Step</p>
                                         </div>
                                         <div className={styles.PrimaryButton} onClick={() => {
@@ -129,6 +136,7 @@ const BubbleSort = () => {
                                         play={play}
                                         reset={reset}
                                         speed={speed}
+                                        step={step}
                                     
                                     />
                                 </div>
