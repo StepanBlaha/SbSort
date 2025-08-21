@@ -62,6 +62,18 @@ const Visualizer = ({ numbers, play, reset, className, step, speed = 1, sort = "
             setColorByValue(map);
         }
     }, [numbers]);
+    const mergeSort = async (arr: number[], stepMode = false) => { 
+
+    }
+    const quickSort = async (arr: number[], stepMode = false) => { 
+        
+    }
+    const heapSort = async (arr: number[], stepMode = false) => { 
+        
+    }
+    const countingSort = async (arr: number[], stepMode = false) => { 
+        
+    }
 
 
     // Step mode doesnt work
