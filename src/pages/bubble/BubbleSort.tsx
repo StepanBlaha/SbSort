@@ -4,7 +4,7 @@ import { Play, Pause } from "lucide-react"
 import { useState, useEffect } from "react"
 import RangeSlider from "../../components/range/Range"
 import Visualizer from "../../components/visualizer/Visualizer"
-
+import bubbleSort from "../../assets/complexity/bubbleSort.png"
 
 const BubbleSort = () => {
     const [ numbers, setNumbers ] = useState<string>()
@@ -32,7 +32,9 @@ const BubbleSort = () => {
         } catch (error) {
             console.log(error)
         }
-    },[numbers])
+    }, [numbers])
+    
+    const [ selectedExplanation, setSelectedExplanation ] = useState<"how"| "time" | "when">("how")
 
 
     return (
@@ -59,8 +61,8 @@ const BubbleSort = () => {
 
                 <div className={styles.Content}>
                     <div className={styles.Hero}>
-                        <p className={styles.HeroTitle}>Sorting Visualizer</p>
-                        <p className={styles.HeroSubtitle}>Learn sorting algorithms through step-by-step visual guides</p>
+                        <p className={styles.HeroTitle}>Bubble Sort</p>
+                        <p className={styles.HeroSubtitle}>Step-by-step visual explanation of Bubble Sort.</p>
                     </div>
 
                     <div className={styles.ContentWrap}>
@@ -133,12 +135,78 @@ const BubbleSort = () => {
                                     <Visualizer
                                         numbers={num}
                                         className={styles.Visualizer}
+                                        functionType="bubble"
                                         play={play}
                                         reset={reset}
                                         speed={speed}
-                                        step={step}
                                     
                                     />
+                                </div>
+
+
+                                <div className={styles.Explanation}>
+                                    <div className={styles.ExplanationHeader}>
+                                        <div className={`${styles.ExplanationHeaderitem} ${selectedExplanation === "how" ? styles.SelectedExplanation : ""}`}
+                                            onClick={()=>setSelectedExplanation("how")}
+                                        >
+                                            <p>How it works</p>
+                                        </div>
+                                        <div className={`${styles.ExplanationHeaderitem} ${selectedExplanation === "time" ? styles.SelectedExplanation : ""}`}
+                                            onClick={()=>setSelectedExplanation("time")}
+                                        >
+                                            <p>Time complexity</p>
+                                        </div>
+                                        <div className={`${styles.ExplanationHeaderitem} ${selectedExplanation === "when" ? styles.SelectedExplanation : ""}`}
+                                            onClick={()=>setSelectedExplanation("when")}
+                                        >
+                                            <p>When to use</p>
+                                        </div>
+                                    </div>
+                                    <div className={styles.ExplanationContent}>
+                                        {selectedExplanation === "how" && (
+                                            <div className={styles.ExplanationItem}>
+                                                <div className={styles.ExplanationItemText}>
+                                                    <ul>
+                                                        <li>Compare each pair of adjacent elements</li>
+                                                        <li>Swap them if they are in the wrong order</li>
+                                                        <li>After each pass, the largest element moves to the end</li>
+                                                        <li>Repeat the process for the remaining unsorted part</li>
+                                                        <li>Stop when no swaps are needed (array is sorted)</li>
+                                                    </ul>
+                                                </div>
+                                                <div className={styles.ExplanationItemImage}></div>
+                                            </div>
+                                        )}
+                                        {selectedExplanation === "time" && (
+                                            <div className={styles.ExplanationItem}>
+                                                <div className={styles.ExplanationItemText}>
+                                                    <ul>
+                                                        <li><b>Best Case:</b> O(n) &mdash; when the array is already sorted (with optimized version that stops if no swaps are made)</li>
+                                                        <li><b>Average Case:</b> O(n<sup>2</sup>) &mdash; typical performance when elements are in random order</li>
+                                                        <li><b>Worst Case:</b> O(n<sup>2</sup>) &mdash; when the array is sorted in reverse order</li>
+                                                        <li><b>Space Complexity:</b> O(1) &mdash; since it sorts in place</li>
+                                                    </ul>
+                                                </div>
+                                                <div
+                                                    style={{backgroundImage: `url(${bubbleSort})`}}
+                                                    className={styles.ExplanationItemImage}
+                                                ></div>
+                                            </div>
+                                        )}
+                                        {selectedExplanation === "when" && (
+                                            <div className={styles.ExplanationItem}>
+                                                <div className={styles.ExplanationItemText}>
+                                                    <ul>
+                                                        <li>When teaching or learning sorting basics (easy to understand)</li>
+                                                        <li>For very small arrays where simplicity is more important than efficiency</li>
+                                                        <li>When the array is almost sorted and only a few swaps are needed</li>
+                                                        <li>Useful for demonstrating algorithm concepts (swapping, comparisons, passes)</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
