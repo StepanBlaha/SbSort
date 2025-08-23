@@ -61,8 +61,8 @@ const CountingSort = () => {
 
                 <div className={styles.Content}>
                     <div className={styles.Hero}>
-                        <p className={styles.HeroTitle}>Bubble Sort</p>
-                        <p className={styles.HeroSubtitle}>Step-by-step visual explanation of Bubble Sort.</p>
+                        <p className={styles.HeroTitle}>Counting Sort</p>
+                        <p className={styles.HeroSubtitle}>Step-by-step visual explanation of Counting Sort.</p>
                     </div>
 
                     <div className={styles.ContentWrap}>
@@ -135,7 +135,7 @@ const CountingSort = () => {
                                     <Visualizer
                                         numbers={num}
                                         className={styles.Visualizer}
-                                        functionType="bubble"
+                                        functionType="counting"
                                         play={play}
                                         reset={reset}
                                         speed={speed}
@@ -167,11 +167,10 @@ const CountingSort = () => {
                                             <div className={styles.ExplanationItem}>
                                                 <div className={styles.ExplanationItemText}>
                                                     <ul>
-                                                        <li>Compare each pair of adjacent elements</li>
-                                                        <li>Swap them if they are in the wrong order</li>
-                                                        <li>After each pass, the largest element moves to the end</li>
-                                                        <li>Repeat the process for the remaining unsorted part</li>
-                                                        <li>Stop when no swaps are needed (array is sorted)</li>
+                                                        <li>Find the range of input values</li>
+                                                        <li>Count the occurrences of each value</li>
+                                                        <li>Compute the cumulative counts to determine positions</li>
+                                                        <li>Place each element in its sorted position in the output array</li>
                                                     </ul>
                                                 </div>
                                                 <div className={styles.ExplanationItemImage}></div>
@@ -181,10 +180,10 @@ const CountingSort = () => {
                                             <div className={styles.ExplanationItem}>
                                                 <div className={styles.ExplanationItemText}>
                                                     <ul>
-                                                        <li><b>Best Case:</b> O(n) &mdash; when the array is already sorted (with optimized version that stops if no swaps are made)</li>
-                                                        <li><b>Average Case:</b> O(n<sup>2</sup>) &mdash; typical performance when elements are in random order</li>
-                                                        <li><b>Worst Case:</b> O(n<sup>2</sup>) &mdash; when the array is sorted in reverse order</li>
-                                                        <li><b>Space Complexity:</b> O(1) &mdash; since it sorts in place</li>
+                                                        <li><b>Best Case:</b> O(n + k)</li>
+                                                        <li><b>Average Case:</b> O(n + k)</li>
+                                                        <li><b>Worst Case:</b> O(n + k)</li>
+                                                        <li><b>Space Complexity:</b> O(n + k)</li>
                                                     </ul>
                                                 </div>
                                                 <div
@@ -197,10 +196,9 @@ const CountingSort = () => {
                                             <div className={styles.ExplanationItem}>
                                                 <div className={styles.ExplanationItemText}>
                                                     <ul>
-                                                        <li>When teaching or learning sorting basics (easy to understand)</li>
-                                                        <li>For very small arrays where simplicity is more important than efficiency</li>
-                                                        <li>When the array is almost sorted and only a few swaps are needed</li>
-                                                        <li>Useful for demonstrating algorithm concepts (swapping, comparisons, passes)</li>
+                                                        <li>When sorting integers or discrete values</li>
+                                                        <li>When the range of numbers (k) is not much larger than the number of elements (n)</li>
+                                                        <li>For stable and linear-time sorting of small-range data</li>
                                                     </ul>
                                                 </div>
                                             </div>
