@@ -218,6 +218,7 @@
     transition: 0.3s ease-out;
     cursor: pointer;
     user-select: none;
+    
 }
 .PlayButton svg{
     min-width: 24px;
