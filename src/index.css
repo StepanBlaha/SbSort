@@ -11,3 +11,41 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.dark{
+  --accent-color: #00f050 !important;
+    --accent-secondary-color: #2add66 !important;  /* Still vibrant but more balanced */
+    --accent-tertiary-color: #51e683 !important; 
+    --accent-dark-color: #007527 !important;
+    --contrast-color: #dedede !important;
+    --contrast-secondary-color: #b5b5b5 !important;
+    --contrast-tertiary-color: #8c8c8c !important;
+    --background-color: #212121 !important;
+    --background-blur-color: #212121b3 !important;
+    --error-color: #ff1616 !important;
+}
+/*
+.light{
+  --accent-color: #00cc44 !important;
+    --accent-secondary-color: #26be59 !important;  
+    --accent-tertiary-color: rgb(81, 230, 131) !important; 
+    --accent-dark-color: #007527 !important;
+    --contrast-color: #212121 !important;
+    --contrast-secondary-color: #3f3f3f !important;
+    --contrast-tertiary-color: #666666 !important;
+    --background-color: #dedede !important;
+    --error-color: #ff1616 !important;
+}
+
+*/
+.light{
+  --accent-color: #03b940 !important;
+    --accent-secondary-color: #22a74e !important;  /* Still vibrant but more balanced */
+    --accent-tertiary-color: rgb(72, 192, 112) !important; 
+    --accent-dark-color: #007527 !important;
+    --contrast-color: #212121 !important;
+    --contrast-secondary-color: #3f3f3f !important;
+    --contrast-tertiary-color: #666666 !important;
+    --background-color: #dedede !important;
+    --background-blur-color: #dededeb3 !important;
+    --error-color: #ff1616 !important;
+}

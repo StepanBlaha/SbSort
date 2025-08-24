@@ -1,0 +1,350 @@
+.Header{
+    max-width: 100%;
+    min-width: 100%;
+    height: fit-content;
+    display: flex;
+    background-color: #F6F5F1;
+    background-color: #ffffff;
+    /* position: sticky; */
+    /* top: 0; */
+    align-items: center;
+    z-index: 10;
+    border: 1px solid red;
+    justify-content: space-between;
+    padding: 12px 30px;
+    box-sizing: border-box;
+}
+.HeaderGroup{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    justify-content: space-between;
+    gap: 20px;
+    box-sizing: border-box;
+}
+.Logo{
+    width: 240px;
+    height: 80px;
+    box-sizing: border-box;
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.Logo img{
+    max-width: 200px;
+}
+.Pages{
+    height: fit-content;
+    width: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+.HeaderPage{
+    width: fit-content;
+    height: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s ease-out;
+}
+.HeaderPage p{
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 22px;
+}
+.HeaderPage:hover{
+    background-color: #eeeeee;
+}
+
+.Theme{
+    width: fit-content;
+    height: fit-content;
+    box-sizing: border-box;
+    display: flex;
+}
+.line {
+    fill: none;
+    stroke: var(--contrast-secondary-color);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+.lineTopBottom {
+    stroke-dasharray: 12 63;
+}
+.inputChecked svg {
+    transform: rotate(-45deg);
+}
+.inputChecked svg .lineTopBottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+}
+.Theme svg{
+    min-height: 40px;
+    max-height: 40px;
+    min-width: 40px;
+    max-width:px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Navbar{
+    border: 1px solid rgb(95 95 95 / 49%);
+    height: fit-content;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 1;
+    padding: 10px 30px;
+    transform: none;
+    transform-origin: 50% 50% 0px;
+    transform-origin: 50% 50% 0px;
+    box-shadow: 0 4px 30px rgb(0 0 0 / 31%);
+    backdrop-filter: blur(8.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background-color: var(--background-blur-color);
+    width: fit-content;
+    padding: 20px 30px;
+    border-radius: 20px;
+    justify-content: center;
+    padding: 16px 30px;
+    user-select: none;
+}
+.HeaderNavbar{
+    height: fit-content;
+    width: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    gap: 20px;
+}
+.HeaderNavbar div{
+    display: flex;
+    align-items: center;
+}
+.HeaderNavbar p{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--contrast-secondary-color);
+    margin: 0;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--contrast-secondary-color);
+    margin: 0;
+    line-height: 15px;
+}
+.HeaderNavbar p:hover{
+    color: var(--contrast-color);
+}
+.Active{
+    color: var(--accent-color);
+    border-bottom: 2px solid currentColor;
+}
+.Active p{
+    color: var(--contrast-color);
+}
+.NavbarMobile{
+    height: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    align-items: flex-end;
+    padding: 0px 20px;
+}
+.NavbarHeader{
+    border: 1px solid rgb(95 95 95 / 49%);
+    width: fit-content;
+    height: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    box-shadow: 0 4px 30px rgb(0 0 0 / 31%);
+    backdrop-filter: blur(8.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background-color: var(--background-blur-color);
+    width: fit-content;
+    border-radius: 14px;
+}
+.HeaderNavbarMobile p:hover{
+    color: var(--contrast-color) !important
+}
+.Active{
+    color: var(--accent-color);
+    border-bottom: 2px solid currentColor;
+}
+.Active p{
+    color: var(--contrast-color) !important;
+}
+.HeaderNavbarMobile{
+    height: fit-content;
+    width: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 4px 30px rgb(0 0 0 / 31%);
+    backdrop-filter: blur(8.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background-color: var(--background-blur-color);
+    width: fit-content;
+    padding:20px;
+    border-radius: 14px;
+    border: 1px solid rgb(95 95 95 / 49%);
+    flex-direction: column;
+}
+
+.HeaderNavbarMobile p{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--contrast-secondary-color);
+    margin: 0;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--contrast-secondary-color);
+    margin: 0;
+    line-height: 15px;
+    text-align: left;
+}
+.NavbarHeader:hover .line{
+    stroke: var(--contrast-color);
+}
+.hamburger {
+    cursor: pointer;
+    height: fit-content;
+    width: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.hamburger input {
+    display: none;
+}
+.hamburger svg {
+    height: 2em;
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill: var(--contrast-secondary-color);
+}
+.line {
+    fill: none;
+    stroke: var(--contrast-secondary-color);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+.lineTopBottom {
+    stroke-dasharray: 12 63;
+}
+.inputChecked svg {
+    transform: rotate(-45deg);
+}
+.inputChecked svg .lineTopBottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+}
