@@ -455,6 +455,9 @@
     width: 100%;
     box-sizing: border-box;
     display: flex;
+
+        overflow: auto;
+    scrollbar-width: none;
 }
 .ExplanationHeaderitem{
     height: fit-content;
@@ -465,6 +468,8 @@
     padding: 8px 16px;
     cursor: pointer;
     transition: 0.3s ease-out;
+
+    user-select: none;
 }
 .ExplanationHeaderitem p{
     font-size: 20px;
