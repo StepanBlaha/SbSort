@@ -2077,358 +2077,320 @@ console.log(...sorted);
 export const Ts = {
     quick:
         `
-// partition function
-function partition(arr, low, high)
-{
+function quickSort(arr: number[]): number[] {
+    // base case
+    if (arr.length <= 1) {
+        return arr;
+    }
 
-    // choose the pivot
-    let pivot = arr[high];
+    // select our pivot -- the last element in the array
+    const pivot = arr[arr.length - 1];
 
-    // index of smaller element and indicates
-    // the right position of pivot found so far
-    let i = low - 1;
+    // create 2 sub-arrays
+    const leftArr: number[] = [];
+    const rightArr: number[] = [];
 
-    // traverse arr[low..high] and move all smaller
-    // elements to the left side. Elements from low to
-    // i are smaller after every iteration
-    for (let j = low; j <= high - 1; j++) {
-        if (arr[j] < pivot) {
-            i++;
-            swap(arr, i, j);
+    // loop through the array
+    for (let i = 0; i < arr.length - 1; i++) {
+        // if the current item is less than the value of our pivot
+        // add the item to our leftArr, otherwise, add it to our
+        // rightArr
+        if (arr[i] < pivot) {
+            leftArr.push(arr[i]);
+        } else {
+            rightArr.push(arr[i]);
         }
     }
 
-    // move pivot after smaller elements and
-    // return its position
-    swap(arr, i + 1, high);
-    return i + 1;
-}
-
-// swap function
-function swap(arr, i, j)
-{
-    let temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
-}
-
-// the QuickSort function implementation
-function quickSort(arr, low, high)
-{
-    if (low < high) {
-
-        // pi is the partition return index of pivot
-        let pi = partition(arr, low, high);
-
-        // recursion calls for smaller elements
-        // and greater or equals elements
-        quickSort(arr, low, pi - 1);
-        quickSort(arr, pi + 1, high);
-    }
-}
-
-
-// Driver Code
-let arr = [ 10, 7, 8, 9, 1, 5 ];
-let n = arr.length;
-
-// call QuickSort on the entire array
-quickSort(arr, 0, n - 1);
-for (let i = 0; i < arr.length; i++) {
-    process.stdout.write(arr[i] + " ");
+    // repeat/recurse this process for our sub arrays
+    return [...quickSort(leftArr), pivot, ...quickSort(rightArr)];
 }
         `,
     heap:
         `
-        // To heapify a subtree rooted with node i
-        // which is an index in arr[].
-        function heapify(arr, n, i) {
+class HeapSort
+{
+   public sort(arr: number[])
+   {
+       const size = arr.length;
 
-            // Initialize largest as root
-            let largest = i;
-            
-            // left index = 2*i + 1
-            let l = 2 * i + 1; 
-            
-            // right index = 2*i + 2
-            let r = 2 * i + 2; 
+       for(let i = Math.floor(size / 2) - 1; i >= 0; i--)
+       {
+           this.heapify(arr, size, i);
+       }
 
-            // If left child is larger than root
-            if (l < n && arr[l] > arr[largest]) {
-                largest = l;
-            }
+       let j = size - 1;
+       while(j >= 1)
+       {
+           this.swap(arr, 0, j);
+           this.heapify(arr, j, 0);
+           j--;
+       }
+   }
 
-            // If right child is larger than largest so far
-            if (r < n && arr[r] > arr[largest]) {
-                largest = r;
-            }
+   private heapify(arr: number[], size: number, i: number)
+   {
+       let largest = i;
 
-            // If largest is not root
-            if (largest !== i) {
-                let temp = arr[i]; // Swap
-                arr[i] = arr[largest];
-                arr[largest] = temp;
+       let leftLeaf = 2 * i + 1;
+       let rightLeaf = 2 * i + 2;
 
-                // Recursively heapify the affected sub-tree
-                heapify(arr, n, largest);
-            }
-        }
+       // If the left child is larger than the current largest.
+    if (leftLeaf < size && arr[leftLeaf] > arr[largest]) 
+       {
+        largest = leftLeaf;
+    }
+    // If the right child is larger than the current largest.
+    if (rightLeaf < size && arr[rightLeaf] > arr[largest]) 
+       {
+        largest = rightLeaf;
+    }
+    
+    // If the largest of the two is not the original largest
+    if (largest != i) 
+       {
+        // Swap i and the largest.
+        this.swap(arr, i, largest);
+        // Heapify the sub-tree. 
+        this.heapify(arr, size, largest); 
+    }
+   }
 
-        // Main function to do heap sort
-        function heapSort(arr) {
-            let n = arr.length;
+   private swap(arr: number[], a: number, b: number)
+   {
+       const tmp = arr[a];
+       arr[a] = arr[b];
+       arr[b] = tmp;
+   }
+}
 
-            // Build heap (rearrange array)
-            for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
-                heapify(arr, n, i);
-            }
-
-            // One by one extract an element from heap
-            for (let i = n - 1; i > 0; i--) {
-            
-                // Move current root to end
-                let temp = arr[0];
-                arr[0] = arr[i];
-                arr[i] = temp;
-
-                // Call max heapify on the reduced heap
-                heapify(arr, i, 0);
-            }
-        }
-
-        // A utility function to print array of size n
-        function printArray(arr) {
-            for (let i = 0; i < arr.length; i++) {
-                console.log(arr[i] + " ");
-            }
-            console.log();
-        }
-
-        // Driver's code
-        let arr = [9, 4, 3, 8, 10, 2, 5];
-        heapSort(arr);
-        console.log("Sorted array is ");
-        printArray(arr);
         `,
     merge:
         `
-        function merge(arr, left, mid, right) {
-        const n1 = mid - left + 1;
-        const n2 = right - mid;
+class MergeSort
+{
+   arrClone : number[];
 
-        // Create temp arrays
-        const L = new Array(n1);
-        const R = new Array(n2);
+   public sort(arr: number[])
+   {
+       // Clone the array for sorting.
+       this.arrClone = Object.assign([], arr);
+       this.sortAux(arr, 0, arr.length - 1);
 
-        // Copy data to temp arrays L[] and R[]
-        for (let i = 0; i < n1; i++)
-            L[i] = arr[left + i];
-        for (let j = 0; j < n2; j++)
-            R[j] = arr[mid + 1 + j];
+   }
 
-        let i = 0, j = 0;
-        let k = left;
+   private sortAux(arr: number[], low: number, high: number)
+   {
+       if(low < high)
+       {
+           const mid = Math.floor((low + high) / 2);
 
-        // Merge the temp arrays back into arr[left..right]
-        while (i < n1 && j < n2) {
-            if (L[i] <= R[j]) {
-                arr[k] = L[i];
-                i++;
-            } else {
-                arr[k] = R[j];
-                j++;
-            }
-            k++;
-        }
+           this.sortAux(arr, low, mid);
+           this.sortAux(arr, mid + 1, high);
 
-        // Copy the remaining elements of L[], if there are any
-        while (i < n1) {
-            arr[k] = L[i];
-            i++;
-            k++;
-        }
+           this.merge(arr, low, mid, high);
 
-        // Copy the remaining elements of R[], if there are any
-        while (j < n2) {
-            arr[k] = R[j];
-            j++;
-            k++;
-        }
-    }
+       }
+   }
 
-    function mergeSort(arr, left, right) {
-        if (left >= right)
-            return;
+   private merge(arr: number[], low: number, mid: number, high: number)
+   {
+       let i = low;
+       let j = mid + 1;
+       let k = 0;
 
-        const mid = Math.floor(left + (right - left) / 2);
-        mergeSort(arr, left, mid);
-        mergeSort(arr, mid + 1, right);
-        merge(arr, left, mid, right);
-    }
+       for(k = low; k <= high; k++)
+       {
+           this.arrClone[k] = arr[k];
+       }
 
+       for(k = low; k <= high; k++)
+       {
+           if( i > mid)
+           {
+               arr[k] = this.arrClone[j];
+               j++;
+           }
+           else if(j > high)
+           {
+               arr[k] = this.arrClone[i];
+               i++;
+           }
+           else if(this.arrClone[i] > this.arrClone[j])
+           {
+               arr[k] = this.arrClone[j];
+               j++;
+           }
+           else
+           {
+               arr[k] = this.arrClone[i];
+               i++;
+           }
+       }
+   }
+}
 
-    // Driver code
-    const arr = [38, 27, 43, 10];
-    mergeSort(arr, 0, arr.length - 1);
-    console.log(arr.join(" "));
         `,
     selection:
         `
-function selectionSort(arr) {
-    let n = arr.length;
-    for (let i = 0; i < n - 1; i++) {
-    
-        // Assume the current position holds
-        // the minimum element
-        let min_idx = i;
-        
-        // Iterate through the unsorted portion
-        // to find the actual minimum
-        for (let j = i + 1; j < n; j++) {
-            if (arr[j] < arr[min_idx]) {
-            
-                // Update min_idx if a smaller element is found
-                min_idx = j;
-            }
-        }
-        
-        // Move minimum element to its
-        // correct position
-        let temp = arr[i];
-        arr[i] = arr[min_idx];
-        arr[min_idx] = temp;
-    }
+class SelectionSort
+{
+   public sort(arr: number[])
+   {
+       for(let i = 0; i < arr.length - 1; i++)
+       {
+           let min = i;
+           
+           for(let j = i + 1; j < arr.length; j++)
+           {
+               if(arr[j] < arr[min])
+               {
+                   // Choose the lesser of the two:
+                   min = j;
+               }
+           }
+           // In-place swap:
+           const tmp = arr[min];
+           arr[min] = arr[i];
+           arr[i] = tmp;
+       }
+   }
 }
 
-function printArray(arr) {
-    for (let val of arr) {
-        process.stdout.write(val + " ");
-    }
-    console.log();
-}
-
-// Driver function 
-const arr = [64, 25, 12, 22, 11];
-
-console.log("Original array: ");
-printArray(arr);
-
-selectionSort(arr);
-
-console.log("Sorted array: ");
-printArray(arr);
         `,
     insertion:
         `
-// Javascript program for insertion sort 
-
-// Function to sort array using insertion sort
-function insertionSort(arr) {
-    for (let i = 1; i < arr.length; i++) {
-        let key = arr[i];
-        let j = i - 1;
-
-        /* Move elements of arr[0..i-1], that are
-           greater than key, to one position ahead
-           of their current position */
-        while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j = j - 1;
-        }
-        arr[j + 1] = key;
-    }
+class InsertionSort
+{
+   public sort(arr: number[])
+   {
+       // Iterate the array (0..n)
+       for(let i = 0; i < arr.length; i++)
+       {
+           const tmp = arr[i];
+           let j = i - 1;
+           // Iterate while J is out of place.
+           while(j >= 0 && arr[j] > tmp)
+           {
+               arr[j + 1] = arr[j];
+               j--;
+           }
+           // Assign the correct location of i where j stops.
+           arr[j + 1] = tmp;
+       }
+   }
 }
 
-// A utility function to print array of size n
-function printArray(arr) {
-    console.log(arr.join(" "));
-}
-
-// Driver method
-let arr = [12, 11, 13, 5, 6];
-
-insertionSort(arr);
-printArray(arr);
-
-// This code is contributed by Hritik Shah.
         `,
     bubble:
         `
-// Optimized javaScript implementation
-// of Bubble sort
-function bubbleSort(arr, n){
-    var i, j, temp;
-    var swapped;
-    for (i = 0; i < n - 1; i++){
-        swapped = false;
-        for (j = 0; j < n - i - 1; j++){
-            if (arr[j] > arr[j + 1]) 
-            {
-                // Swap arr[j] and arr[j+1]
-                temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-                swapped = true;
-            }
-        }
+class BubbleSort
+{
+   public sort(arr: number[])
+   {
+       const size = arr.length;
 
-        // IF no two elements were 
-        // swapped by inner loop, then break
-        if (swapped == false)
-        break;
-    }
+       for(let i = 0; i < size - 1; i++)
+       {
+           for(let j = 0; j < size - i - 1; j++)
+           {
+               if(arr[j] > arr[j + 1])
+               {
+                   this.swap(arr, j, j + 1);
+               }
+           }
+       }
+   }
+
+   public sortFaster(arr: number[])
+   {
+       const size = arr.length;
+       let swapped: boolean = false;
+
+       for(let i = 0; i < size - 1; i++)
+       {
+           swapped = false;
+
+           for(let j = 0; j < size - i - 1; j++)
+           {
+               if(arr[j] > arr[j + 1])
+               {
+                   this.swap(arr, j,  j + 1);
+                   swapped = true;
+               }
+           }
+           // If no swaps happened, we have a sorted array:
+           if(!swapped)
+           {
+               break;
+           }
+       }
+   }
+
+   private swap(arr: number[], a: number, b: number)
+   {
+       const tmp = arr[a];
+       arr[a] = arr[b];
+       arr[b] = tmp;
+   }
 }
 
-// Function to print an array 
-function printArray(arr, size){
-  var i;
-  for (i = 0; i < size; i++)
-      console.log(arr[i] + " ");
-}
-
-// Driver program
-var arr = [ 64, 34, 25, 12, 22, 11, 90 ];
-var n = arr.length;
-bubbleSort(arr, n);
-console.log("Sorted array: ");
-printArray(arr, n);
         `,
     counting:
         `
-class GfG {
-    static countsort(arr) {
-        let n = arr.length;
-
-        // find the maximum element
-        let maxval = Math.max(...arr);
-
-        // create and initialize count array
-        let count = Array(maxval + 1).fill(0);
-
-        // count frequency of each element
-        for (let i = 0; i < n; i++)
-            count[arr[i]]++;
-
-        // compute prefix sum
-        for (let i = 1; i <= maxval; i++)
-            count[i] += count[i - 1];
-
-        // build output array
-        let ans = Array(n);
-        for (let i = n - 1; i >= 0; i--) {
-            let val = arr[i];
-            ans[count[val] - 1] = val;
-            count[val]--;
-        }
-
-        return ans;
+function countingSort(arr: number[]): number[] {
+    if (arr.length === 0) return arr;
+    
+    // Find the range of input
+    const min = Math.min(...arr);
+    const max = Math.max(...arr);
+    const range = max - min + 1;
+    
+    // Create count array
+    const count: number[] = new Array(range).fill(0);
+    
+    // Count occurrences of each element
+    for (let i = 0; i < arr.length; i++) {
+        count[arr[i] - min]++;
     }
+    
+    // Reconstruct the sorted array
+    const result: number[] = [];
+    for (let i = 0; i < range; i++) {
+        while (count[i] > 0) {
+            result.push(i + min);
+            count[i]--;
+        }
+    }
+    
+    return result;
 }
 
-// Driver code
-let arr = [2,5,3,0,2,3,0,3];
-let sorted = GfG.countsort(arr);
-console.log(...sorted);
+// In-place version (modifies original array)
+function countingSortInPlace(arr: number[]): void {
+    if (arr.length === 0) return;
+    
+    const min = Math.min(...arr);
+    const max = Math.max(...arr);
+    const range = max - min + 1;
+    
+    const count: number[] = new Array(range).fill(0);
+    
+    // Count occurrences
+    for (let i = 0; i < arr.length; i++) {
+        count[arr[i] - min]++;
+    }
+    
+    // Reconstruct array in place
+    let index = 0;
+    for (let i = 0; i < range; i++) {
+        while (count[i] > 0) {
+            arr[index] = i + min;
+            index++;
+            count[i]--;
+        }
+    }
+}
         `
 }
 
