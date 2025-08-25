@@ -6,6 +6,9 @@ import RangeSlider from "../../components/range/Range"
 import Visualizer from "../../components/visualizer/Visualizer"
 import bubbleSort from "../../assets/complexity/bubbleSort.png"
 
+
+import SortCode from "../../components/SortCode/SortCode"
+
 const BubbleSort = () => {
     const [ numbers, setNumbers ] = useState<string>()
     const [ play, setPlay ] = useState<boolean>(false)
@@ -21,7 +24,6 @@ const BubbleSort = () => {
     const [step, setStep] = useState<boolean>(false)
 
 
-    const [ codeLang, setCodeLang ] = useState<"c++"| "php"| "c"| "java"| "js"| "ts"| "c#"| "python">("c++")
 
 
     useEffect(() => {
@@ -87,12 +89,14 @@ const BubbleSort = () => {
                                     </div>
 
                                     <div className={styles.ConsoleButtonsGroup}>
+                                        {/*
                                         <div className={styles.PrimaryButton} onClick={() => {
                                         setStep(true);
                                         setTimeout(() => setStep(false), 0); // reset step flag
                                     }}>
                                             <p>Step</p>
                                         </div>
+                                        */}
                                         <div className={styles.PrimaryButton} onClick={() => {
                                             setReset(true);
                                             setTimeout(() => setReset(false), 0);
@@ -213,111 +217,9 @@ const BubbleSort = () => {
                                 </div>
 
 
-{/*code */}
-                                <div className={styles.Explanation}>
-                                    <div className={styles.ExplanationHeader}>
-                                        <div className={`${styles.ExplanationHeaderitem} ${codeLang === "c++" ? styles.SelectedExplanation : ""}`}
-                                            onClick={()=>setCodeLang("c++")}
-                                        >
-                                            <p>C++</p>
-                                        </div>
-                                        <div className={`${styles.ExplanationHeaderitem} ${codeLang === "c" ? styles.SelectedExplanation : ""}`}
-                                            onClick={()=>setCodeLang("c")}
-                                        >
-                                            <p>C</p>
-                                        </div>
-                                        <div className={`${styles.ExplanationHeaderitem} ${codeLang === "c#" ? styles.SelectedExplanation : ""}`}
-                                            onClick={()=>setCodeLang("c#")}
-                                        >
-                                            <p>C#</p>
-                                        </div>
-                                        <div className={`${styles.ExplanationHeaderitem} ${codeLang === "python" ? styles.SelectedExplanation : ""}`}
-                                            onClick={()=>setCodeLang("python")}
-                                        >
-                                            <p>Python</p>
-                                        </div>
-                                        <div className={`${styles.ExplanationHeaderitem} ${codeLang === "java" ? styles.SelectedExplanation : ""}`}
-                                            onClick={()=>setCodeLang("java")}
-                                        >
-                                            <p>Java</p>
-                                        </div>
-                                        <div className={`${styles.ExplanationHeaderitem} ${codeLang === "php" ? styles.SelectedExplanation : ""}`}
-                                            onClick={()=>setCodeLang("php")}
-                                        >
-                                            <p>PHP</p>
-                                        </div>
-                                        <div className={`${styles.ExplanationHeaderitem} ${codeLang === "js" ? styles.SelectedExplanation : ""}`}
-                                            onClick={()=>setCodeLang("js")}
-                                        >
-                                            <p>Javascript</p>
-                                        </div>
-                                        <div className={`${styles.ExplanationHeaderitem} ${codeLang === "ts" ? styles.SelectedExplanation : ""}`}
-                                            onClick={()=>setCodeLang("ts")}
-                                        >
-                                            <p>Typescript</p>
-                                        </div>
-                                    </div>
-                                    <div className={styles.ExplanationContent}>
-                                        {codeLang === "c++" && (
-                                            <div className={styles.ExplanationItem}>
-                                                <div className={styles.ExplanationItemText}>
-                                                    <p>c++</p>
-                                                </div>
-                                            </div>
-                                        )}
-                                        {codeLang === "c" && (
-                                            <div className={styles.ExplanationItem}>
-                                                <div className={styles.ExplanationItemText}>
-                                                    <p>c</p>
-                                                </div>
-                                            </div>
-                                        )}
-                                        {codeLang === "c#" && (
-                                            <div className={styles.ExplanationItem}>
-                                                <div className={styles.ExplanationItemText}>
-                                                    <p>c#</p>
-                                                </div>
-                                            </div>
-                                        )}
-                                        {codeLang === "python" && (
-                                            <div className={styles.ExplanationItem}>
-                                                <div className={styles.ExplanationItemText}>
-                                                    <p>python</p>
-                                                </div>
-                                            </div>
-                                        )}
-                                        {codeLang === "php" && (
-                                            <div className={styles.ExplanationItem}>
-                                                <div className={styles.ExplanationItemText}>
-                                                    <p>php</p>
-                                                </div>
-                                            </div>
-                                        )}
-                                        {codeLang === "java" && (
-                                            <div className={styles.ExplanationItem}>
-                                                <div className={styles.ExplanationItemText}>
-                                                    <p>java</p>
-                                                </div>
-                                            </div>
-                                        )}
-                                        {codeLang === "js" && (
-                                            <div className={styles.ExplanationItem}>
-                                                <div className={styles.ExplanationItemText}>
-                                                    <p>js</p>
-                                                </div>
-                                            </div>
-                                        )}
-                                        {codeLang === "ts" && (
-                                            <div className={styles.ExplanationItem}>
-                                                <div className={styles.ExplanationItemText}>
-                                                    <p>ts</p>
-                                                </div>
-                                            </div>
-                                        )}
-                                        
-                                    </div>
-
-                                </div>
+                                {/*code */} 
+                                <SortCode sort="bubble"/>
+                                
                             </div>
                         </div>
                     </div>

@@ -5,6 +5,10 @@ import { useState, useEffect } from "react"
 import RangeSlider from "../../components/range/Range"
 import Visualizer from "../../components/visualizer/Visualizer"
 import insertionSort from "../../assets/complexity/insertionSort.png"
+import SortCode from "../../components/SortCode/SortCode"
+
+
+
 
 const InsertionSort = () => {
     const [ numbers, setNumbers ] = useState<string>()
@@ -84,12 +88,14 @@ const InsertionSort = () => {
                                     </div>
 
                                     <div className={styles.ConsoleButtonsGroup}>
+                                        {/*
                                         <div className={styles.PrimaryButton} onClick={() => {
                                         setStep(true);
                                         setTimeout(() => setStep(false), 0); // reset step flag
                                     }}>
                                             <p>Step</p>
                                         </div>
+                                        */}
                                         <div className={styles.PrimaryButton} onClick={() => {
                                             setReset(true);
                                             setTimeout(() => setReset(false), 0);
@@ -205,6 +211,9 @@ const InsertionSort = () => {
                                     </div>
 
                                 </div>
+
+                                {/*code */} 
+                                <SortCode sort="insertion"/>
                             </div>
                         </div>
                     </div>

@@ -5,6 +5,8 @@ import { useState, useEffect } from "react"
 import RangeSlider from "../../components/range/Range"
 import Visualizer from "../../components/visualizer/Visualizer"
 import countingSort from "../../assets/complexity/countingSort.png"
+import SortCode from "../../components/SortCode/SortCode"
+
 
 const CountingSort = () => {
     const [ numbers, setNumbers ] = useState<string>()
@@ -84,12 +86,14 @@ const CountingSort = () => {
                                     </div>
 
                                     <div className={styles.ConsoleButtonsGroup}>
+                                        {/*
                                         <div className={styles.PrimaryButton} onClick={() => {
                                         setStep(true);
                                         setTimeout(() => setStep(false), 0); // reset step flag
                                     }}>
                                             <p>Step</p>
                                         </div>
+                                        */}
                                         <div className={styles.PrimaryButton} onClick={() => {
                                             setReset(true);
                                             setTimeout(() => setReset(false), 0);
@@ -206,6 +210,9 @@ const CountingSort = () => {
                                     </div>
 
                                 </div>
+
+                                {/*code */} 
+                                <SortCode sort="counting"/>
                             </div>
                         </div>
                     </div>

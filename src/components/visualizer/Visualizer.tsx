@@ -137,42 +137,190 @@ const Visualizer = ({ numbers, play, reset, className, functionType, step, speed
     }
 
 
-    const quickSort = async (arr: number[]): Promise<number[]> => {
-        
-        // base case
-        if (arr.length <= 1) {
-            return arr;
+    const quickSort = async (arr: number[]) => {
+        if (runningRef.current) return;
+        runningRef.current = true;
+
+        const myResetId = resetIdRef.current;
+        await quickSortHelper(arr, 0, arr.length - 1, myResetId);
+
+        setActiveIndices([]);
+        iRef.current = 0;
+        jRef.current = 0;
+        runningRef.current = false;
+    }
+
+    const quickSortHelper = async (arr: number[], low: number, high: number, myResetId: number) => {
+        if (low < high) {
+            const pivotIndex = await partition(arr, low, high, myResetId);
+            await quickSortHelper(arr, low, pivotIndex - 1, myResetId);
+            await quickSortHelper(arr, pivotIndex + 1, high, myResetId);
         }
+    }
 
-        // select our pivot -- the last element in the array
-        const pivot = arr[arr.length - 1];
+    const partition = async (arr: number[], low: number, high: number, myResetId: number) => {
+        const pivot = arr[high];
+        let i = low - 1;
 
-        // create 2 sub-arrays
-        const leftArr: number[] = [];
-        const rightArr: number[] = [];
+        for (let j = low; j < high; j++) {
+            setActiveIndices([j, high]);
+            await new Promise((res) => setTimeout(res, timeout));
 
-        // loop through the array
-        for (let i = 0; i < arr.length - 1; i++) {
-            // if the current item is less than the value of our pivot
-            // add the item to our leftArr, otherwise, add it to our
-            // rightArr
-            if (arr[i] < pivot) {
-                leftArr.push(arr[i]);
-            } else {
-                rightArr.push(arr[i]);
+            if (arr[j] < pivot) {
+                i++;
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+                setNums([...arr]);
+                await new Promise((res) => setTimeout(res, timeout));
+            }
+
+            // Pause handling
+            if (!playRef.current && myResetId === resetIdRef.current) {
+                return i + 1;
+            }
+
+            // Reset handling
+            if (myResetId !== resetIdRef.current) {
+                return i + 1;
             }
         }
 
-        // repeat/recurse this process for our sub arrays
-        const sortedLeft = await quickSort(leftArr);
-        const sortedRight = await quickSort(rightArr);
-        return [...sortedLeft, pivot, ...sortedRight];
+        [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
+        setNums([...arr]);
+        await new Promise((res) => setTimeout(res, timeout));
+
+        return i + 1;
     }
-    const heapSort = async (arr: number[]) => { 
-        
+
+    const heapSort = async (arr: number[]) => {
+        if (runningRef.current) return;
+        runningRef.current = true;
+
+        const myResetId = resetIdRef.current;
+        const n = arr.length;
+
+        // Build max heap
+        for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
+            await heapify(arr, n, i, myResetId);
+        }
+
+        // Extract elements from heap one by one
+        for (let i = n - 1; i > 0; i--) {
+            [arr[0], arr[i]] = [arr[i], arr[0]];
+            setNums([...arr]);
+            await new Promise((res) => setTimeout(res, timeout));
+
+            await heapify(arr, i, 0, myResetId);
+
+            // Pause handling
+            if (!playRef.current && myResetId === resetIdRef.current) {
+                runningRef.current = false;
+                return;
+            }
+
+            // Reset handling
+            if (myResetId !== resetIdRef.current) {
+                runningRef.current = false;
+                iRef.current = 0;
+                jRef.current = 0;
+                return;
+            }
+        }
+
+        setActiveIndices([]);
+        iRef.current = 0;
+        jRef.current = 0;
+        runningRef.current = false;
     }
-    const countingSort = async (arr: number[]) => { 
-        
+
+    const heapify = async (arr: number[], n: number, i: number, myResetId: number) => {
+        let largest = i;
+        let left = 2 * i + 1;
+        let right = 2 * i + 2;
+
+        if (left < n && arr[left] > arr[largest]) {
+            largest = left;
+        }
+
+        if (right < n && arr[right] > arr[largest]) {
+            largest = right;
+        }
+
+        if (largest !== i) {
+            setActiveIndices([i, largest]);
+            await new Promise((res) => setTimeout(res, timeout));
+
+            [arr[i], arr[largest]] = [arr[largest], arr[i]];
+            setNums([...arr]);
+            await new Promise((res) => setTimeout(res, timeout));
+
+            await heapify(arr, n, largest, myResetId);
+        }
+    }
+
+    const countingSort = async (arr: number[]) => {
+        if (runningRef.current) return;
+        runningRef.current = true;
+
+        const myResetId = resetIdRef.current;
+        const max = Math.max(...arr);
+        const min = Math.min(...arr);
+        const range = max - min + 1;
+        const count = new Array(range).fill(0);
+
+        // Count occurrences
+        for (let i = 0; i < arr.length; i++) {
+            setActiveIndices([i]);
+            await new Promise((res) => setTimeout(res, timeout));
+            
+            count[arr[i] - min]++;
+
+            // Pause handling
+            if (!playRef.current && myResetId === resetIdRef.current) {
+                runningRef.current = false;
+                return;
+            }
+
+            // Reset handling
+            if (myResetId !== resetIdRef.current) {
+                runningRef.current = false;
+                iRef.current = 0;
+                jRef.current = 0;
+                return;
+            }
+        }
+
+        // Reconstruct array
+        let index = 0;
+        for (let i = 0; i < range; i++) {
+            while (count[i] > 0) {
+                arr[index] = i + min;
+                setActiveIndices([index]);
+                setNums([...arr]);
+                await new Promise((res) => setTimeout(res, timeout));
+                
+                index++;
+                count[i]--;
+
+                // Pause handling
+                if (!playRef.current && myResetId === resetIdRef.current) {
+                    runningRef.current = false;
+                    return;
+                }
+
+                // Reset handling
+                if (myResetId !== resetIdRef.current) {
+                    runningRef.current = false;
+                    iRef.current = 0;
+                    jRef.current = 0;
+                    return;
+                }
+            }
+        }
+
+        setActiveIndices([]);
+        iRef.current = 0;
+        jRef.current = 0;
+        runningRef.current = false;
     }
 
 
@@ -368,7 +516,7 @@ const Visualizer = ({ numbers, play, reset, className, functionType, step, speed
         selection: selectionSort,
         heap: heapSort,
         counting: countingSort,
-        //quick: quickSort
+        quick: quickSort
         // ... other sort functions
     };
 

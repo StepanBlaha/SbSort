@@ -470,6 +470,9 @@
     transition: 0.3s ease-out;
 
     user-select: none;
+
+     border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 .ExplanationHeaderitem p{
     font-size: 20px;

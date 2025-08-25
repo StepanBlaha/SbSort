@@ -5,6 +5,8 @@ import { useState, useEffect } from "react"
 import RangeSlider from "../../components/range/Range"
 import Visualizer from "../../components/visualizer/Visualizer"
 import heapSort from "../../assets/complexity/heapSort.png"
+import SortCode from "../../components/SortCode/SortCode"
+
 
 const HeapSort = () => {
     const [ numbers, setNumbers ] = useState<string>()
@@ -84,12 +86,14 @@ const HeapSort = () => {
                                     </div>
 
                                     <div className={styles.ConsoleButtonsGroup}>
+                                        {/*
                                         <div className={styles.PrimaryButton} onClick={() => {
                                         setStep(true);
                                         setTimeout(() => setStep(false), 0); // reset step flag
                                     }}>
                                             <p>Step</p>
                                         </div>
+                                        */}
                                         <div className={styles.PrimaryButton} onClick={() => {
                                             setReset(true);
                                             setTimeout(() => setReset(false), 0);
@@ -206,6 +210,9 @@ const HeapSort = () => {
                                     </div>
 
                                 </div>
+
+                                {/*code */} 
+                                <SortCode sort="heap"/>
                             </div>
                         </div>
                     </div>

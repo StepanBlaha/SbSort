@@ -3,6 +3,7 @@ import styles from "./SelectionSort.module.css"
 import { Play, Pause } from "lucide-react"
 import { useState, useEffect } from "react"
 import RangeSlider from "../../components/range/Range"
+import SortCode from "../../components/SortCode/SortCode"
 import Visualizer from "../../components/visualizer/Visualizer"
 import selectionSort from "../../assets/complexity/selectionSort.png"
 
@@ -84,12 +85,14 @@ const SelectionSort = () => {
                                     </div>
 
                                     <div className={styles.ConsoleButtonsGroup}>
+                                        {/*
                                         <div className={styles.PrimaryButton} onClick={() => {
                                         setStep(true);
                                         setTimeout(() => setStep(false), 0); // reset step flag
                                     }}>
                                             <p>Step</p>
                                         </div>
+                                        */}
                                         <div className={styles.PrimaryButton} onClick={() => {
                                             setReset(true);
                                             setTimeout(() => setReset(false), 0);
@@ -206,6 +209,9 @@ const SelectionSort = () => {
                                     </div>
 
                                 </div>
+
+                                {/*code */} 
+                                <SortCode sort="selection"/>
                             </div>
                         </div>
                     </div>
