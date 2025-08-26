@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     gap: clamp(12px, 3.3vw, 64px);
-    background-color: #FFFFFF;
+    background-color: var(--background-color);
     align-items: center;
     overflow-y: visible;
     overflow-x: clip;
@@ -16,12 +16,11 @@
     min-height: 200px;
     height: fit-content;
     display: flex;
-    background-color: #FFFFFF;
+    background-color: var(--background-color);
     /* position: sticky; */
     /* top: 0; */
     align-items: center;
     z-index: 10;
-    border: 1px solid red;
     justify-content: space-between;
     padding: 10px 30px;
     box-sizing: border-box;
@@ -32,7 +31,6 @@
     display: flex;
     align-items: center;
     z-index: 10;
-    border: 1px solid red;
     justify-content: space-between;
     gap: 20px;
     box-sizing: border-box;
@@ -40,7 +38,7 @@
 .Logo{
     width: 100px;
     height: 80px;
-    background-color: #53baff;
+    background-color: var(--accent-color);
     box-sizing: border-box;
     display: flex;
 }
@@ -67,7 +65,7 @@
 .Theme{
     width: 100px;
     height: 80px;
-    background-color: #53baff;
+    background-color: var(--accent-color);
     box-sizing: border-box;
     display: flex;
 }
@@ -84,7 +82,6 @@
     flex-direction: column;
     align-items: center;
     gap: clamp(24px, 7vw, 128px);
-    border: 1px solid green;
 }
 .Hero{
     width: 100%;
@@ -94,13 +91,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    border: 1px solid red;
 }
 .HeroTitle{
     font-size: 60px;
     line-height: 80px;
     font-weight: 700;
-    color: #000000;
+    color: var(--contrast-color);
     margin: 0;
     text-align: left;
 }
@@ -108,7 +104,7 @@
     font-size: 30px;
     line-height: 40px;
     font-weight: 600;
-    color: #333333;
+    color: var(--contrast-secondary-color);
     margin: 0;
     text-align: left;
 }
@@ -153,7 +149,7 @@
     font-size: 30px;
     line-height: 40px;
     font-weight: 600;
-    color: #333333;
+    color: var(--contrast-secondary-color);
     margin: 0;
     width: 100%;
     text-align: left;
@@ -178,7 +174,7 @@
     font-size: 24px;
     line-height: 24px;
     font-weight: 600;
-    color: #333333;
+    color: var(--contrast-secondary-color);
     margin: 0;
     padding: 8px 12px;
     border-radius: 8px;
@@ -212,48 +208,49 @@
     gap: 12px;
     padding: 16px 24px;
     border-radius: 12px;
-    background-color: #53baff;
+    background-color: var(--accent-color);
     align-items: center;
     box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.15);
     transition: 0.3s ease-out;
     cursor: pointer;
     user-select: none;
+    
 }
 .PlayButton svg{
     min-width: 24px;
     min-height: 24px;
     max-width: 24px;
     max-height: 24px;
-    color: white;
+    color: var(--background-color);
     transition: 0.3s ease-out;
 }
 .PlayButton p{
     font-size: 24px;
     line-height: 24px;
     font-weight: 600;
-    color: white;
+    color: var(--background-color);
     margin: 0;
     transition: 0.3s ease-out;
 }
 .PlayButton:hover{
-    background-color: #3896d4;
+    background-color: var(--accent-secondary-color);
 }
 .PlayButton:hover svg{
-    color: white;
-    fill: white;
+    color: var(--background-color);
+    fill: var(--background-color);
 }
 .PlayButton:hover p{
-    color: white;
+    color: var(--background-color);
 }
 .PlayButton:active{
-    background-color: #2c78aa;
+    background-color: var(--accent-tertiary-color);
 }
 .PlayButton:active svg{
-    color: #cccccc;
-    fill: #cccccc;
+    color: var(--background-secondary-color);
+    fill: var(--background-secondary-color);
 }
 .PlayButton:active p{
-    color: #cccccc;
+    color: var(--background-secondary-color);
 }
 
 
@@ -268,7 +265,7 @@
     gap: 12px;
     padding: 16px;
     border-radius: 12px;
-    background-color: #f4f6f9;
+    background-color: var(--background-tertiary-color);
     align-items: center;
     justify-content: center;
     box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.15);
@@ -281,36 +278,36 @@
     min-height: 24px;
     max-width: 24px;
     max-height: 24px;
-    color: #333333;
+    color: var(--contrast-secondary-color);
     transition: 0.3s ease-out;
 }
 .PrimaryButton p{
     font-size: 24px;
     line-height: 24px;
     font-weight: 600;
-    color: #333333;
+    color: var(--contrast-secondary-color);
     margin: 0;
     transition: 0.3s ease-out;
 }
 .PrimaryButton:hover{
-    background-color: #53baff;
+    background-color: var(--accent-color);
 }
 .PrimaryButton:hover svg{
-    color: white;
-    fill: white;
+    color: var(--background-color);
+    fill: var(--background-color);
 }
 .PrimaryButton:hover p{
-    color: white;
+    color: var(--background-color);
 }
 .PrimaryButton:active{
-    background-color: #3896d4;
+    background-color: var(--accent-secondary-color);
 }
 .PrimaryButton:active svg{
-    color: white;
-    fill: white;
+    color: var(--background-color);
+    fill: var(--background-color);
 }
 .PrimaryButton:active p{
-    color: white;
+    color: var(--background-color);
 }
 
 
@@ -335,7 +332,7 @@
     font-size: 24px;
     line-height: 24px;
     font-weight: 600;
-    color: #333333;
+    color: var(--contrast-secondary-color);
     margin: 0;
 }
 
@@ -358,7 +355,7 @@
     font-size: 24px;
     line-height: 24px;
     font-weight: 600;
-    color: #333333;
+    color: var(--contrast-secondary-color);
     margin: 0;
 }
 .DataTypesGroup{
@@ -372,13 +369,13 @@
 
 
 .SelectedType{
-    background-color: #53baff;
+    background-color: var(--accent-color);
 }
 .SelectedType svg{
-    color: white;
+    color: var(--background-color);
 }
 .SelectedType p{
-    color: white;
+    color: var(--background-color);
 }
 
 
@@ -409,7 +406,7 @@
     font-size: 30px;
     line-height: 40px;
     font-weight: 600;
-    color: #333333;
+    color: var(--contrast-secondary-color);
     margin: 0;
     width: 100%;
     text-align: left;
@@ -422,7 +419,7 @@
     flex-direction: column;
     padding: 10px;
     gap: 30px;
-    background-color: #f4f6f9;
+    background-color: var(--background-tertiary-color);
 }
 .VisualizationGraph{
     width: 100%;
@@ -454,16 +451,24 @@
     width: 100%;
     box-sizing: border-box;
     display: flex;
+
+        overflow: auto;
+    scrollbar-width: none;
 }
 .ExplanationHeaderitem{
     height: fit-content;
     width: fit-content;
     box-sizing: border-box;
     display: flex;
-    background-color: #f4f6f9;
+    background-color: var(--background-tertiary-color);
     padding: 8px 16px;
     cursor: pointer;
     transition: 0.3s ease-out;
+
+    user-select: none;
+
+     border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 .ExplanationHeaderitem p{
     font-size: 20px;
@@ -475,20 +480,20 @@
     text-align: left;
 }
 .ExplanationHeaderitem:not(.SelectedExplanation):hover {
-    background-color: #ffffff;
+    background-color: var(--background-color);
 }
 .ExplanationHeaderitem:not(.SelectedExplanation):hover p{
-    color: #333333;
+    color: var(--contrast-secondary-color);
 }
 
 .SelectedExplanation{
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    background-color: #ffffff;
+    background-color: var(--background-color);
 }
 .SelectedExplanation p{
 
-    color: #333333;
+    color: var(--contrast-secondary-color);
     margin: 0;
     width: 100%;
     text-align: left;
@@ -502,7 +507,7 @@
     min-height: 100px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    background-color: #ffffff;
+    background-color: var(--background-color);
 }
 .ExplanationItem{
     width: 100%;
@@ -532,7 +537,7 @@
     font-size: 18px;
     line-height: 20px;
     font-weight: 600;
-    color: #333333;
+    color: var(--contrast-secondary-color);
     margin: 0;
     width: 100%;
     text-align: left;

@@ -1,12 +1,12 @@
 import React from "react"
-import styles from "./InsertionSort.module.css"
+import styles from "../sort/SortPage.module.css"
 import { Play, Pause } from "lucide-react"
 import { useState, useEffect } from "react"
 import RangeSlider from "../../components/range/Range"
 import Visualizer from "../../components/visualizer/Visualizer"
 import insertionSort from "../../assets/complexity/insertionSort.png"
 import SortCode from "../../components/SortCode/SortCode"
-
+import Navbar from "../../components/Navbar/Navbar"
 
 
 
@@ -44,24 +44,7 @@ const InsertionSort = () => {
     return (
         <>
             <div className={styles.Page}>
-                <div className={styles.Header}>
-                    <div className={styles.Logo}></div>
-                    <div className={styles.HeaderGroup}>
-
-                        <div className={styles.Pages}>
-                            <div className={styles.HeaderPage}>
-                                <p>Home</p>
-                            </div>
-                            <div className={styles.HeaderPage}>
-                                <p>Sort Types</p>
-                            </div>
-                            <div className={styles.HeaderPage}>
-                                <p>About</p>
-                            </div>
-                        </div>
-                        <div className={styles.Theme}></div>
-                    </div>
-                </div>
+                <Navbar/>
 
                 <div className={styles.Content}>
                     <div className={styles.Hero}>

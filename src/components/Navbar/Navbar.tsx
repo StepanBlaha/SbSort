@@ -1,15 +1,17 @@
 import styles from "./Navbar.module.css"
-import logo from "../../assets/logos/SBSORT.png"
+import logo from "../../assets/logos/SBSORT-light.png"
+import darklogo from "../../assets/logos/SBSORT-dark.png"
 import ThemeSwitch from "../ThemeSwitch/ThemeSwitch"
 import { useState, useEffect, useRef } from "react"
 import { useWindowSize } from "../../hooks/useWindowSize"
 import { motion, AnimatePresence } from "framer-motion";
-
-
+import { useNavigate } from "react-router-dom"
+import { useTheme } from "../../context/ThemeContext"
 
 
 const Navbar = () => {
-
+    const navigate = useNavigate();
+    const { theme } = useTheme()
     const width = useWindowSize();
     const [ menuOpen, setMenuOpen] = useState<boolean>(false)
     const [activeId, setActiveId] = useState<string>("home");
@@ -39,23 +41,23 @@ const Navbar = () => {
 
     return (
         <>
-        {width > 600 ? (
+        {width > 800 ? (
             <div className={styles.Header}>
                 <div className={styles.Logo}
                 >
-                    <img src={logo} alt="" />
+                    <img src={theme === "light" ? logo : darklogo} alt="SBSORT logo" />
                 </div>
                 <div className={styles.HeaderGroup}>
 
                     <div className={styles.Pages}>
-                        <div className={styles.HeaderPage}>
-                            <p>Home</p>
+                        <div className={styles.HeaderPage} onClick={()=>navigate("/home")}>
+                            <a>Home</a>
                         </div>
-                        <div className={styles.HeaderPage}>
-                            <p>Sort Types</p>
+                        <div className={styles.HeaderPage} onClick={()=>navigate("/sort-types")}>
+                            <a>Sort Types</a>
                         </div>
-                        <div className={styles.HeaderPage}>
-                            <p>About</p>
+                        <div className={styles.HeaderPage} onClick={()=>navigate("/about")}>
+                            <a>About</a>
                         </div>
                     </div>
                     <div className={styles.Theme}>
@@ -66,7 +68,7 @@ const Navbar = () => {
             ) : (
             <div className={styles.Header}>
                 <div className={styles.Logo}>
-                    <img src={logo} alt="" />
+                    <img src={theme === "light" ? logo : darklogo} alt="SBSORT logo" />
                 </div>
             <div className={styles.NavbarMobile} >
                 <div className={styles.NavbarHeader} ref={buttonRef} >
@@ -81,7 +83,8 @@ const Navbar = () => {
                         </svg>
                     </label>
 
-                </div>
+                            </div>
+                            <ThemeSwitch/>
                 <AnimatePresence initial={false}>
                 {menuOpen && 
                     <motion.div
@@ -101,18 +104,18 @@ const Navbar = () => {
                                 exit={{ opacity: 0, y: -5 }}
                                 transition={{ delay: index * 0.03 }}
                                 key={id}
-                                className={activeId === id ? styles.Active : ""}
+                                className={`${activeId === id ? styles.Active : ""} ${styles.HeaderPage}`}
                                 onClick={() => {
                                 setMenuOpen(false);
                                     setTimeout(() => {
-                                        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+                                        navigate(`/${id}`)
                                     }, 50); 
                                 }}
                             >
                                 <p>{id}</p>
                         </motion.div>
                         ))}
-                        <ThemeSwitch/>
+                        
                     
                     </motion.div>
                 }
