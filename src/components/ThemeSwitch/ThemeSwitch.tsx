@@ -68,7 +68,7 @@ const ThemeSwitch = () => {
         <div className={styles.toggleButton} ref={ref} onClick={toggleDarkMode}>
             <div className={styles.toggleSwitch}>
             <label className={styles.switchLabel}>
-                <input type="checkbox" className={styles.checkbox} />
+                        <input type="checkbox" className={styles.checkbox} checked={theme === "light" } />
                 <span className={styles.slider}></span>
             </label>
             </div>
