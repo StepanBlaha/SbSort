@@ -7,6 +7,8 @@ import Visualizer from "../../components/visualizer/Visualizer"
 import mergeSort from "../../assets/complexity/mergeSort.png"
 import SortCode from "../../components/SortCode/SortCode"
 import Navbar from "../../components/Navbar/Navbar"
+import hero from "../../assets/bgs/hero-merge.png"
+import how from "../../assets/bgs/how-merge.png"
 
 const MergeSort = () => {
     const [ numbers, setNumbers ] = useState<string>()
@@ -45,7 +47,7 @@ const MergeSort = () => {
                 <Navbar/>
 
                 <div className={styles.Content}>
-                    <div className={styles.Hero}>
+                    <div className={styles.Hero} style={{backgroundImage: `url(${hero})`}}>
                         <p className={styles.HeroTitle}>Merge Sort</p>
                         <p className={styles.HeroSubtitle}>Step-by-step visual explanation of Merge Sort.</p>
                     </div>
@@ -60,11 +62,11 @@ const MergeSort = () => {
                                 <div className={styles.ConsoleButtons}>
                                     <div className={styles.ConsoleButtonsGroup}>
                                         <div className={styles.PlayButton} onClick={()=>setPlay(true)}>
-                                            <Play  fill="#ffffff"/>
+                                            <Play  fill="var(--background-color)"/>
                                             <p>Play</p>
                                         </div>
                                         <div className={styles.PrimaryButton} onClick={()=>setPlay(false)}>
-                                            <Pause fill="#333333" />
+                                            <Pause fill="var(--contrast-secondary-color)" />
                                         </div>
                                     </div>
 
@@ -159,7 +161,7 @@ const MergeSort = () => {
                                                         <li>Merge the two sorted halves into one sorted array</li>
                                                     </ul>
                                                 </div>
-                                                <div className={styles.ExplanationItemImage}></div>
+                                                <div className={styles.ExplanationItemImage} style={{backgroundImage: `url(${how})`}}></div>
                                             </div>
                                         )}
                                         {selectedExplanation === "time" && (

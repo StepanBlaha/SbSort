@@ -7,7 +7,10 @@ import Visualizer from "../../components/visualizer/Visualizer"
 import SortCode from "../../components/SortCode/SortCode"
 import quickSort from "../../assets/complexity/quickSort.png"
 import Navbar from "../../components/Navbar/Navbar"
-
+import hero from "../../assets/bgs/hero-quick.png"
+import { useTheme } from "../../context/ThemeContext"
+import howLight from "../../assets/bgs/how-quick-light.png"
+import howDark from "../../assets/bgs/how-quick-dark.png"
 
 const QuickSort = () => {
     const [ numbers, setNumbers ] = useState<string>()
@@ -20,7 +23,7 @@ const QuickSort = () => {
 
     const [ num, setNum] = useState<number[]>([1, 5, 1, 2, 3, 8, 9, 1, 3, 1, 2])
     const [error, setError] = useState<string>()
-    
+    const { theme } = useTheme();
     const [step, setStep] = useState<boolean>(false)
 
 
@@ -46,7 +49,7 @@ const QuickSort = () => {
                 <Navbar/>
 
                 <div className={styles.Content}>
-                    <div className={styles.Hero}>
+                    <div className={styles.Hero} style={{backgroundImage: `url(${hero})`}}>
                         <p className={styles.HeroTitle}>Quick Sort</p>
                         <p className={styles.HeroSubtitle}>Step-by-step visual explanation of Quick Sort.</p>
                     </div>
@@ -61,11 +64,11 @@ const QuickSort = () => {
                                 <div className={styles.ConsoleButtons}>
                                     <div className={styles.ConsoleButtonsGroup}>
                                         <div className={styles.PlayButton} onClick={()=>setPlay(true)}>
-                                            <Play  fill="#ffffff"/>
+                                            <Play  fill="var(--background-color)"/>
                                             <p>Play</p>
                                         </div>
                                         <div className={styles.PrimaryButton} onClick={()=>setPlay(false)}>
-                                            <Pause fill="#333333" />
+                                            <Pause fill="var(--contrast-secondary-color)" />
                                         </div>
                                     </div>
 
@@ -160,7 +163,7 @@ const QuickSort = () => {
                                                         <li>Recursively apply the process to left and right partitions</li>
                                                     </ul>
                                                 </div>
-                                                <div className={styles.ExplanationItemImage}></div>
+                                                <div className={styles.ExplanationItemImage} style={{backgroundImage: `url(${theme === "light" ? howLight : howDark})`}}></div>
                                             </div>
                                         )}
                                         {selectedExplanation === "time" && (

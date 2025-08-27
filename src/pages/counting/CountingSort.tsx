@@ -7,6 +7,12 @@ import Visualizer from "../../components/visualizer/Visualizer"
 import countingSort from "../../assets/complexity/countingSort.png"
 import SortCode from "../../components/SortCode/SortCode"
 import Navbar from "../../components/Navbar/Navbar"
+import hero from "../../assets/bgs/hero-counting.png"
+import { useTheme } from "../../context/ThemeContext"
+
+
+import howLight from "../../assets/bgs/how-counting-light.png"
+import howDark from "../../assets/bgs/how-counting-dark.png"
 
 
 const CountingSort = () => {
@@ -22,7 +28,7 @@ const CountingSort = () => {
     const [error, setError] = useState<string>()
     
     const [step, setStep] = useState<boolean>(false)
-
+    const { theme } = useTheme();
 
     useEffect(() => {
         try {
@@ -46,7 +52,7 @@ const CountingSort = () => {
                 <Navbar/>
 
                 <div className={styles.Content}>
-                    <div className={styles.Hero}>
+                    <div className={styles.Hero} style={{backgroundImage: `url(${hero})`}}>
                         <p className={styles.HeroTitle}>Counting Sort</p>
                         <p className={styles.HeroSubtitle}>Step-by-step visual explanation of Counting Sort.</p>
                     </div>
@@ -61,11 +67,11 @@ const CountingSort = () => {
                                 <div className={styles.ConsoleButtons}>
                                     <div className={styles.ConsoleButtonsGroup}>
                                         <div className={styles.PlayButton} onClick={()=>setPlay(true)}>
-                                            <Play  fill="#ffffff"/>
+                                            <Play  fill="var(--background-color)"/>
                                             <p>Play</p>
                                         </div>
                                         <div className={styles.PrimaryButton} onClick={()=>setPlay(false)}>
-                                            <Pause fill="#333333" />
+                                            <Pause fill="var(--contrast-secondary-color)" />
                                         </div>
                                     </div>
 
@@ -161,7 +167,7 @@ const CountingSort = () => {
                                                         <li>Place each element in its sorted position in the output array</li>
                                                     </ul>
                                                 </div>
-                                                <div className={styles.ExplanationItemImage}></div>
+                                                <div className={styles.ExplanationItemImage} style={{backgroundImage: `url(${theme === "light" ? howLight : howDark})`}}></div>
                                             </div>
                                         )}
                                         {selectedExplanation === "time" && (

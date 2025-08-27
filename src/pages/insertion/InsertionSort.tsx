@@ -7,7 +7,8 @@ import Visualizer from "../../components/visualizer/Visualizer"
 import insertionSort from "../../assets/complexity/insertionSort.png"
 import SortCode from "../../components/SortCode/SortCode"
 import Navbar from "../../components/Navbar/Navbar"
-
+import how from "../../assets/bgs/how-insertion.png"
+import hero from "../../assets/bgs/hero-insertion.png"
 
 
 const InsertionSort = () => {
@@ -47,7 +48,7 @@ const InsertionSort = () => {
                 <Navbar/>
 
                 <div className={styles.Content}>
-                    <div className={styles.Hero}>
+                    <div className={styles.Hero} style={{backgroundImage: `url(${hero})`}}>
                         <p className={styles.HeroTitle}>Insertion Sort</p>
                         <p className={styles.HeroSubtitle}>Step-by-step visual explanation of Insertion Sort.</p>
                     </div>
@@ -62,11 +63,11 @@ const InsertionSort = () => {
                                 <div className={styles.ConsoleButtons}>
                                     <div className={styles.ConsoleButtonsGroup}>
                                         <div className={styles.PlayButton} onClick={()=>setPlay(true)}>
-                                            <Play  fill="#ffffff"/>
+                                            <Play  fill="var(--background-color)"/>
                                             <p>Play</p>
                                         </div>
                                         <div className={styles.PrimaryButton} onClick={()=>setPlay(false)}>
-                                            <Pause fill="#333333" />
+                                            <Pause fill="var(--contrast-secondary-color)" />
                                         </div>
                                     </div>
 
@@ -161,7 +162,7 @@ const InsertionSort = () => {
                                                         <li>Shift larger elements one step to the right when needed</li>
                                                     </ul>
                                                 </div>
-                                                <div className={styles.ExplanationItemImage}></div>
+                                                <div className={styles.ExplanationItemImage} style={{backgroundImage: `url(${how})`}}></div>
                                             </div>
                                         )}
                                         {selectedExplanation === "time" && (

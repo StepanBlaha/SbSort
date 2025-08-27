@@ -7,12 +7,23 @@ import Visualizer from "../../components/visualizer/Visualizer"
 import heapSort from "../../assets/complexity/heapSort.png"
 import SortCode from "../../components/SortCode/SortCode"
 import Navbar from "../../components/Navbar/Navbar"
+import { useTheme } from "../../context/ThemeContext"
+
+import heroLight from "../../assets/bgs/hero-heap-light.png"
+import heroDark from "../../assets/bgs/hero-heap-dark.png"
+
+
+import howLight from "../../assets/bgs/how-heap-light.png"
+import howDark from "../../assets/bgs/how-heap-dark.png"
+
+
 
 const HeapSort = () => {
     const [ numbers, setNumbers ] = useState<string>()
     const [ play, setPlay ] = useState<boolean>(false)
     const [ dataType, setDataType ] = useState<"number" | "letter">("number")
     const [reset, setReset] = useState<boolean>(false)
+    const { theme } = useTheme();
     
 
     const [ speed, setSpeed ] = useState<number>(10)
@@ -45,7 +56,7 @@ const HeapSort = () => {
                 <Navbar/>
 
                 <div className={styles.Content}>
-                    <div className={styles.Hero}>
+                    <div className={styles.Hero} style={{backgroundImage: `url(${theme === "light" ? heroLight : heroDark})`}}>
                         <p className={styles.HeroTitle}>Heap Sort</p>
                         <p className={styles.HeroSubtitle}>Step-by-step visual explanation of Heap Sort.</p>
                     </div>
@@ -60,11 +71,11 @@ const HeapSort = () => {
                                 <div className={styles.ConsoleButtons}>
                                     <div className={styles.ConsoleButtonsGroup}>
                                         <div className={styles.PlayButton} onClick={()=>setPlay(true)}>
-                                            <Play  fill="#ffffff"/>
+                                            <Play  fill="var(--background-color)"/>
                                             <p>Play</p>
                                         </div>
                                         <div className={styles.PrimaryButton} onClick={()=>setPlay(false)}>
-                                            <Pause fill="#333333" />
+                                            <Pause fill="var(--contrast-secondary-color)" />
                                         </div>
                                     </div>
 
@@ -160,7 +171,7 @@ const HeapSort = () => {
                                                         <li>Repeat until all elements are sorted</li>
                                                     </ul>
                                                 </div>
-                                                <div className={styles.ExplanationItemImage}></div>
+                                                <div className={styles.ExplanationItemImage} style={{backgroundImage: `url(${theme === "light" ? howLight : howDark})`}}></div>
                                             </div>
                                         )}
                                         {selectedExplanation === "time" && (

@@ -6,8 +6,10 @@ import RangeSlider from "../../components/range/Range"
 import Visualizer from "../../components/visualizer/Visualizer"
 import bubbleSort from "../../assets/complexity/bubbleSort.png"
 import Navbar from "../../components/Navbar/Navbar"
-
+import hero from "../../assets/bgs/hero-bubble.png"
 import SortCode from "../../components/SortCode/SortCode"
+import how from "../../assets/bgs/how-bubble.png"
+
 
 const BubbleSort = () => {
     const [ numbers, setNumbers ] = useState<string>()
@@ -48,7 +50,7 @@ const BubbleSort = () => {
                 <Navbar/>
 
                 <div className={styles.Content}>
-                    <div className={styles.Hero}>
+                    <div className={styles.Hero} style={{backgroundImage: `url(${hero})`}}>
                         <p className={styles.HeroTitle}>Bubble Sort</p>
                         <p className={styles.HeroSubtitle}>Step-by-step visual explanation of Bubble Sort.</p>
                     </div>
@@ -63,11 +65,11 @@ const BubbleSort = () => {
                                 <div className={styles.ConsoleButtons}>
                                     <div className={styles.ConsoleButtonsGroup}>
                                         <div className={styles.PlayButton} onClick={()=>setPlay(true)}>
-                                            <Play  fill="#ffffff"/>
+                                            <Play  fill="var(--background-color)"/>
                                             <p>Play</p>
                                         </div>
                                         <div className={styles.PrimaryButton} onClick={()=>setPlay(false)}>
-                                            <Pause fill="#333333" />
+                                            <Pause fill="var(--contrast-secondary-color)" />
                                         </div>
                                     </div>
 
@@ -164,7 +166,7 @@ const BubbleSort = () => {
                                                         <li>Stop when no swaps are needed (array is sorted)</li>
                                                     </ul>
                                                 </div>
-                                                <div className={styles.ExplanationItemImage}></div>
+                                                <div className={styles.ExplanationItemImage} style={{backgroundImage: `url(${how})`}}></div>
                                             </div>
                                         )}
                                         {selectedExplanation === "time" && (
