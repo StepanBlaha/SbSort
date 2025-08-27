@@ -4,11 +4,12 @@
     box-sizing: border-box;
     display: flex;
     gap: 1px;
-    border: 1px solid;
     align-items: flex-end;
     padding: 10px;
     padding-bottom: 0;
     border-radius:12px;
+
+    background-color: var(--background-tertiary-color);
 }
 .Block{
     width: 100%;
@@ -19,4 +20,5 @@
 }
 .ActiveBlock{
     background-color: rgb(167, 167, 167) !important;
+    background-color: var(--contrast-tertiary-color) !important;
 }

@@ -90,6 +90,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 .ExplanationItemText ul{
     width: 100%;
@@ -122,8 +123,64 @@
 
 
 }
+.CopyButton{
+    height: fit-content;
+    width: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+    border-radius: 4px;
+    border: none;
 
 
+
+
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    padding: 8px;
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: 0.3s ease-out;
+}
+.CopyButton svg{
+    min-width: 20px;
+    max-width: 20px;
+    min-height: 20px;
+    max-height: 20px;
+    color: var(--contrast-tertiary-color);
+}
+
+.CopyButton:hover{
+    background-color: var(--sort-hover-color);
+}
+.CopyButton:hover svg{
+    color: var(--contrast-secondary-color);
+}
+.CopyButton:active{
+    background-color: var(--background-secondary-color);
+}
+.CopyButton:active svg{
+    color: var(--contrast-color);
+}
+
+.alertFixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    z-index: 9999;
+}
+.ExplanationItemText pre{
+    margin: 0 !important;
+    scrollbar-width: none !important;
+
+}
 @media(max-width: 800px){
     .ExplanationItem{
         flex-direction: column;

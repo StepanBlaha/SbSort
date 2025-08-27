@@ -1,0 +1,121 @@
+{
+    "hero":{
+        "hello": "Hi, I'm Stepan Blaha",
+        "role": "Software",
+        "role_texts": ["Developer", "Enthusiast", "Designer"],
+        "description": "I love turning ideas into code. Passionate about building smart, user-friendly, high-performance and scalable software.",
+        "work_status": "Available For Work"
+    },
+    "stats":{
+        "experience": "Years of Experience",
+        "projects": "Completed Projects",
+        "monsters": "Monsters drunk"
+    },
+    "about":{
+        "title": "About me",
+        "label": "STEPAN BLAHA",
+        "content":{
+            "part1": "I'm <1>Stepan Blaha </1>, a Web developer and Computer Science student with 2+ years of experience. I specialize in building clean, responsive, and dynamic websites using HTML, CSS, JavaScript, Typecsript, React, NextJs, MySQL and MongoDB.",
+            "part2": "I'm currently studying at <1>SPS Prosek</1> in my third year.",
+            "part3": "I'm always learning and leveling up my skills because i believe that <1>no matter how good you are, you can always get better</1>. Currently im diving deeper into NextJs and backend. I'm always open to new challenges and opportunities thanks to which i can build cool stuff and grow in the process.",
+            "part4": "When I'm not coding or at school you can usually find me in the gym working out, on the court playing basketball with my friends or watching the newset episode of <1>Oɴᴇ PɪᴇᴄE</1>"
+        }
+    },
+    "marquee": "✦ INTERACTIVE ✦ SECURE ✦ RELIABLE ✦ ENGAGING ✦ ACCESSIBLE ✦ RESPONSIVE ✦ DYNAMIC ✦ SCALABLE ✦ SEARCH OPTIMIZED",
+    "github":{
+        "title": "Github Contributions",
+        "label": "WORK ETHIC",
+        "calendar": {
+            "months": [
+                "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+            ],
+            "weekdays": [
+                "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+            ],
+            "totalCount": "{{count}} contributions in the last year",
+            "legend": {
+                "less": "Less",
+                "more": "More"
+            }
+        }
+    },
+    "experience":{
+        "title": "Professional Experience",
+        "label": "WORK HISTORY"
+    },
+    "stack":{
+        "title": "Technical Skills",
+        "label": "TECH STACK"
+    },
+    "projects":{
+        "title": "Projects",
+        "label": "MY WORK",
+        "description": "Here are some of the projects I’ve worked on recently. Each one gave me a chance to explore different tools, frameworks, and workflows in real-world scenarios. I’ve built everything from interactive frontend interfaces to backend APIs, focusing on clean code and good UX. These projects reflect both what I’ve learned so far and what I’m still improving.<2></2> For more, visit my ",
+        "github": "GitHub profile",
+        "demo": "Live demo",
+        "more": "For more, visit projects "
+
+    },
+    "contacts":{
+        "title": "Contacts",
+        "label": "CONNECT WITH ME",
+        "in_touch": "Get In Touch",
+        "description": "I'm always eager to explore new opportunities and take on <1>exciting projects</1>. If you have a project in mind, or just want to say hi, feel free to send me a <1>message!</1>",
+        "social_media": "Social Media",
+        "form":{
+            "errors":{
+                "name": "Name is required",
+                "email": "Email is required",
+                "subject": "Subject is required",
+                "message": "Message is required"
+            }, 
+            "labels":{
+                "name": "Your Name",
+                "email": "Your Email",
+                "subject": "Subject",
+                "message": "Message"
+            },
+            "placeholders":{
+                "name": "John Doe",
+                "email": "john@example.com",
+                "subject": "Project Inquiry",
+                "message": "Hello, I'd like to discuss a project..."
+            },
+            "button": "Send Message"
+        }
+    },
+    "alert":{
+        "success": {
+            "title": "Success",
+            "text": "Text copied successfully."
+        },
+        "error": {
+            "title": "Error",
+            "text": "Sorry something went wrong, please try again."
+        }
+    },
+    "footer":{
+        "stack":{
+            "framework": "Built with",
+            "styles": "Styled with",
+            "deploy": "Deployed on"
+        },
+        "right": "All Rights Reserved.",
+        "message": "Built and Designed with"
+    },
+    "navbar":{
+        "sections":{
+            "home": "HOME",
+            "about": "ABOUT",
+            "experience": "EXPERIENCE",
+            "projects": "PROJECTS",
+            "contacts": "CONTACTS"
+        },
+        "pages":{
+            "home": "HOME",
+            "projects": "PROJECTS"
+        }
+    },
+    "likes": "Likes"
+}

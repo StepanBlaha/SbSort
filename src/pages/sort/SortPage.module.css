@@ -422,7 +422,7 @@
     flex-direction: column;
     padding: 10px;
     gap: 30px;
-    background-color: var(--background-tertiary-color);
+    background-color: var(--background-color);
 }
 .VisualizationGraph{
     width: 100%;
@@ -463,10 +463,11 @@
     overflow: auto;
     scrollbar-width: none;
     justify-content: space-between;
+    align-items: stretch; 
 
 }
 .ExplanationHeaderitem{
-    height: fit-content;
+    
     width: fit-content;
     box-sizing: border-box;
     display: flex;
@@ -480,6 +481,10 @@
     border-top-right-radius: 8px;
     min-width: 120px;
     width: 100%;
+
+    flex: 1; /* optional if you want them to distribute equally */
+    width: auto;
+        align-items: center;
 }
 .ExplanationHeaderitem p{
     font-size: 20px;
@@ -488,6 +493,7 @@
     color: #666666;
     margin: 0;
     width: 100%;
+    height: fit-content;
     text-align: left;
 }
 .ExplanationHeaderitem:not(.SelectedExplanation):hover {

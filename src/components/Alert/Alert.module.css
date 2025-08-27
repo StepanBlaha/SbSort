@@ -1,0 +1,104 @@
+.container {
+    margin-top: 3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-left: 4px solid #22c55e;
+    background-color: #ecfdf5;
+    border-radius: 0.375rem;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+.leftSection {
+    display: flex;
+}
+.iconSuccess {
+    height: 1.5rem;
+    width: 1.5rem;
+    color: #22c55e; 
+    border-radius: 9999px;
+}
+.textSection {
+    align-self: center;
+    margin-left: 0.75rem;
+    text-align: left;
+}
+.title {
+    color: #16a34a; 
+    font-weight: 600;
+}
+.message {
+    color: #16a34a;
+    margin-top: 0.25rem;
+}
+.closeButton {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    color: #22c55e;
+    cursor: pointer;
+}
+.iconClose {
+    height: 1.25rem;
+    width: 1.25rem;
+    color: inherit;
+}
+.errorContainer {
+    margin-top: 3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-left: 4px solid #ef4444;
+    background-color: #fef2f2;
+    border-radius: 0.375rem;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.errorContent {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+.errorLeft {
+    display: flex;
+}
+.errorIcon {
+    height: 1.5rem;
+    width: 1.5rem;
+    color: #ef4444;
+}
+.errorTextBlock {
+    align-self: center;
+    margin-left: 0.75rem;
+}
+.errorTitle {
+    color: #dc2626;
+    font-weight: 600;
+}
+.errorMessage {
+    color: #dc2626;
+    margin-top: 0.25rem;
+}
+.errorCloseButton {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    color: #ef4444;
+    cursor: pointer;
+}
+.errorCloseIcon {
+    height: 1.25rem;
+    width: 1.25rem;
+    color: inherit;
+}

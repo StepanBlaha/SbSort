@@ -1,0 +1,120 @@
+{
+    "hero":{
+        "hello": "Ahoj, jsem Štěpán Bláha",
+        "role": "Software",
+        "role_texts": ["Vývojář", "Nadšenec", "Designér"],
+        "description": "Miluji převádění nápadů do kódu. Jsem vášnivý pro tvorbu chytrého, uživatelsky přívětivého, vysoce výkonného a škálovatelného softwaru.",
+        "work_status": "K dispozici pro práci"
+    },
+    "stats":{
+        "experience": "Let zkušeností",
+        "projects": "Dokončených projektů",
+        "monsters": "Vypitých monsterů"
+    },
+    "about":{
+        "title": "O mně",
+        "label": "ŠTĚPÁN BLÁHA",
+        "content":{
+            "part1": "Jsem <1>Štěpán Bláha</1>, webový vývojář a student informatiky s více než 2 lety zkušeností. Specializuji se na tvorbu čistých, responzivních a dynamických webových stránek pomocí HTML, CSS, JavaScript, TypeScript, React, NextJs, MySQL a MongoDB.",
+            "part2": "Momentálně studuji na <1>SPS Prosek</1> ve třetím ročníku.",
+            "part3": "Neustále se učím a zdokonaluji své dovednosti, protože věřím, že <1>bez ohledu na to, jak dobrý jsi, vždy se můžeš zlepšit</1>. Momentálně se více zabývám NextJs a backendem. Jsem vždy otevřený novým výzvám a příležitostem, díky kterým můžu tvořit skvělé věci a růst v tomto procesu.",
+            "part4": "Když nekóduji nebo nejsem ve škole, obvykle mě najdete v posilovně při cvičení, na hřišti při hraní basketbalu s přáteli nebo při sledování nejnovější epizody <1>Oɴᴇ PɪᴇᴄE</1>"
+        }
+    },
+    "marquee": "✦ INTERAKTIVNÍ ✦ BEZPEČNÉ ✦ SPOLEHLIVÉ ✦ POUTAVÉ ✦ PŘÍSTUPNÉ ✦ RESPONZIVNÍ ✦ DYNAMICKÉ ✦ ŠKÁLOVATELNÉ ✦ OPTIMALIZOVANÉ PRO VYHLEDÁVAČE",
+    "github":{
+        "title": "GitHub příspěvky",
+        "label": "PRACOVNÍ MORÁLKA",
+        "calendar": {
+            "months": [
+                "Led", "Úno", "Bře", "Dub", "Kvě", "Čvn",
+                "Čvc", "Srp", "Zář", "Říj", "Lis", "Pro"
+            ],
+            "weekdays": [
+                "Pondělí", "Úterý", "Středa", "Čtvrtek", "Pátek", "Sobota", "Neděle"
+            ],
+            "totalCount": "{{count}} commitů za poslední rok",
+            "legend": {
+                "less": "Méně",
+                "more": "Více"
+            }
+        }
+    },
+    "experience":{
+        "title": "Profesní zkušenosti",
+        "label": "PRACOVNÍ HISTORIE"
+    },
+    "stack":{
+        "title": "Technické dovednosti",
+        "label": "TECHNOLOGIE"
+    },
+    "projects":{
+        "title": "Projekty",
+        "label": "MÁ PRÁCE",
+        "description": "Zde jsou některé z projektů, na kterých jsem nedávno pracoval. Každý mi dal příležitost prozkoumat různé nástroje, frameworky a pracovní postupy v reálných scénářích. Vytvořil jsem vše od interaktivních frontendových rozhraní po backendová API, se zaměřením na čistý kód a dobré UX. Tyto projekty odrážejí jak to, co jsem se dosud naučil, tak to, co stále zdokonaluji.<2></2> Pro více navštivte můj ",
+        "github": "GitHub profil",
+        "demo": "Živá ukázka",
+        "more": "Pro více informací navštivte "
+    },
+    "contacts":{
+        "title": "Kontakty",
+        "label": "SPOJTE SE SE MNOU",
+        "in_touch": "Ozvěte se",
+        "description": "Vždy toužím prozkoumat nové příležitosti a ujmout se <1>vzrušujících projektů</1>. Pokud máte projekt na mysli, nebo se jen chcete pozdravit, neváhejte mi poslat <1>zprávu!</1>",
+        "social_media": "Sociální sítě",
+        "form":{
+            "errors":{
+                "name": "Jméno je povinné",
+                "email": "Email je povinný",
+                "subject": "Předmět je povinný",
+                "message": "Zpráva je povinná"
+            }, 
+            "labels":{
+                "name": "Vaše jméno",
+                "email": "Váš email",
+                "subject": "Předmět",
+                "message": "Zpráva"
+            },
+            "placeholders":{
+                "name": "Jan Novák",
+                "email": "jan@example.com",
+                "subject": "Dotaz na projekt",
+                "message": "Dobrý den, rád bych projednal projekt..."
+            },
+            "button": "Odeslat zprávu"
+        }
+    },
+    "alert":{
+        "success": {
+            "title": "Úspěch",
+            "text": "Text byl úspěšně zkopírován do schránky."
+        },
+        "error": {
+            "title": "Chyba",
+            "text": "Omlouváme se, něco se pokazilo, zkuste to prosím znovu."
+        }
+    },
+    "footer":{
+        "stack":{
+            "framework": "Vytvořeno s",
+            "styles": "Stylováno s",
+            "deploy": "Nasazeno na"
+        },
+        "right": "Všechna práva vyhrazena.",
+        "message": "Vytvořeno a navrženo s"
+    },
+    "navbar":{
+        "sections":{
+            "home": "DOMŮ",
+            "about": "O MNĚ",
+            "experience": "ZKUŠENOSTI",
+            "projects": "PROJEKTY",
+            "contacts": "KONTAKTY"
+        },
+        "pages":{
+            "home": "DOMŮ",
+            "projects": "PROJEKTY"
+        }
+    },
+    "likes": "Líbí se"
+}
