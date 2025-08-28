@@ -119,7 +119,11 @@
 }
 
 
-
+@media(max-width: 600px){
+    .Hero{
+        min-height: 400px !important;
+    }
+}
 
 
 
@@ -218,60 +222,6 @@
     gap: 16px;
     align-items: center;
 }
-.PlayButton{
-    width: fit-content;
-    height: fit-content;
-    box-sizing: border-box;
-    display: flex;
-    gap: 12px;
-    padding: 16px 24px;
-    border-radius: 12px;
-    background-color: var(--accent-color);
-    align-items: center;
-    box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.15);
-    transition: 0.3s ease-out;
-    cursor: pointer;
-    user-select: none;
-    
-}
-.PlayButton svg{
-    min-width: 24px;
-    min-height: 24px;
-    max-width: 24px;
-    max-height: 24px;
-    color: var(--background-color);
-    transition: 0.3s ease-out;
-}
-.PlayButton p{
-    font-size: 24px;
-    line-height: 24px;
-    font-weight: 600;
-    color: var(--background-color);
-    margin: 0;
-    transition: 0.3s ease-out;
-}
-.PlayButton:hover{
-    background-color: var(--accent-secondary-color);
-}
-.PlayButton:hover svg{
-    color: var(--background-color);
-    fill: var(--background-color);
-}
-.PlayButton:hover p{
-    color: var(--background-color);
-}
-.PlayButton:active{
-    background-color: var(--accent-tertiary-color);
-}
-.PlayButton:active svg{
-    color: var(--background-secondary-color);
-    fill: var(--background-secondary-color);
-}
-.PlayButton:active p{
-    color: var(--background-secondary-color);
-}
-
-
 
 
 

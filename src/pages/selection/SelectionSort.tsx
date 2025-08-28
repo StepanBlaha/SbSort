@@ -9,8 +9,8 @@ import selectionSort from "../../assets/complexity/selectionSort.png"
 import Navbar from "../../components/Navbar/Navbar"
 import hero from "../../assets/bgs/hero-selection.png"
 import how from "../../assets/bgs/how-selection.png"
-
-
+import PrimaryButton from "../../components/Buttons/PrimaryButton/PrimaryButton"
+import PlayButton from "../../components/Buttons/PlayButton/PlayButton"
 const SelectionSort = () => {
     const [ numbers, setNumbers ] = useState<string>()
     const [ play, setPlay ] = useState<boolean>(false)
@@ -62,13 +62,8 @@ const SelectionSort = () => {
                                 <input type="text" className={styles.NumberInput} value={numbers} onChange={(e) => setNumbers(e.target.value)} />
                                 <div className={styles.ConsoleButtons}>
                                     <div className={styles.ConsoleButtonsGroup}>
-                                        <div className={styles.PlayButton} onClick={()=>setPlay(true)}>
-                                            <Play  fill="var(--background-color)"/>
-                                            <p>Play</p>
-                                        </div>
-                                        <div className={styles.PrimaryButton} onClick={()=>setPlay(false)}>
-                                            <Pause fill="var(--contrast-secondary-color)" />
-                                        </div>
+                                        <PlayButton onClick={()=>setPlay(true)}/>
+                                        <PrimaryButton onClick={()=>setPlay(false)}/>
                                     </div>
 
                                     <div className={styles.ConsoleButtonsGroup}>
@@ -104,17 +99,22 @@ const SelectionSort = () => {
                                     />
                                 </div>
 
-                                <div className={styles.DataTypes}>
-                                    <p className={styles.DataTitle}>Data type</p>
-                                    <div className={styles.DataTypesGroup}>
-                                        <div className={`${styles.PrimaryButton} ${dataType === "number" ? styles.SelectedType : ""}`} onClick={()=>setDataType("number")}>
-                                            <p>Numbers</p>
-                                        </div>
-                                        <div className={`${styles.PrimaryButton} ${dataType === "letter" ? styles.SelectedType : ""}`} onClick={()=>setDataType("letter")}>
-                                            <p>Letters</p>
+                                {
+                                    /*
+                                    
+                                    <div className={styles.DataTypes}>
+                                        <p className={styles.DataTitle}>Data type</p>
+                                        <div className={styles.DataTypesGroup}>
+                                            <div className={`${styles.PrimaryButton} ${dataType === "number" ? styles.SelectedType : ""}`} onClick={()=>setDataType("number")}>
+                                                <p>Numbers</p>
+                                            </div>
+                                            <div className={`${styles.PrimaryButton} ${dataType === "letter" ? styles.SelectedType : ""}`} onClick={()=>setDataType("letter")}>
+                                                <p>Letters</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                    */
+                                }
                             </div>
 
                         </div>

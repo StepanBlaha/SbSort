@@ -36,7 +36,7 @@
     background-position: center;
 }
 .Logo img{
-    max-width: 200px;
+    max-width: clamp(160px, 30vw, 200px);
 }
 .Pages{
     height: fit-content;
