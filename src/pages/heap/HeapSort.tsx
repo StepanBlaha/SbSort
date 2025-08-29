@@ -8,6 +8,7 @@ import heapSort from "../../assets/complexity/heapSort.png"
 import SortCode from "../../components/SortCode/SortCode"
 import Navbar from "../../components/Navbar/Navbar"
 import { useTheme } from "../../context/ThemeContext"
+import Footer from "../../components/Footer/Footer"
 
 import heroLight from "../../assets/bgs/hero-heap-light.png"
 import heroDark from "../../assets/bgs/hero-heap-dark.png"
@@ -210,7 +211,7 @@ const HeapSort = () => {
                     </div>
                 </div>
 
-                <div className={styles.Footer}></div>
+                <Footer/>
             </div>
         </>
     )

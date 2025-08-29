@@ -1,0 +1,160 @@
+.Footer{
+    width: 100%;
+    height: fit-content;
+    min-height: 100px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    /*gap: 20px;*/
+}
+.FooterSection p{
+    font-size: 16px;
+    line-height: 20px;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 600;
+    color: var(--contrast-secondary-color);
+    margin: 0;
+    text-align: center;
+}
+.Footer a{
+    cursor: pointer;
+    transition: 0.3s ease-out;
+    color: var(--accent-color);
+}
+.FooterSection a{
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+    color: var(--accent-color);
+}
+.FooterSection a:hover{
+
+    color: var(--accent-tertiary-color);
+}
+.FooterSection{
+    width: 100%;
+    height: fit-content;
+    min-height: 100px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    gap: 6px;
+}
+.TopFooterSection{
+    width: 90%;
+    height: fit-content;
+    min-height: 100px;
+    align-items: center;
+
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    gap: 6px;
+}
+.LikeCounter{
+    width: fit-content;
+    height: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+.Stack{
+    width: fit-content;
+    height: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+.StackItem{
+    width: fit-content;
+    height: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    gap: 4px;
+}
+.StackItem p{
+    font-size: 18px;
+    line-height: 19px;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 600;
+    color: var(--contrast-secondary-color);
+    margin: 0;
+    white-space: nowrap;
+}
+.StackItem a{
+    font-size: 18px;
+    line-height: 19px;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 600;
+    color: var(--contrast-secondary-color);
+    margin: 0;
+    white-space: nowrap;
+    text-decoration: none;
+
+    display: flex;
+    align-items: flex-end;
+    /* justify-content: space-between; */
+    gap: 4px;
+}
+.StackItem svg{
+    min-height: 20px;
+    min-width: 20px;
+    max-height: 20px;
+    max-width: 20px;
+    fill: var(--contrast-secondary-color);
+}
+.Spotify{
+    width: fit-content;
+    height: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.SectionDivider{
+        width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, hsl(240 5% 64.9% / .5), transparent);
+    margin: 2rem 0;
+}
+
+@media (max-width: 1200px) {
+    .TopFooterSection {
+        align-items: center;
+       /* gap: 50px;*/
+    }
+}
+@media (max-width: 900px) {
+    .TopFooterSection {
+        flex-direction: column;
+    }
+
+}
+
+
+.Item{
+    cursor: pointer;
+    transition: 0.3s ease-out;
+}
+.Item p{
+    transition: 0.3s ease-out;
+}
+.Item svg{
+    transition: 0.3s ease-out;
+}
+.Item:hover p{
+    color: var(--accent-color) ;
+}
+.Item:hover svg{
+    fill: var(--accent-color);
+}

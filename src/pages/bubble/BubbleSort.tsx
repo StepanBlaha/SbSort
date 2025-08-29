@@ -11,6 +11,7 @@ import SortCode from "../../components/SortCode/SortCode"
 import how from "../../assets/bgs/how-bubble.png"
 import PlayButton from "../../components/Buttons/PlayButton/PlayButton"
 import PrimaryButton from "../../components/Buttons/PrimaryButton/PrimaryButton"
+import Footer from "../../components/Footer/Footer"
 
 
 const BubbleSort = () => {
@@ -210,7 +211,7 @@ const BubbleSort = () => {
                     </div>
                 </div>
 
-                <div className={styles.Footer}></div>
+                <Footer/>
             </div>
         </>
     )

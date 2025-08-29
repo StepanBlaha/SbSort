@@ -11,6 +11,7 @@ import hero from "../../assets/bgs/hero-quick.png"
 import { useTheme } from "../../context/ThemeContext"
 import howLight from "../../assets/bgs/how-quick-light.png"
 import howDark from "../../assets/bgs/how-quick-dark.png"
+import Footer from "../../components/Footer/Footer"
 
 import PlayButton from "../../components/Buttons/PlayButton/PlayButton"
 import PrimaryButton from "../../components/Buttons/PrimaryButton/PrimaryButton"
@@ -205,7 +206,7 @@ const QuickSort = () => {
                     </div>
                 </div>
 
-                <div className={styles.Footer}></div>
+                <Footer/>
             </div>
         </>
     )

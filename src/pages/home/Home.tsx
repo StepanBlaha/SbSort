@@ -6,6 +6,7 @@ import logo from "../../assets/logos/SBSORT.png"
 
 import ThemeSwitch from "../../components/ThemeSwitch/ThemeSwitch"
 import Navbar from "../../components/Navbar/Navbar"
+import Footer from "../../components/Footer/Footer"
 
 import bubble from "../../assets/bgs/bubble.png"
 import selection from "../../assets/bgs/selection.png"
@@ -93,7 +94,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className={styles.Footer}></div>
+                <Footer/>
             </div>
         </>
     )

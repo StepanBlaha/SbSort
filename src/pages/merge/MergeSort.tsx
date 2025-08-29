@@ -13,6 +13,7 @@ import how from "../../assets/bgs/how-merge.png"
 import PlayButton from "../../components/Buttons/PlayButton/PlayButton"
 import PrimaryButton from "../../components/Buttons/PrimaryButton/PrimaryButton"
 
+import Footer from "../../components/Footer/Footer"
 
 const MergeSort = () => {
     const [ numbers, setNumbers ] = useState<string>()
@@ -204,7 +205,7 @@ const MergeSort = () => {
                     </div>
                 </div>
 
-                <div className={styles.Footer}></div>
+                <Footer/>
             </div>
         </>
     )

@@ -332,7 +332,10 @@
     text-align: left;
 }
 .NavbarHeader:hover .line{
-    stroke: var(--accent-secondary-color);
+    stroke: var(--accent-tertiary-color);
+}
+.NavbarHeader:hover {
+    border-color: var(--accent-tertiary-color);
 }
 .hamburger {
     cursor: pointer;

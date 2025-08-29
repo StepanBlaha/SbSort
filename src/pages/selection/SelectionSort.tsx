@@ -9,6 +9,10 @@ import selectionSort from "../../assets/complexity/selectionSort.png"
 import Navbar from "../../components/Navbar/Navbar"
 import hero from "../../assets/bgs/hero-selection.png"
 import how from "../../assets/bgs/how-selection.png"
+
+
+import Footer from "../../components/Footer/Footer"
+
 import PrimaryButton from "../../components/Buttons/PrimaryButton/PrimaryButton"
 import PlayButton from "../../components/Buttons/PlayButton/PlayButton"
 const SelectionSort = () => {
@@ -200,7 +204,7 @@ const SelectionSort = () => {
                     </div>
                 </div>
 
-                <div className={styles.Footer}></div>
+                <Footer/>
             </div>
         </>
     )

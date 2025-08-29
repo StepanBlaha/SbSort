@@ -9,6 +9,7 @@ import SortCode from "../../components/SortCode/SortCode"
 import Navbar from "../../components/Navbar/Navbar"
 import how from "../../assets/bgs/how-insertion.png"
 import hero from "../../assets/bgs/hero-insertion.png"
+import Footer from "../../components/Footer/Footer"
 
 
 import PlayButton from "../../components/Buttons/PlayButton/PlayButton"
@@ -204,7 +205,7 @@ const InsertionSort = () => {
                     </div>
                 </div>
 
-                <div className={styles.Footer}></div>
+                <Footer/>
             </div>
         </>
     )

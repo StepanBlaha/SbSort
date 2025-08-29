@@ -16,6 +16,7 @@ import PrimaryButton from "../../components/Buttons/PrimaryButton/PrimaryButton"
 import howLight from "../../assets/bgs/how-counting-light.png"
 import howDark from "../../assets/bgs/how-counting-dark.png"
 
+import Footer from "../../components/Footer/Footer"
 
 const CountingSort = () => {
     const [ numbers, setNumbers ] = useState<string>()
@@ -208,7 +209,7 @@ const CountingSort = () => {
                     </div>
                 </div>
 
-                <div className={styles.Footer}></div>
+                <Footer/>
             </div>
         </>
     )
