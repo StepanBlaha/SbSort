@@ -21,9 +21,7 @@ const SelectionSort = () => {
     const [ speed, setSpeed ] = useState<number>(10)
 
     const [ num, setNum] = useState<number[]>([1, 5, 1, 2, 3, 8, 9, 1, 3, 1, 2])
-    const [error, setError] = useState<string>()
-    
-    const [step, setStep] = useState<boolean>(false)
+
 
 
     useEffect(() => {
@@ -63,7 +61,7 @@ const SelectionSort = () => {
                                 <div className={styles.ConsoleButtons}>
                                     <div className={styles.ConsoleButtonsGroup}>
                                         <PlayButton onClick={()=>setPlay(true)}/>
-                                        <PrimaryButton onClick={()=>setPlay(false)}/>
+                                        <PrimaryButton onClick={() => setPlay(false)} Icon={Pause} fill={true} />
                                     </div>
 
                                     <div className={styles.ConsoleButtonsGroup}>
@@ -75,13 +73,11 @@ const SelectionSort = () => {
                                             <p>Step</p>
                                         </div>
                                         */}
-                                        <div className={styles.PrimaryButton} onClick={() => {
+                                        <PrimaryButton onClick={() => {
                                             setReset(true);
                                             setTimeout(() => setReset(false), 0);
-                                            setPlay(false);             // stop any running sort first
-                                        }}>
-                                            <p>Reset</p>
-                                        </div>
+                                            setPlay(false);             
+                                        }} text="Reset"/>
                                     </div>
 
 

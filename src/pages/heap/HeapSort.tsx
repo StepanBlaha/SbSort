@@ -71,7 +71,7 @@ const HeapSort = () => {
                                 <div className={styles.ConsoleButtons}>
                                     <div className={styles.ConsoleButtonsGroup}>
                                         <PlayButton onClick={()=>setPlay(true)}/>
-                                        <PrimaryButton onClick={()=>setPlay(false)}/>
+                                        <PrimaryButton onClick={() => setPlay(false)} Icon={Pause} fill={true} />
                                     </div>
 
                                     <div className={styles.ConsoleButtonsGroup}>
@@ -83,13 +83,11 @@ const HeapSort = () => {
                                             <p>Step</p>
                                         </div>
                                         */}
-                                        <div className={styles.PrimaryButton} onClick={() => {
+                                        <PrimaryButton onClick={() => {
                                             setReset(true);
                                             setTimeout(() => setReset(false), 0);
-                                            setPlay(false);             // stop any running sort first
-                                        }}>
-                                            <p>Reset</p>
-                                        </div>
+                                            setPlay(false);             
+                                        }} text="Reset"/>
                                     </div>
 
 
