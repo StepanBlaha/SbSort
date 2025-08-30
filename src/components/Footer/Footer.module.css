@@ -54,6 +54,7 @@
     box-sizing: border-box;
     justify-content: space-between;
     gap: 6px;
+    flex-direction: column;
 }
 .LikeCounter{
     width: fit-content;

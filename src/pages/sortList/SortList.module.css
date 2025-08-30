@@ -1,0 +1,214 @@
+.Page{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(12px, 3.3vw, 64px);
+    background-color: #F6F5F1;
+    background-color: var(--background-color);
+    align-items: center;
+    overflow-y: visible;
+    overflow-x: clip;
+    box-sizing: border-box;
+}
+
+
+
+
+.Content{
+    height: fit-content;
+    min-height: 200px;
+    box-sizing: border-box;
+    width: 84%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(24px, 7vw, 128px);
+}
+.Hero{
+    width: 100%;
+    height: fit-content;
+    min-height: 500px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: contain;
+}
+.HeroTitle{
+    font-size: 60px;
+    line-height: 70px;
+    font-weight: 700;
+    color: var(--contrast-color);
+    margin: 0;
+}
+.HeroSubtitle{
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 600;
+    color: var(--contrast-secondary-color);
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+.SortSection{
+    height: fit-content;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.SortTitle{
+    width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
+    display: flex;
+}
+.SortTitle p{
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: 700;
+    color: var(--contrast-color);
+    margin: 0;
+}
+.Sorts{
+    width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.Sort{
+    height: fit-content;
+
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    gap: clamp(20px, 3vw, 50px);
+    padding: 20px 30px;
+    padding: clamp(15px, 2.5vw, 20px) clamp(20px, 3.5vw, 30px);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+    width: 100%;
+    background-color: var(--background-tertiary-color);
+
+    justify-content: flex-start;
+}
+.Sort svg{
+    min-height: clamp(30px, 5vw, 40px);
+    max-height: clamp(30px, 5vw, 40px);
+    min-width: clamp(30px, 5vw, 40px);
+    max-width: clamp(30px, 5vw, 40px);
+    transition: 0.3s ease-out;
+    color: var(--contrast-tertiary-color);
+}
+.SortItemGroup{
+    height: fit-content;
+    width: 100%;
+    gap: 50px;
+    gap: clamp(10px, 2.5vw, 50px);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+@media(max-width: 1600px){
+    .Sorts{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media(max-width: 1200px){
+    .Sorts{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+.Sort:hover{
+    background-color: var(--sort-hover-color);
+    /*
+    box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.15);
+    */
+}
+.Sort:hover svg{
+    color: var(--contrast-color);
+    transform: scale(1.5);
+}
+.SortImage{
+    width: auto;
+    height: 200px;
+    height: clamp(100px, 20vw, 200px);
+    aspect-ratio: 1 !important;
+    box-sizing: border-box;
+
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.SortText{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+.SortTitle{
+    font-size: 30px;
+    line-height: 40px;
+
+    font-size: clamp(20px, 3.5vw, 30px);
+    line-height: clamp(30px, 4.5vw, 40px);
+    font-weight: 600;
+    color: var(--contrast-color);
+    margin: 0;
+    width: fit-content;
+
+    text-align: left;
+}
+.SortDesc{
+    font-size: 22px;
+    font-size: clamp(15px, 2.5vw, 22px);
+    line-height: 30px;
+    line-height: clamp(20px, 3.5vw, 30px);
+    font-weight: 600;
+    color: var(--contrast-tertiary-color);
+    margin: 0;
+    width: fit-content;
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

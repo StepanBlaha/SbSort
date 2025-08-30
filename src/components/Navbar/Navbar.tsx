@@ -53,7 +53,7 @@ const Navbar = () => {
                         <div className={styles.HeaderPage} onClick={()=>navigate("/home")}>
                             <a>Home</a>
                         </div>
-                        <div className={styles.HeaderPage} onClick={()=>navigate("/sort-types")}>
+                        <div className={styles.HeaderPage} onClick={()=>navigate("/list")}>
                             <a>Sort Types</a>
                         </div>
                         <div className={styles.HeaderPage} onClick={()=>navigate("/about")}>
@@ -108,7 +108,7 @@ const Navbar = () => {
                                 onClick={() => {
                                 setMenuOpen(false);
                                     setTimeout(() => {
-                                        navigate(`/${id}`)
+                                        navigate(`/${id === "Sort Types" ? "list" : id}`)
                                     }, 50); 
                                 }}
                             >

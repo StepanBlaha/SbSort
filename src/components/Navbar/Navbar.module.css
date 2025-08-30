@@ -315,6 +315,7 @@
     flex-direction: column;
     position: absolute;
     top: 69px;
+    gap: 4px;
 }
 
 .HeaderNavbarMobile p{

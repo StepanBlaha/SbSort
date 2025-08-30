@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/home/Home';
+import SortList from './pages/sortList/SortList';
 import { Navigate } from 'react-router-dom';
 import BubbleSort from './pages/bubble/BubbleSort';
 import SelectionSort from './pages/selection/SelectionSort';
@@ -17,6 +18,7 @@ const AppRoutes = () => {
             <Route path='/' element={
                 <Home/>
                 } />
+            <Route path='list' element={<SortList/>}/>
             <Route path='bubble' element={<BubbleSort />} />
             <Route path='selection' element={<SelectionSort />} />
             <Route path='insertion' element={<InsertionSort />} />
