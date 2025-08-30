@@ -1,7 +1,7 @@
 import styles from "./Menu.module.css"
 import { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronDown } from 'lucide-react';
-
+import LanguageSwitch from "../../LanguageSwitch/LanguageSwitch";
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -79,9 +79,9 @@ const Menu = ({display = false, handleDisplay, version = "default"} : MenuProps)
                                         {langOpen === true ? <ChevronDown/> : <ChevronLeft/>}
                                         <p>{t("navbar.language")}</p>
                                     </button>
-                                    {/*langOpen === true && (
+                                    {langOpen === true && (
                                         <LanguageSwitch type="mobile"/>
-                                    ) */}
+                                    )}
                                 </div>
                             </div>
                         </>
