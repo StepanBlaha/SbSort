@@ -1,0 +1,169 @@
+.MenuMask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    scrollbar-width: 2px;
+    scrollbar-width: thin;
+    z-index: 99999999;
+    background: var(--accent-color); 
+}
+.Menu{
+    min-height: 100%;
+    width: 100%;
+    height: fit-content;;
+    background-color: var(--accent-color);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    z-index: 999999;
+    justify-content: space-between;
+}
+.Wrapper{
+    width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.TitlePart{
+    width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+.TitlePart p{
+    color: #333333;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 38px;
+    letter-spacing: 0;
+    margin: 0;
+    text-align: left;
+}
+.TitlePart svg{
+    min-width: 32px;
+    max-width: 32px;
+    min-height: 32px;
+    max-height: 32px;
+    color: #333333;
+    cursor: pointer;
+}
+.ContentPart{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    box-sizing: border-box;
+}
+.LinkGroup{
+    width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.MenuItem{
+    width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.MenuItemHeader{
+    width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.MenuItemHeader p{
+    color: #333333;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 48px;
+    letter-spacing: 0;
+    margin: 0;
+    text-align: left;
+}
+.MenuItemHeader svg{
+    min-height:48px;
+    max-height: 48px;
+    min-width: 48px;
+    max-width: 48px;
+}
+.Submenu{
+    width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.SubmenuItem{
+    width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    padding: 0px 24px;
+    gap: 65px;
+    color: #333333;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 38px;
+    letter-spacing: 0;
+    margin: 0;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.SubmenuPickButton{
+    width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    padding: 0px 24px;
+    gap: 65px;
+    color: #A3A922;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 38px;
+    letter-spacing: 0;
+    margin: 0;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.SelectedSubmenuItem{
+    color: #292A08;
+}
+.LogoutPopup{
+    position: fixed;
+    z-index: 99999;
+}
+.LogoutPopupCard{
+    min-height: clamp(200px, 22vw, 300px);
+    max-height: clamp(200px, 22vw, 300px);
+    min-width: min(90%, 400px);
+    max-width: min(90%, 400px);
+    padding: 32px;
+    border-radius: 16px;
+}
