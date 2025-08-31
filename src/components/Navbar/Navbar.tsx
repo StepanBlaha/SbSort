@@ -16,8 +16,16 @@ const Navbar = () => {
     const navigate = useNavigate();
     const { theme } = useTheme()
     const width = useWindowSize();
-    const [ menuOpen, setMenuOpen] = useState<boolean>(false)
-    const [activeId, setActiveId] = useState<string>("home");
+
+
+    const [ menuOpen, setMenuOpen] = useState<boolean>(() => {
+        const open = sessionStorage.getItem("SBSortMenuOpen");
+        return open ? JSON.parse(open) : false;
+    });
+    useEffect(() => {
+        console.log("lll")
+        sessionStorage.setItem("SBSortMenuOpen", JSON.stringify(menuOpen));
+    }, [menuOpen]);
 
     useEffect(()=>{
         if(width > 600 && menuOpen === true){
@@ -39,7 +47,7 @@ const Navbar = () => {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
     
-    const sections = ["Home", "Sort Types", "About"]
+
 
 
     return (
@@ -48,6 +56,7 @@ const Navbar = () => {
         {width > 800 ? (
             <div className={styles.Header}>
                 <div className={styles.Logo}
+                onClick={()=>navigate("/home")}
                 >
                     <img src={theme === "light" ? logo : darklogo} alt="SBSORT logo" />
                 </div>
@@ -72,7 +81,9 @@ const Navbar = () => {
             </div>
             ) : (
             <div className={styles.Header}>
-                <div className={styles.Logo}>
+                <div className={styles.Logo}
+                onClick={()=>navigate("/home")}
+                >
                     <img src={theme === "light" ? logo : darklogo} alt="SBSORT logo" />
                 </div>
             <div className={styles.NavbarMobile} >

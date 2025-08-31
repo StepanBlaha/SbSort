@@ -55,19 +55,19 @@ const Menu = ({display = false, handleDisplay, version = "default"} : MenuProps)
                         <>
                             <div className={styles.LinkGroup}>
                                 <div className={styles.MenuItem}>
-                                    <button className={styles.MenuItemHeader} onClick={()=>navigate("/home")}>
+                                    <button className={styles.MenuItemHeader} onClick={()=>{setTimeout(() => navigate("/home"), 330);  handleDisplay(false)}}>
                                         <ChevronLeft/>
                                         <p>{t("navbar.sections.home")}</p>
                                     </button>
                                 </div>
                                 <div className={styles.MenuItem}>
-                                    <button className={styles.MenuItemHeader} onClick={()=>navigate("/list")}>
+                                    <button className={styles.MenuItemHeader} onClick={()=>{setTimeout(() => navigate("/list"), 330);  handleDisplay(false)}}>
                                         <ChevronLeft/>
                                         <p>{t("navbar.sections.list")}</p>
                                     </button>
                                 </div>
                                 <div className={styles.MenuItem}>
-                                    <button className={styles.MenuItemHeader} onClick={()=>navigate("/about")}>
+                                    <button className={styles.MenuItemHeader} onClick={()=>{setTimeout(() => navigate("/about"), 330);   handleDisplay(false)}}>
                                         <ChevronLeft/>
                                         <p>{t("navbar.sections.about")}</p>
                                     </button>

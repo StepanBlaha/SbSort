@@ -34,6 +34,12 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+    border-radius: 8px;
+}
+.Logo:hover{
+    background-color: var(--sort-hover-color);
 }
 .Logo img{
     max-width: clamp(160px, 30vw, 200px);
