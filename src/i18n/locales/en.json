@@ -1,88 +1,187 @@
-{
+{  
+    "main":{
+        "title": "Sorting Visualizer",
+        "subtitle": "Learn sorting algorithms through step-by-step visual guides",
+        "sorts_title": "Sorting Algorithms",
+        "sorts":{
+            "bubble": "Bubble Sort",
+            "merge": "Merge Sort",
+            "selection": "Selection Sort",
+            "quick": "Quick Sort",
+            "insertion": "Insertion Sort",
+            "heap": "Heap Sort",
+            "counting": "Counting Sort"
+        }
+    },
     "hero":{
-        "hello": "Hi, I'm Stepan Blaha",
-        "role": "Software",
-        "role_texts": ["Developer", "Enthusiast", "Designer"],
-        "description": "I love turning ideas into code. Passionate about building smart, user-friendly, high-performance and scalable software.",
-        "work_status": "Available For Work"
-    },
-    "stats":{
-        "experience": "Years of Experience",
-        "projects": "Completed Projects",
-        "monsters": "Monsters drunk"
-    },
-    "about":{
-        "title": "About me",
-        "label": "STEPAN BLAHA",
-        "content":{
-            "part1": "I'm <1>Stepan Blaha </1>, a Web developer and Computer Science student with 2+ years of experience. I specialize in building clean, responsive, and dynamic websites using HTML, CSS, JavaScript, Typecsript, React, NextJs, MySQL and MongoDB.",
-            "part2": "I'm currently studying at <1>SPS Prosek</1> in my third year.",
-            "part3": "I'm always learning and leveling up my skills because i believe that <1>no matter how good you are, you can always get better</1>. Currently im diving deeper into NextJs and backend. I'm always open to new challenges and opportunities thanks to which i can build cool stuff and grow in the process.",
-            "part4": "When I'm not coding or at school you can usually find me in the gym working out, on the court playing basketball with my friends or watching the newset episode of <1>Oɴᴇ PɪᴇᴄE</1>"
+        
+        "bubble": {
+            "title": "Bubble Sort",
+            "subtitle": "Step-by-step visual explanation of Bubble Sort."
+        },
+        "merge": {
+            "title": "Merge Sort",
+            "subtitle": "Step-by-step visual explanation of Merge Sort."
+        },
+        "Heap": {
+            "title": "Heap Sort",
+            "subtitle": "Step-by-step visual explanation of Heap Sort."
+        },
+        "quick": {
+            "title": "Quick Sort",
+            "subtitle": "Step-by-step visual explanation of Quick Sort."
+        },
+        "selection": {
+            "title": "Selection Sort",
+            "subtitle": "Step-by-step visual explanation of Selection Sort."
+        },
+        "insertion": {
+            "title": "Insertion Sort",
+            "subtitle": "Step-by-step visual explanation of Insertion Sort."
+        },
+        "counting": {
+            "title": "Counting Sort",
+            "subtitle": "Step-by-step visual explanation of Counting Sort."
         }
     },
-    "marquee": "✦ INTERACTIVE ✦ SECURE ✦ RELIABLE ✦ ENGAGING ✦ ACCESSIBLE ✦ RESPONSIVE ✦ DYNAMIC ✦ SCALABLE ✦ SEARCH OPTIMIZED",
-    "github":{
-        "title": "Github Contributions",
-        "label": "WORK ETHIC",
-        "calendar": {
-            "months": [
-                "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-            ],
-            "weekdays": [
-                "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
-            ],
-            "totalCount": "{{count}} contributions in the last year",
-            "legend": {
-                "less": "Less",
-                "more": "More"
+    "console": {
+        "input": "Input array",
+        "reset": "Reset",
+        "speed": "Speed",
+        "visualization": "Visualization",
+        "how": "How it works",
+        "time": "Time complexity",
+        "when": "When to use",
+        "how_list":{
+            "bubble": {
+                "1": "Compare each pair of adjacent elements",
+                "2": "Swap them if they are in the wrong order",
+                "3": "After each pass, the largest element moves to the end",
+                "4": "Repeat the process for the remaining unsorted part",
+                "5": "Stop when no swaps are needed (array is sorted)"
+            },
+            "counting": {
+                "1": "Find the range of input values",
+                "2": "Count the occurrences of each value",
+                "3": "Compute the cumulative counts to determine positions",
+                "4": "Place each element in its sorted position in the output array"            
+            },
+            "heap": {
+                "1": "Build a max heap from the array",
+                "2": "Swap the root (max) with the last element",
+                "3": "Reduce heap size and heapify to restore max heap",
+                "4": "Repeat until all elements are sorted"            
+            },
+            "insertion": {
+                "1": "Take elements one by one from the unsorted part",
+                "2": "Insert each into its correct position in the sorted part",
+                "3": "Shift larger elements one step to the right when needed"            
+            },
+            "merge": {
+                "1": "Divide the array into two halves",
+                "2": "Recursively sort each half",
+                "3": "Merge the two sorted halves into one sorted array"
+            },
+            "quick": {
+                "1": "Pick a pivot element",
+                "2": "Partition array so smaller elements go left, larger go right",
+                "3": "Recursively apply the process to left and right partitions"
+            },
+            "selection": {
+                "1": "Find the minimum element in the unsorted part",
+                "2": "Swap it with the first unsorted element",
+                "3": "Move the boundary of sorted/unsorted part one step forward",
+                "4": "Repeat until all elements are sorted"            
             }
-        }
-    },
-    "experience":{
-        "title": "Professional Experience",
-        "label": "WORK HISTORY"
-    },
-    "stack":{
-        "title": "Technical Skills",
-        "label": "TECH STACK"
-    },
-    "projects":{
-        "title": "Projects",
-        "label": "MY WORK",
-        "description": "Here are some of the projects I’ve worked on recently. Each one gave me a chance to explore different tools, frameworks, and workflows in real-world scenarios. I’ve built everything from interactive frontend interfaces to backend APIs, focusing on clean code and good UX. These projects reflect both what I’ve learned so far and what I’m still improving.<2></2> For more, visit my ",
-        "github": "GitHub profile",
-        "demo": "Live demo",
-        "more": "For more, visit projects "
-
-    },
-    "contacts":{
-        "title": "Contacts",
-        "label": "CONNECT WITH ME",
-        "in_touch": "Get In Touch",
-        "description": "I'm always eager to explore new opportunities and take on <1>exciting projects</1>. If you have a project in mind, or just want to say hi, feel free to send me a <1>message!</1>",
-        "social_media": "Social Media",
-        "form":{
-            "errors":{
-                "name": "Name is required",
-                "email": "Email is required",
-                "subject": "Subject is required",
-                "message": "Message is required"
-            }, 
-            "labels":{
-                "name": "Your Name",
-                "email": "Your Email",
-                "subject": "Subject",
-                "message": "Message"
+        },
+        "time_list":{
+            "bubble": {
+                "1": "Compare each pair of adjacent elements",
+                "2": "Swap them if they are in the wrong order",
+                "3": "After each pass, the largest element moves to the end",
+                "4": "Repeat the process for the remaining unsorted part",
+                "5": "Stop when no swaps are needed (array is sorted)"
             },
-            "placeholders":{
-                "name": "John Doe",
-                "email": "john@example.com",
-                "subject": "Project Inquiry",
-                "message": "Hello, I'd like to discuss a project..."
+            "counting": {
+                "1": "Compare each pair of adjacent elements",
+                "2": "Swap them if they are in the wrong order",
+                "3": "After each pass, the largest element moves to the end",
+                "4": "Repeat the process for the remaining unsorted part",
+                "5": "Stop when no swaps are needed (array is sorted)"
             },
-            "button": "Send Message"
+            "heap": {
+                "1": "Compare each pair of adjacent elements",
+                "2": "Swap them if they are in the wrong order",
+                "3": "After each pass, the largest element moves to the end",
+                "4": "Repeat the process for the remaining unsorted part",
+                "5": "Stop when no swaps are needed (array is sorted)"
+            },
+            "insertion": {
+                "1": "Compare each pair of adjacent elements",
+                "2": "Swap them if they are in the wrong order",
+                "3": "After each pass, the largest element moves to the end",
+                "4": "Repeat the process for the remaining unsorted part",
+                "5": "Stop when no swaps are needed (array is sorted)"
+            },
+            "merge": {
+                "1": "Compare each pair of adjacent elements",
+                "2": "Swap them if they are in the wrong order",
+                "3": "After each pass, the largest element moves to the end",
+                "4": "Repeat the process for the remaining unsorted part",
+                "5": "Stop when no swaps are needed (array is sorted)"
+            },
+            "quick": {
+                "1": "Compare each pair of adjacent elements",
+                "2": "Swap them if they are in the wrong order",
+                "3": "After each pass, the largest element moves to the end",
+                "4": "Repeat the process for the remaining unsorted part",
+                "5": "Stop when no swaps are needed (array is sorted)"
+            },
+            "selection": {
+                "1": "Compare each pair of adjacent elements",
+                "2": "Swap them if they are in the wrong order",
+                "3": "After each pass, the largest element moves to the end",
+                "4": "Repeat the process for the remaining unsorted part",
+                "5": "Stop when no swaps are needed (array is sorted)"
+            }
+        },
+        "when_list":{
+            "bubble": {
+                "1": "When teaching or learning sorting basics (easy to understand)",
+                "2": "For very small arrays where simplicity is more important than efficiency",
+                "3": "When the array is almost sorted and only a few swaps are needed",
+                "4": "Useful for demonstrating algorithm concepts (swapping, comparisons, passes)"
+            },
+            "counting": {
+                "1": "When sorting integers or discrete values",
+                "2": "When the range of numbers (k) is not much larger than the number of elements (n)",
+                "3": "For stable and linear-time sorting of small-range data"
+            },
+            "heap": {
+                "1": "When O(n log n) worst-case is required",
+                "2": "When in-place sorting is needed",
+                "3": "Good for systems with limited memory"
+            },
+            "insertion": {
+                "1": "For small datasets",
+                "2": "When data is almost sorted",
+                "3": "As a building block for more advanced algorithms"
+            },
+            "merge": {
+                "1": "For large datasets",
+                "2": "When stability (keeping order of equal elements) matters",
+                "3": "When guaranteed O(n log n) is required"
+            },
+            "quick": {
+                "1": "For large datasets",
+                "2": "When average performance matters",
+                "3": "When in-place sorting is preferred"
+            },
+            "selection": {
+                "1": "When memory writes are costly (few swaps)",
+                "2": "For very small datasets",
+                "3": "For educational purposes"
+            }
         }
     },
     "alert":{
@@ -106,16 +205,12 @@
     },
     "navbar":{
         "sections":{
-            "home": "HOME",
-            "about": "ABOUT",
-            "experience": "EXPERIENCE",
+            "home": "Home",
+            "about": "About",
+            "list": "Sort Types",
             "projects": "PROJECTS",
             "contacts": "CONTACTS"
         },
-        "pages":{
-            "home": "HOME",
-            "projects": "PROJECTS"
-        }
-    },
-    "likes": "Likes"
+        "language": "Change Language"
+    }
 }

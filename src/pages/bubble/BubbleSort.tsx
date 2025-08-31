@@ -12,9 +12,10 @@ import how from "../../assets/bgs/how-bubble.png"
 import PlayButton from "../../components/Buttons/PlayButton/PlayButton"
 import PrimaryButton from "../../components/Buttons/PrimaryButton/PrimaryButton"
 import Footer from "../../components/Footer/Footer"
-
+import { useTranslation } from "react-i18next"
 
 const BubbleSort = () => {
+    const { t } = useTranslation();
     const [ numbers, setNumbers ] = useState<string>()
     const [ play, setPlay ] = useState<boolean>(false)
     const [ dataType, setDataType ] = useState<"number" | "letter">("number")
@@ -54,13 +55,13 @@ const BubbleSort = () => {
 
                 <div className={styles.Content}>
                     <div className={styles.Hero} style={{backgroundImage: `url(${hero})`}}>
-                        <p className={styles.HeroTitle}>Bubble Sort</p>
-                        <p className={styles.HeroSubtitle}>Step-by-step visual explanation of Bubble Sort.</p>
+                        <p className={styles.HeroTitle}>{t("hero.bubble.title")}</p>
+                        <p className={styles.HeroSubtitle}>{t("hero.bubble.subtitle")}</p>
                     </div>
 
                     <div className={styles.ContentWrap}>
                         <div className={styles.Console}>
-                            <p className={styles.ConsoleTitle}>Input array</p>
+                            <p className={styles.ConsoleTitle}>{t("console.input")}</p>
                             <div className={styles.ConsoleContent}>
 
 
@@ -84,7 +85,7 @@ const BubbleSort = () => {
                                             setReset(true);
                                             setTimeout(() => setReset(false), 0);
                                             setPlay(false);             
-                                        }} text="Reset"/>
+                                        }} text={t("console.reset")}/>
                                     </div>
 
 
@@ -92,7 +93,7 @@ const BubbleSort = () => {
 
 
                                 <div className={styles.Speed}>
-                                    <p className={styles.SpeedTitle}>Speed</p>
+                                    <p className={styles.SpeedTitle}>{t("console.speed")}</p>
                                     <RangeSlider
                                         min={1}
                                         max={40}
@@ -122,7 +123,7 @@ const BubbleSort = () => {
 
                         </div>
                         <div className={styles.DataDiv}>
-                            <p className={styles.DataTitle}>Visualization</p>
+                            <p className={styles.DataTitle}>{t("console.visualization")}</p>
                             <div className={styles.DataContent}>
                                 <div className={styles.VisualizationGraph}>
                                     <Visualizer
@@ -142,17 +143,17 @@ const BubbleSort = () => {
                                         <div className={`${styles.ExplanationHeaderitem} ${selectedExplanation === "how" ? styles.SelectedExplanation : ""}`}
                                             onClick={()=>setSelectedExplanation("how")}
                                         >
-                                            <p>How it works</p>
+                                            <p>{t("console.how")}</p>
                                         </div>
                                         <div className={`${styles.ExplanationHeaderitem} ${selectedExplanation === "time" ? styles.SelectedExplanation : ""}`}
                                             onClick={()=>setSelectedExplanation("time")}
                                         >
-                                            <p>Time complexity</p>
+                                            <p>{t("console.time")}</p>
                                         </div>
                                         <div className={`${styles.ExplanationHeaderitem} ${selectedExplanation === "when" ? styles.SelectedExplanation : ""}`}
                                             onClick={()=>setSelectedExplanation("when")}
                                         >
-                                            <p>When to use</p>
+                                            <p>{t("console.when")}</p>
                                         </div>
                                     </div>
                                     <div className={styles.ExplanationContent}>
@@ -160,11 +161,11 @@ const BubbleSort = () => {
                                             <div className={styles.ExplanationItem}>
                                                 <div className={styles.ExplanationItemText}>
                                                     <ul>
-                                                        <li>Compare each pair of adjacent elements</li>
-                                                        <li>Swap them if they are in the wrong order</li>
-                                                        <li>After each pass, the largest element moves to the end</li>
-                                                        <li>Repeat the process for the remaining unsorted part</li>
-                                                        <li>Stop when no swaps are needed (array is sorted)</li>
+                                                        <li>{t("console.how_list.bubble.1")}</li>
+                                                        <li>{t("console.how_list.bubble.2")}</li>
+                                                        <li>{t("console.how_list.bubble.3")}</li>
+                                                        <li>{t("console.how_list.bubble.4")}</li>
+                                                        <li>{t("console.how_list.bubble.5")}</li>
                                                     </ul>
                                                 </div>
                                                 <div className={styles.ExplanationItemImage} style={{backgroundImage: `url(${how})`}}></div>
@@ -190,10 +191,10 @@ const BubbleSort = () => {
                                             <div className={styles.ExplanationItem}>
                                                 <div className={styles.ExplanationItemText}>
                                                     <ul>
-                                                        <li>When teaching or learning sorting basics (easy to understand)</li>
-                                                        <li>For very small arrays where simplicity is more important than efficiency</li>
-                                                        <li>When the array is almost sorted and only a few swaps are needed</li>
-                                                        <li>Useful for demonstrating algorithm concepts (swapping, comparisons, passes)</li>
+                                                        <li>{t("console.when_list.bubble.1")}</li>
+                                                        <li>{t("console.when_list.bubble.2")}</li>
+                                                        <li>{t("console.when_list.bubble.3")}</li>
+                                                        <li>{t("console.when_list.bubble.4")}</li>
                                                     </ul>
                                                 </div>
                                             </div>

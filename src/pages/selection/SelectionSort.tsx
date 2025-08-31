@@ -15,6 +15,7 @@ import Footer from "../../components/Footer/Footer"
 
 import PrimaryButton from "../../components/Buttons/PrimaryButton/PrimaryButton"
 import PlayButton from "../../components/Buttons/PlayButton/PlayButton"
+import { t } from "i18next"
 const SelectionSort = () => {
     const [ numbers, setNumbers ] = useState<string>()
     const [ play, setPlay ] = useState<boolean>(false)
@@ -51,13 +52,13 @@ const SelectionSort = () => {
 
                 <div className={styles.Content}>
                     <div className={styles.Hero}  style={{backgroundImage: `url(${hero})`}}>
-                        <p className={styles.HeroTitle}>Selection Sort</p>
-                        <p className={styles.HeroSubtitle}>Step-by-step visual explanation of Selection Sort.</p>
+                        <p className={styles.HeroTitle}>{t("hero.selection.title")}</p>
+                        <p className={styles.HeroSubtitle}>{t("hero.selection.subtitle")}</p>
                     </div>
 
                     <div className={styles.ContentWrap}>
                         <div className={styles.Console}>
-                            <p className={styles.ConsoleTitle}>Input array</p>
+                            <p className={styles.ConsoleTitle}>{t("console.input")}</p>
                             <div className={styles.ConsoleContent}>
 
 
@@ -81,7 +82,7 @@ const SelectionSort = () => {
                                             setReset(true);
                                             setTimeout(() => setReset(false), 0);
                                             setPlay(false);             
-                                        }} text="Reset"/>
+                                        }} text={t("console.reset")}/>
                                     </div>
 
 
@@ -89,7 +90,7 @@ const SelectionSort = () => {
 
 
                                 <div className={styles.Speed}>
-                                    <p className={styles.SpeedTitle}>Speed</p>
+                                    <p className={styles.SpeedTitle}>{t("console.speed")}</p>
                                     <RangeSlider
                                         min={1}
                                         max={40}
@@ -119,7 +120,7 @@ const SelectionSort = () => {
 
                         </div>
                         <div className={styles.DataDiv}>
-                            <p className={styles.DataTitle}>Visualization</p>
+                            <p className={styles.DataTitle}>{t("console.visualization")}</p>
                             <div className={styles.DataContent}>
                                 <div className={styles.VisualizationGraph}>
                                     <Visualizer
@@ -139,17 +140,17 @@ const SelectionSort = () => {
                                         <div className={`${styles.ExplanationHeaderitem} ${selectedExplanation === "how" ? styles.SelectedExplanation : ""}`}
                                             onClick={()=>setSelectedExplanation("how")}
                                         >
-                                            <p>How it works</p>
+                                            <p>{t("console.how")}</p>
                                         </div>
                                         <div className={`${styles.ExplanationHeaderitem} ${selectedExplanation === "time" ? styles.SelectedExplanation : ""}`}
                                             onClick={()=>setSelectedExplanation("time")}
                                         >
-                                            <p>Time complexity</p>
+                                            <p>{t("console.time")}</p>
                                         </div>
                                         <div className={`${styles.ExplanationHeaderitem} ${selectedExplanation === "when" ? styles.SelectedExplanation : ""}`}
                                             onClick={()=>setSelectedExplanation("when")}
                                         >
-                                            <p>When to use</p>
+                                            <p>{t("console.when")}</p>
                                         </div>
                                     </div>
                                     <div className={styles.ExplanationContent}>
@@ -157,10 +158,10 @@ const SelectionSort = () => {
                                             <div className={styles.ExplanationItem}>
                                                 <div className={styles.ExplanationItemText}>
                                                     <ul>
-                                                        <li>Find the minimum element in the unsorted part</li>
-                                                        <li>Swap it with the first unsorted element</li>
-                                                        <li>Move the boundary of sorted/unsorted part one step forward</li>
-                                                        <li>Repeat until all elements are sorted</li>
+                                                        <li>{t("console.how_list.selection.1")}</li>
+                                                        <li>{t("console.how_list.selection.2")}</li>
+                                                        <li>{t("console.how_list.selection.3")}</li>
+                                                        <li>{t("console.how_list.selection.4")}</li>
                                                     </ul>
                                                 </div>
                                                 <div className={styles.ExplanationItemImage} style={{backgroundImage: `url(${how})`}}></div>
@@ -186,9 +187,9 @@ const SelectionSort = () => {
                                             <div className={styles.ExplanationItem}>
                                                 <div className={styles.ExplanationItemText}>
                                                     <ul>
-                                                        <li>When memory writes are costly (few swaps)</li>
-                                                        <li>For very small datasets</li>
-                                                        <li>For educational purposes</li>
+                                                        <li>{t("console.when_list.selection.1")}</li>
+                                                        <li>{t("console.when_list.selection.2")}</li>
+                                                        <li>{t("console.when_list.selection.3")}</li>
                                                     </ul>
                                                 </div>
                                             </div>

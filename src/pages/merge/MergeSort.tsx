@@ -14,6 +14,7 @@ import PlayButton from "../../components/Buttons/PlayButton/PlayButton"
 import PrimaryButton from "../../components/Buttons/PrimaryButton/PrimaryButton"
 
 import Footer from "../../components/Footer/Footer"
+import { t } from "i18next"
 
 const MergeSort = () => {
     const [ numbers, setNumbers ] = useState<string>()
@@ -53,13 +54,13 @@ const MergeSort = () => {
 
                 <div className={styles.Content}>
                     <div className={styles.Hero} style={{backgroundImage: `url(${hero})`}}>
-                        <p className={styles.HeroTitle}>Merge Sort</p>
-                        <p className={styles.HeroSubtitle}>Step-by-step visual explanation of Merge Sort.</p>
+                        <p className={styles.HeroTitle}>{t("hero.merge.title")}</p>
+                        <p className={styles.HeroSubtitle}>{t("hero.merge.subtitle")}</p>
                     </div>
 
                     <div className={styles.ContentWrap}>
                         <div className={styles.Console}>
-                            <p className={styles.ConsoleTitle}>Input array</p>
+                            <p className={styles.ConsoleTitle}>{t("console.input")}</p>
                             <div className={styles.ConsoleContent}>
 
 
@@ -82,8 +83,8 @@ const MergeSort = () => {
                                         <PrimaryButton onClick={() => {
                                             setReset(true);
                                             setTimeout(() => setReset(false), 0);
-                                            setPlay(false);             
-                                        }} text="Reset"/>
+                                            setPlay(false);
+                                        }} text={t("console.reset")} />
                                     </div>
 
 
@@ -91,7 +92,7 @@ const MergeSort = () => {
 
 
                                 <div className={styles.Speed}>
-                                    <p className={styles.SpeedTitle}>Speed</p>
+                                    <p className={styles.SpeedTitle}>{t("console.speed")}</p>
                                     <RangeSlider
                                         min={1}
                                         max={40}
@@ -121,7 +122,7 @@ const MergeSort = () => {
 
                         </div>
                         <div className={styles.DataDiv}>
-                            <p className={styles.DataTitle}>Visualization</p>
+                            <p className={styles.DataTitle}>{t("console.visualization")}</p>
                             <div className={styles.DataContent}>
                                 <div className={styles.VisualizationGraph}>
                                     <Visualizer
@@ -141,17 +142,17 @@ const MergeSort = () => {
                                         <div className={`${styles.ExplanationHeaderitem} ${selectedExplanation === "how" ? styles.SelectedExplanation : ""}`}
                                             onClick={()=>setSelectedExplanation("how")}
                                         >
-                                            <p>How it works</p>
+                                            <p>{t("console.how")}</p>
                                         </div>
                                         <div className={`${styles.ExplanationHeaderitem} ${selectedExplanation === "time" ? styles.SelectedExplanation : ""}`}
                                             onClick={()=>setSelectedExplanation("time")}
                                         >
-                                            <p>Time complexity</p>
+                                            <p>{t("console.time")}</p>
                                         </div>
                                         <div className={`${styles.ExplanationHeaderitem} ${selectedExplanation === "when" ? styles.SelectedExplanation : ""}`}
                                             onClick={()=>setSelectedExplanation("when")}
                                         >
-                                            <p>When to use</p>
+                                            <p>{t("console.when")}</p>
                                         </div>
                                     </div>
                                     <div className={styles.ExplanationContent}>
@@ -159,9 +160,9 @@ const MergeSort = () => {
                                             <div className={styles.ExplanationItem}>
                                                 <div className={styles.ExplanationItemText}>
                                                     <ul>
-                                                        <li>Divide the array into two halves</li>
-                                                        <li>Recursively sort each half</li>
-                                                        <li>Merge the two sorted halves into one sorted array</li>
+                                                        <li>{t("console.how_list.merge.1")}</li>
+                                                        <li>{t("console.how_list.merge.2")}</li>
+                                                        <li>{t("console.how_list.merge.3")}</li>
                                                     </ul>
                                                 </div>
                                                 <div className={styles.ExplanationItemImage} style={{backgroundImage: `url(${how})`}}></div>
@@ -187,9 +188,9 @@ const MergeSort = () => {
                                             <div className={styles.ExplanationItem}>
                                                 <div className={styles.ExplanationItemText}>
                                                     <ul>
-                                                        <li>For large datasets</li>
-                                                        <li>When stability (keeping order of equal elements) matters</li>
-                                                        <li>When guaranteed O(n log n) is required</li>
+                                                        <li>{t("console.when_list.merge.1")}</li>
+                                                        <li>{t("console.when_list.merge.2")}</li>
+                                                        <li>{t("console.when_list.merge.3")}</li>
                                                     </ul>
                                                 </div>
                                             </div>

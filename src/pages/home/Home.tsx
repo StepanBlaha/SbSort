@@ -17,6 +17,7 @@ import quick from "../../assets/bgs/quick.png"
 import counting from "../../assets/bgs/counting.png"
 
 import { useNavigate } from "react-router-dom"
+import { t } from "i18next"
 
 const Home = () => {
 
@@ -31,13 +32,13 @@ const Home = () => {
 
                 <div className={styles.Content}>
                     <div className={styles.Hero} style={{backgroundImage: `url(${hero})`}}>
-                        <p className={styles.HeroTitle}>Sorting Visualizer</p>
-                        <p className={styles.HeroSubtitle}>Learn sorting algorithms through step-by-step visual guides</p>
+                        <p className={styles.HeroTitle}>{t("main.title")}</p>
+                        <p className={styles.HeroSubtitle}>{t("main.subtitle")}</p>
                     </div>
 
                     <div className={styles.SortSection}>
                         <div className={styles.SortTitle}>
-                            <p>Sorting Algorithms</p>
+                            <p>{t("main.sorts_title")}</p>
                         </div>
                         <div className={styles.Sorts}>
                             
@@ -45,49 +46,49 @@ const Home = () => {
                                 <div className={styles.SortImage}
                                 style={{backgroundImage: `url(${bubble})`}}
                                 ></div>
-                                <p className={styles.SortText}>Bubble Sort</p>
+                                <p className={styles.SortText}>{t("main.sorts.bubble")}</p>
                             </div>
 
                             <div className={styles.Sort} onClick={()=>navigate("/merge")}>
                                 <div className={styles.SortImage}
                                 style={{backgroundImage: `url(${merge})`}}
                                 ></div>
-                                <p className={styles.SortText}>Merge Sort</p>
+                                <p className={styles.SortText}>{t("main.sorts.merge")}</p>
                             </div>
 
                             <div className={styles.Sort} onClick={()=>navigate("/selection")}>
                                 <div className={styles.SortImage}
                                 style={{backgroundImage: `url(${selection})`}}
                                 ></div>
-                                <p className={styles.SortText}>Selection Sort</p>
+                                <p className={styles.SortText}>{t("main.sorts.selection")}</p>
                             </div>
 
                             <div className={styles.Sort} onClick={()=>navigate("/quick")}>
                                 <div className={styles.SortImage}
                                 style={{backgroundImage: `url(${quick})`}}
                                 ></div>
-                                <p className={styles.SortText}>Quick Sort</p>
+                                <p className={styles.SortText}>{t("main.sorts.quick")}</p>
                             </div>
 
                             <div className={styles.Sort} onClick={()=>navigate("/insertion")}>
                                 <div className={styles.SortImage}
                                 style={{backgroundImage: `url(${insertion})`}}
                                 ></div>
-                                <p className={styles.SortText}>Insertion Sort</p>
+                                <p className={styles.SortText}>{t("main.sorts.insertion")}</p>
                             </div>
 
                             <div className={styles.Sort} onClick={()=>navigate("/heap")}>
                                 <div className={styles.SortImage}
                                 style={{backgroundImage: `url(${heap})`}}
                                 ></div>
-                                <p className={styles.SortText}>Heap Sort</p>
+                                <p className={styles.SortText}>{t("main.sorts.heap")}</p>
                             </div>
 
                             <div className={styles.Sort} onClick={()=>navigate("/counting")}>
                                 <div className={styles.SortImage}
                                 style={{backgroundImage: `url(${counting})`}}
                                 ></div>
-                                <p className={styles.SortText}>Counting Sort</p>
+                                <p className={styles.SortText}>{t("main.sorts.counting")}</p>
                             </div>
                         </div>
 

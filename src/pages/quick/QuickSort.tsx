@@ -15,6 +15,7 @@ import Footer from "../../components/Footer/Footer"
 
 import PlayButton from "../../components/Buttons/PlayButton/PlayButton"
 import PrimaryButton from "../../components/Buttons/PrimaryButton/PrimaryButton"
+import { t } from "i18next"
 
 const QuickSort = () => {
     const [ numbers, setNumbers ] = useState<string>()
@@ -54,13 +55,13 @@ const QuickSort = () => {
 
                 <div className={styles.Content}>
                     <div className={styles.Hero} style={{backgroundImage: `url(${hero})`}}>
-                        <p className={styles.HeroTitle}>Quick Sort</p>
-                        <p className={styles.HeroSubtitle}>Step-by-step visual explanation of Quick Sort.</p>
+                        <p className={styles.HeroTitle}>{t("hero.quick.title")}</p>
+                        <p className={styles.HeroSubtitle}>{t("hero.quick.subtitle")}</p>
                     </div>
 
                     <div className={styles.ContentWrap}>
                         <div className={styles.Console}>
-                            <p className={styles.ConsoleTitle}>Input array</p>
+                            <p className={styles.ConsoleTitle}>{t("console.input")}</p>
                             <div className={styles.ConsoleContent}>
 
 
@@ -84,7 +85,7 @@ const QuickSort = () => {
                                             setReset(true);
                                             setTimeout(() => setReset(false), 0);
                                             setPlay(false);             
-                                        }} text="Reset"/>
+                                        }} text={t("console.reset")}/>
                                     </div>
 
 
@@ -92,7 +93,7 @@ const QuickSort = () => {
 
 
                                 <div className={styles.Speed}>
-                                    <p className={styles.SpeedTitle}>Speed</p>
+                                    <p className={styles.SpeedTitle}>{t("console.speed")}</p>
                                     <RangeSlider
                                         min={1}
                                         max={40}
@@ -122,7 +123,7 @@ const QuickSort = () => {
 
                         </div>
                         <div className={styles.DataDiv}>
-                            <p className={styles.DataTitle}>Visualization</p>
+                            <p className={styles.DataTitle}>{t("console.visualization")}</p>
                             <div className={styles.DataContent}>
                                 <div className={styles.VisualizationGraph}>
                                     <Visualizer
@@ -142,17 +143,17 @@ const QuickSort = () => {
                                         <div className={`${styles.ExplanationHeaderitem} ${selectedExplanation === "how" ? styles.SelectedExplanation : ""}`}
                                             onClick={()=>setSelectedExplanation("how")}
                                         >
-                                            <p>How it works</p>
+                                            <p>{t("console.how")}</p>
                                         </div>
                                         <div className={`${styles.ExplanationHeaderitem} ${selectedExplanation === "time" ? styles.SelectedExplanation : ""}`}
                                             onClick={()=>setSelectedExplanation("time")}
                                         >
-                                            <p>Time complexity</p>
+                                            <p>{t("console.time")}</p>
                                         </div>
                                         <div className={`${styles.ExplanationHeaderitem} ${selectedExplanation === "when" ? styles.SelectedExplanation : ""}`}
                                             onClick={()=>setSelectedExplanation("when")}
                                         >
-                                            <p>When to use</p>
+                                            <p>{t("console.when")}</p>
                                         </div>
                                     </div>
                                     <div className={styles.ExplanationContent}>
@@ -160,9 +161,9 @@ const QuickSort = () => {
                                             <div className={styles.ExplanationItem}>
                                                 <div className={styles.ExplanationItemText}>
                                                     <ul>
-                                                        <li>Pick a pivot element</li>
-                                                        <li>Partition array so smaller elements go left, larger go right</li>
-                                                        <li>Recursively apply the process to left and right partitions</li>
+                                                        <li>{t("console.how_list.quick.1")}</li>
+                                                        <li>{t("console.how_list.quick.2")}</li>
+                                                        <li>{t("console.how_list.quick.3")}</li>
                                                     </ul>
                                                 </div>
                                                 <div className={styles.ExplanationItemImage} style={{backgroundImage: `url(${theme === "light" ? howLight : howDark})`}}></div>
@@ -188,9 +189,9 @@ const QuickSort = () => {
                                             <div className={styles.ExplanationItem}>
                                                 <div className={styles.ExplanationItemText}>
                                                     <ul>
-                                                        <li>For large datasets</li>
-                                                        <li>When average performance matters</li>
-                                                        <li>When in-place sorting is preferred</li>
+                                                        <li>{t("console.when_list.quick.1")}</li>
+                                                        <li>{t("console.when_list.quick.2")}</li>
+                                                        <li>{t("console.when_list.quick.3")}</li>
                                                     </ul>
                                                 </div>
                                             </div>

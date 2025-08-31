@@ -57,19 +57,19 @@ const Menu = ({display = false, handleDisplay, version = "default"} : MenuProps)
                                 <div className={styles.MenuItem}>
                                     <button className={styles.MenuItemHeader} onClick={()=>navigate("/home")}>
                                         <ChevronLeft/>
-                                        <p>Home</p>
+                                        <p>{t("navbar.sections.home")}</p>
                                     </button>
                                 </div>
                                 <div className={styles.MenuItem}>
                                     <button className={styles.MenuItemHeader} onClick={()=>navigate("/list")}>
                                         <ChevronLeft/>
-                                        <p>Sort Types</p>
+                                        <p>{t("navbar.sections.list")}</p>
                                     </button>
                                 </div>
                                 <div className={styles.MenuItem}>
                                     <button className={styles.MenuItemHeader} onClick={()=>navigate("/about")}>
                                         <ChevronLeft/>
-                                        <p>About</p>
+                                        <p>{t("navbar.sections.about")}</p>
                                     </button>
                                 </div>
                             </div>

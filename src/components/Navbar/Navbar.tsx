@@ -7,11 +7,12 @@ import { useWindowSize } from "../../hooks/useWindowSize"
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom"
 import { useTheme } from "../../context/ThemeContext"
-
+import { useTranslation } from "react-i18next"
 import MenuBlock from "./Menu/Menu"
 
 
 const Navbar = () => {
+    const { t } = useTranslation();
     const navigate = useNavigate();
     const { theme } = useTheme()
     const width = useWindowSize();
@@ -54,13 +55,13 @@ const Navbar = () => {
 
                     <div className={styles.Pages}>
                         <div className={styles.HeaderPage} onClick={()=>navigate("/home")}>
-                            <a>Home</a>
+                            <a>{t("navbar.sections.home")}</a>
                         </div>
                         <div className={styles.HeaderPage} onClick={()=>navigate("/list")}>
-                            <a>Sort Types</a>
+                            <a>{t("navbar.sections.list")}</a>
                         </div>
                         <div className={styles.HeaderPage} onClick={()=>navigate("/about")}>
-                            <a>About</a>
+                            <a>{t("navbar.sections.about")}</a>
                         </div>
                     </div>
                     <div className={styles.Theme}>

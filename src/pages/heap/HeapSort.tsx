@@ -16,7 +16,7 @@ import heroDark from "../../assets/bgs/hero-heap-dark.png"
 
 import howLight from "../../assets/bgs/how-heap-light.png"
 import howDark from "../../assets/bgs/how-heap-dark.png"
-
+import { useTranslation } from "react-i18next"
 import PlayButton from "../../components/Buttons/PlayButton/PlayButton"
 import PrimaryButton from "../../components/Buttons/PrimaryButton/PrimaryButton"
 const HeapSort = () => {
@@ -25,7 +25,7 @@ const HeapSort = () => {
     const [ dataType, setDataType ] = useState<"number" | "letter">("number")
     const [reset, setReset] = useState<boolean>(false)
     const { theme } = useTheme();
-    
+    const { t } = useTranslation();
 
     const [ speed, setSpeed ] = useState<number>(10)
 
@@ -58,13 +58,13 @@ const HeapSort = () => {
 
                 <div className={styles.Content}>
                     <div className={styles.Hero} style={{backgroundImage: `url(${theme === "light" ? heroLight : heroDark})`}}>
-                        <p className={styles.HeroTitle}>Heap Sort</p>
-                        <p className={styles.HeroSubtitle}>Step-by-step visual explanation of Heap Sort.</p>
+                        <p className={styles.HeroTitle}>{t("hero.heap.title")}</p>
+                        <p className={styles.HeroSubtitle}>{t("hero.heap.subtitle")}</p>
                     </div>
 
                     <div className={styles.ContentWrap}>
                         <div className={styles.Console}>
-                            <p className={styles.ConsoleTitle}>Input array</p>
+                            <p className={styles.ConsoleTitle}>{t("console.input")}</p>
                             <div className={styles.ConsoleContent}>
 
 
@@ -88,7 +88,7 @@ const HeapSort = () => {
                                             setReset(true);
                                             setTimeout(() => setReset(false), 0);
                                             setPlay(false);             
-                                        }} text="Reset"/>
+                                        }} text={t("console.reset")}/>
                                     </div>
 
 
@@ -96,7 +96,7 @@ const HeapSort = () => {
 
 
                                 <div className={styles.Speed}>
-                                    <p className={styles.SpeedTitle}>Speed</p>
+                                    <p className={styles.SpeedTitle}>{t("console.speed")}</p>
                                     <RangeSlider
                                         min={1}
                                         max={40}
@@ -126,7 +126,7 @@ const HeapSort = () => {
 
                         </div>
                         <div className={styles.DataDiv}>
-                            <p className={styles.DataTitle}>Visualization</p>
+                            <p className={styles.DataTitle}>{t("console.visualization")}</p>
                             <div className={styles.DataContent}>
                                 <div className={styles.VisualizationGraph}>
                                     <Visualizer
@@ -146,17 +146,17 @@ const HeapSort = () => {
                                         <div className={`${styles.ExplanationHeaderitem} ${selectedExplanation === "how" ? styles.SelectedExplanation : ""}`}
                                             onClick={()=>setSelectedExplanation("how")}
                                         >
-                                            <p>How it works</p>
+                                            <p>{t("console.how")}</p>
                                         </div>
                                         <div className={`${styles.ExplanationHeaderitem} ${selectedExplanation === "time" ? styles.SelectedExplanation : ""}`}
                                             onClick={()=>setSelectedExplanation("time")}
                                         >
-                                            <p>Time complexity</p>
+                                            <p>{t("console.time")}</p>
                                         </div>
                                         <div className={`${styles.ExplanationHeaderitem} ${selectedExplanation === "when" ? styles.SelectedExplanation : ""}`}
                                             onClick={()=>setSelectedExplanation("when")}
                                         >
-                                            <p>When to use</p>
+                                            <p>{t("console.when")}</p>
                                         </div>
                                     </div>
                                     <div className={styles.ExplanationContent}>
@@ -164,10 +164,10 @@ const HeapSort = () => {
                                             <div className={styles.ExplanationItem}>
                                                 <div className={styles.ExplanationItemText}>
                                                     <ul>
-                                                        <li>Build a max heap from the array</li>
-                                                        <li>Swap the root (max) with the last element</li>
-                                                        <li>Reduce heap size and heapify to restore max heap</li>
-                                                        <li>Repeat until all elements are sorted</li>
+                                                        <li>{t("console.how_list.heap.1")}</li>
+                                                        <li>{t("console.how_list.heap.2")}</li>
+                                                        <li>{t("console.how_list.heap.3")}</li>
+                                                        <li>{t("console.how_list.heap.4")}</li>
                                                     </ul>
                                                 </div>
                                                 <div className={styles.ExplanationItemImage} style={{backgroundImage: `url(${theme === "light" ? howLight : howDark})`}}></div>
@@ -193,9 +193,9 @@ const HeapSort = () => {
                                             <div className={styles.ExplanationItem}>
                                                 <div className={styles.ExplanationItemText}>
                                                     <ul>
-                                                        <li>When O(n log n) worst-case is required</li>
-                                                        <li>When in-place sorting is needed</li>
-                                                        <li>Good for systems with limited memory</li>
+                                                        <li>{t("console.when_list.heap.1")}</li>
+                                                        <li>{t("console.when_list.heap.2")}</li>
+                                                        <li>{t("console.when_list.heap.3")}</li>
                                                     </ul>
                                                 </div>
                                             </div>

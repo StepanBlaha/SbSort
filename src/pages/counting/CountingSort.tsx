@@ -15,7 +15,7 @@ import PrimaryButton from "../../components/Buttons/PrimaryButton/PrimaryButton"
 
 import howLight from "../../assets/bgs/how-counting-light.png"
 import howDark from "../../assets/bgs/how-counting-dark.png"
-
+import { useTranslation } from "react-i18next"
 import Footer from "../../components/Footer/Footer"
 
 const CountingSort = () => {
@@ -23,7 +23,7 @@ const CountingSort = () => {
     const [ play, setPlay ] = useState<boolean>(false)
     const [ dataType, setDataType ] = useState<"number" | "letter">("number")
     const [reset, setReset] = useState<boolean>(false)
-    
+    const { t } = useTranslation();
 
     const [ speed, setSpeed ] = useState<number>(10)
 
@@ -56,13 +56,13 @@ const CountingSort = () => {
 
                 <div className={styles.Content}>
                     <div className={styles.Hero} style={{backgroundImage: `url(${hero})`}}>
-                        <p className={styles.HeroTitle}>Counting Sort</p>
-                        <p className={styles.HeroSubtitle}>Step-by-step visual explanation of Counting Sort.</p>
+                        <p className={styles.HeroTitle}>{t("hero.counting.title")}</p>
+                        <p className={styles.HeroSubtitle}>{t("hero.counting.subtitle")}</p>
                     </div>
 
                     <div className={styles.ContentWrap}>
                         <div className={styles.Console}>
-                            <p className={styles.ConsoleTitle}>Input array</p>
+                            <p className={styles.ConsoleTitle}>{t("console.input")}</p>
                             <div className={styles.ConsoleContent}>
 
 
@@ -85,8 +85,8 @@ const CountingSort = () => {
                                         <PrimaryButton onClick={() => {
                                             setReset(true);
                                             setTimeout(() => setReset(false), 0);
-                                            setPlay(false);             
-                                        }} text="Reset"/>
+                                            setPlay(false);
+                                        }} text={t("console.reset")} />
                                     </div>
 
 
@@ -94,7 +94,7 @@ const CountingSort = () => {
 
 
                                 <div className={styles.Speed}>
-                                    <p className={styles.SpeedTitle}>Speed</p>
+                                    <p className={styles.SpeedTitle}>{t("console.speed")}</p>
                                     <RangeSlider
                                         min={1}
                                         max={40}
@@ -124,7 +124,7 @@ const CountingSort = () => {
 
                         </div>
                         <div className={styles.DataDiv}>
-                            <p className={styles.DataTitle}>Visualization</p>
+                            <p className={styles.DataTitle}>{t("console.visualization")}</p>
                             <div className={styles.DataContent}>
                                 <div className={styles.VisualizationGraph}>
                                     <Visualizer
@@ -144,17 +144,17 @@ const CountingSort = () => {
                                         <div className={`${styles.ExplanationHeaderitem} ${selectedExplanation === "how" ? styles.SelectedExplanation : ""}`}
                                             onClick={()=>setSelectedExplanation("how")}
                                         >
-                                            <p>How it works</p>
+                                            <p>{t("console.how")}s</p>
                                         </div>
                                         <div className={`${styles.ExplanationHeaderitem} ${selectedExplanation === "time" ? styles.SelectedExplanation : ""}`}
                                             onClick={()=>setSelectedExplanation("time")}
                                         >
-                                            <p>Time complexity</p>
+                                            <p>{t("console.time")}</p>
                                         </div>
                                         <div className={`${styles.ExplanationHeaderitem} ${selectedExplanation === "when" ? styles.SelectedExplanation : ""}`}
                                             onClick={()=>setSelectedExplanation("when")}
                                         >
-                                            <p>When to use</p>
+                                            <p>{t("console.when")}</p>
                                         </div>
                                     </div>
                                     <div className={styles.ExplanationContent}>
@@ -162,10 +162,10 @@ const CountingSort = () => {
                                             <div className={styles.ExplanationItem}>
                                                 <div className={styles.ExplanationItemText}>
                                                     <ul>
-                                                        <li>Find the range of input values</li>
-                                                        <li>Count the occurrences of each value</li>
-                                                        <li>Compute the cumulative counts to determine positions</li>
-                                                        <li>Place each element in its sorted position in the output array</li>
+                                                        <li>{t("console.how_list.counting.1")}</li>
+                                                        <li>{t("console.how_list.counting.2")}</li>
+                                                        <li>{t("console.how_list.counting.3")}</li>
+                                                        <li>{t("console.how_list.counting.4")}</li>
                                                     </ul>
                                                 </div>
                                                 <div className={styles.ExplanationItemImage} style={{backgroundImage: `url(${theme === "light" ? howLight : howDark})`}}></div>
@@ -191,9 +191,9 @@ const CountingSort = () => {
                                             <div className={styles.ExplanationItem}>
                                                 <div className={styles.ExplanationItemText}>
                                                     <ul>
-                                                        <li>When sorting integers or discrete values</li>
-                                                        <li>When the range of numbers (k) is not much larger than the number of elements (n)</li>
-                                                        <li>For stable and linear-time sorting of small-range data</li>
+                                                        <li>{t("console.when_list.counting.1")}</li>
+                                                        <li>{t("console.when_list.counting.2")}</li>
+                                                        <li>{t("console.when_list.counting.3")}</li>
                                                     </ul>
                                                 </div>
                                             </div>
