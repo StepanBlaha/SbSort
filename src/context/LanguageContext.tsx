@@ -20,7 +20,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     });
     useEffect(() => {
         i18n.changeLanguage(selectedLanguage.toLowerCase())
-        sessionStorage.setItem("SBselectedLanguage", JSON.stringify(selectedLanguage));
+        sessionStorage.setItem("SBSortselectedLanguage", JSON.stringify(selectedLanguage));
     }, [selectedLanguage]);
 
     return (

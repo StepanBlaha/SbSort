@@ -29,8 +29,8 @@ const LanguageSwitch = ({ type }: LangSwitchProps) => {
         ) : (
             <>
                 <div className={styles.ButtonGroupOptions}>
-                    <button className={`${styles.Option} ${selectedLanguage === "en"  ? styles.SelectedOption: ""}`} onClick={()=>setSelectedLanguage("en")}>EN</button>
                     <button className={`${styles.Option} ${selectedLanguage === "cz"  ? styles.SelectedOption: ""}`} onClick={()=>setSelectedLanguage("cz")}>CZ</button>
+                    <button className={`${styles.Option} ${selectedLanguage === "en"  ? styles.SelectedOption: ""}`} onClick={()=>setSelectedLanguage("en")}>EN</button>
                 </div>
             </>
         )}
