@@ -13,6 +13,9 @@
             "counting": "Counting Sort"
         }
     },
+    "buttons":{
+        "play": "Play"
+    },
     "hero":{
         
         "bubble": {
@@ -44,6 +47,39 @@
             "subtitle": "Step-by-step visual explanation of Counting Sort."
         }
     },
+    "sort_list": {
+        "title": "Sorting Algorithms",
+        "algorithms": {
+            "bubble": {
+                "title": "Bubble Sort",
+                "description": "Repeatedly swaps adjacent elements until sorted"
+            },
+            "merge": {
+                "title": "Merge Sort", 
+                "description": "Divides array, sorts halves, and merges them"
+            },
+            "selection": {
+                "title": "Selection Sort",
+                "description": "Repeatedly selects the smallest element and places it"
+            },
+            "quick": {
+                "title": "Quick Sort",
+                "description": "Partitions array around a pivot and sorts recursively"
+            },
+            "insertion": {
+                "title": "Insertion Sort",
+                "description": "Builds sorted list by inserting elements one by one"
+            },
+            "heap": {
+                "title": "Heap Sort",
+                "description": "Uses a heap structure to repeatedly extract max/min"
+            },
+            "counting": {
+                "title": "Counting Sort",
+                "description": "Counts element frequencies to place them in order"
+            }
+        }
+    },
     "console": {
         "input": "Input array",
         "reset": "Reset",
@@ -52,6 +88,12 @@
         "how": "How it works",
         "time": "Time complexity",
         "when": "When to use",
+        "complexity_labels": {
+            "best_case": "Best Case",
+            "average_case": "Average Case", 
+            "worst_case": "Worst Case",
+            "space_complexity": "Space Complexity"
+        },
         "how_list":{
             "bubble": {
                 "1": "Compare each pair of adjacent elements",
@@ -94,55 +136,132 @@
                 "4": "Repeat until all elements are sorted"            
             }
         },
-        "time_list":{
+        "time_list": {
             "bubble": {
-                "1": "Compare each pair of adjacent elements",
-                "2": "Swap them if they are in the wrong order",
-                "3": "After each pass, the largest element moves to the end",
-                "4": "Repeat the process for the remaining unsorted part",
-                "5": "Stop when no swaps are needed (array is sorted)"
-            },
-            "counting": {
-                "1": "Compare each pair of adjacent elements",
-                "2": "Swap them if they are in the wrong order",
-                "3": "After each pass, the largest element moves to the end",
-                "4": "Repeat the process for the remaining unsorted part",
-                "5": "Stop when no swaps are needed (array is sorted)"
-            },
-            "heap": {
-                "1": "Compare each pair of adjacent elements",
-                "2": "Swap them if they are in the wrong order",
-                "3": "After each pass, the largest element moves to the end",
-                "4": "Repeat the process for the remaining unsorted part",
-                "5": "Stop when no swaps are needed (array is sorted)"
-            },
-            "insertion": {
-                "1": "Compare each pair of adjacent elements",
-                "2": "Swap them if they are in the wrong order",
-                "3": "After each pass, the largest element moves to the end",
-                "4": "Repeat the process for the remaining unsorted part",
-                "5": "Stop when no swaps are needed (array is sorted)"
+                "best_case": {
+                    "complexity": "O(n)",
+                    "description": "when the array is already sorted (with optimized version that stops if no swaps are made)"
+                },
+                "average_case": {
+                    "complexity": "O(n²)",
+                    "description": "typical performance when elements are in random order"
+                },
+                "worst_case": {
+                    "complexity": "O(n²)",
+                    "description": "when the array is sorted in reverse order"
+                },
+                "space_complexity": {
+                    "complexity": "O(1)",
+                    "description": "since it sorts in place"
+                }
             },
             "merge": {
-                "1": "Compare each pair of adjacent elements",
-                "2": "Swap them if they are in the wrong order",
-                "3": "After each pass, the largest element moves to the end",
-                "4": "Repeat the process for the remaining unsorted part",
-                "5": "Stop when no swaps are needed (array is sorted)"
-            },
-            "quick": {
-                "1": "Compare each pair of adjacent elements",
-                "2": "Swap them if they are in the wrong order",
-                "3": "After each pass, the largest element moves to the end",
-                "4": "Repeat the process for the remaining unsorted part",
-                "5": "Stop when no swaps are needed (array is sorted)"
+                "best_case": {
+                    "complexity": "O(n log n)",
+                    "description": "consistent performance regardless of input order"
+                },
+                "average_case": {
+                    "complexity": "O(n log n)",
+                    "description": "reliable divide-and-conquer approach"
+                },
+                "worst_case": {
+                    "complexity": "O(n log n)",
+                    "description": "guaranteed performance even with worst input"
+                },
+                "space_complexity": {
+                    "complexity": "O(n)",
+                    "description": "requires additional memory for temporary arrays during merging"
+                }
             },
             "selection": {
-                "1": "Compare each pair of adjacent elements",
-                "2": "Swap them if they are in the wrong order",
-                "3": "After each pass, the largest element moves to the end",
-                "4": "Repeat the process for the remaining unsorted part",
-                "5": "Stop when no swaps are needed (array is sorted)"
+                "best_case": {
+                    "complexity": "O(n²)",
+                    "description": "always needs to find minimum in remaining array"
+                },
+                "average_case": {
+                    "complexity": "O(n²)",
+                    "description": "constant number of comparisons regardless of input"
+                },
+                "worst_case": {
+                    "complexity": "O(n²)",
+                    "description": "no difference based on input data arrangement"
+                },
+                "space_complexity": {
+                    "complexity": "O(1)",
+                    "description": "sorts in place with only a few variables"
+                }
+            },
+            "quick": {
+                "best_case": {
+                    "complexity": "O(n log n)",
+                    "description": "when pivot divides array into equal halves"
+                },
+                "average_case": {
+                    "complexity": "O(n log n)",
+                    "description": "with random or median-of-three pivot selection"
+                },
+                "worst_case": {
+                    "complexity": "O(n²)",
+                    "description": "when pivot is always the smallest or largest element"
+                },
+                "space_complexity": {
+                    "complexity": "O(log n)",
+                    "description": "for recursive function calls on the stack"
+                }
+            },
+            "insertion": {
+                "best_case": {
+                    "complexity": "O(n)",
+                    "description": "when the array is already sorted"
+                },
+                "average_case": {
+                    "complexity": "O(n²)",
+                    "description": "when elements are in random order"
+                },
+                "worst_case": {
+                    "complexity": "O(n²)",
+                    "description": "when the array is sorted in reverse order"
+                },
+                "space_complexity": {
+                    "complexity": "O(1)",
+                    "description": "sorts in place with only a constant amount of extra space"
+                }
+            },
+            "heap": {
+                "best_case": {
+                    "complexity": "O(n log n)",
+                    "description": "building heap takes O(n), extracting all elements takes O(n log n)"
+                },
+                "average_case": {
+                    "complexity": "O(n log n)",
+                    "description": "consistent performance across different inputs"
+                },
+                "worst_case": {
+                    "complexity": "O(n log n)",
+                    "description": "guaranteed performance regardless of input arrangement"
+                },
+                "space_complexity": {
+                    "complexity": "O(1)",
+                    "description": "sorts in place using the input array as heap"
+                }
+            },
+            "counting": {
+                "best_case": {
+                    "complexity": "O(n + k)",
+                    "description": "where k is the range of input values"
+                },
+                "average_case": {
+                    "complexity": "O(n + k)",
+                    "description": "linear time complexity independent of input order"
+                },
+                "worst_case": {
+                    "complexity": "O(n + k)",
+                    "description": "still linear even with worst case input"
+                },
+                "space_complexity": {
+                    "complexity": "O(k)",
+                    "description": "requires additional array to count occurrences"
+                }
             }
         },
         "when_list":{

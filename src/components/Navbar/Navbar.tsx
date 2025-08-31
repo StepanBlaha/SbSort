@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom"
 import { useTheme } from "../../context/ThemeContext"
 import { useTranslation } from "react-i18next"
 import MenuBlock from "./Menu/Menu"
-
+import LanguageSwitch from "../LanguageSwitch/LanguageSwitch"
 
 const Navbar = () => {
     const { t } = useTranslation();
@@ -64,6 +64,7 @@ const Navbar = () => {
                             <a>{t("navbar.sections.about")}</a>
                         </div>
                     </div>
+                    <LanguageSwitch type="pc"/>
                     <div className={styles.Theme}>
                         <ThemeSwitch/>
                     </div>

@@ -175,10 +175,18 @@ const CountingSort = () => {
                                             <div className={styles.ExplanationItem}>
                                                 <div className={styles.ExplanationItemText}>
                                                     <ul>
-                                                        <li><b>Best Case:</b> O(n + k)</li>
-                                                        <li><b>Average Case:</b> O(n + k)</li>
-                                                        <li><b>Worst Case:</b> O(n + k)</li>
-                                                        <li><b>Space Complexity:</b> O(n + k)</li>
+                                                        <li>
+                                                            <b>{t('console.complexity_labels.best_case')}:</b> {t(`console.time_list.counting.best_case.complexity`)} &mdash; {t(`console.time_list.counting.best_case.description`)}
+                                                        </li>
+                                                        <li>
+                                                            <b>{t('console.complexity_labels.average_case')}:</b> {t(`console.time_list.counting.average_case.complexity`)} &mdash; {t(`console.time_list.counting.average_case.description`)}
+                                                        </li>
+                                                        <li>
+                                                            <b>{t('console.complexity_labels.worst_case')}:</b> {t(`console.time_list.counting.worst_case.complexity`)} &mdash; {t(`console.time_list.counting.worst_case.description`)}
+                                                        </li>
+                                                        <li>
+                                                            <b>{t('console.complexity_labels.space_complexity')}:</b> {t(`console.time_list.counting.space_complexity.complexity`)} &mdash; {t(`console.time_list.counting.space_complexity.description`)}
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <div

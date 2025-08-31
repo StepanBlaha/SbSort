@@ -46,7 +46,8 @@ const BubbleSort = () => {
     }, [numbers])
     
     const [ selectedExplanation, setSelectedExplanation ] = useState<"how"| "time" | "when">("how")
-
+    const labels = t('complexity_labels', { returnObjects: true });
+    const timeData = t(`time_list.bubble`, { returnObjects: true });
 
     return (
         <>
@@ -175,10 +176,18 @@ const BubbleSort = () => {
                                             <div className={styles.ExplanationItem}>
                                                 <div className={styles.ExplanationItemText}>
                                                     <ul>
-                                                        <li><b>Best Case:</b> O(n) &mdash; when the array is already sorted (with optimized version that stops if no swaps are made)</li>
-                                                        <li><b>Average Case:</b> O(n<sup>2</sup>) &mdash; typical performance when elements are in random order</li>
-                                                        <li><b>Worst Case:</b> O(n<sup>2</sup>) &mdash; when the array is sorted in reverse order</li>
-                                                        <li><b>Space Complexity:</b> O(1) &mdash; since it sorts in place</li>
+                                                        <li>
+                                                            <b>{t('console.complexity_labels.best_case')}:</b> {t(`console.time_list.bubble.best_case.complexity`)} &mdash; {t(`console.time_list.bubble.best_case.description`)}
+                                                        </li>
+                                                        <li>
+                                                            <b>{t('console.complexity_labels.average_case')}:</b> {t(`console.time_list.bubble.average_case.complexity`)} &mdash; {t(`console.time_list.bubble.average_case.description`)}
+                                                        </li>
+                                                        <li>
+                                                            <b>{t('console.complexity_labels.worst_case')}:</b> {t(`console.time_list.bubble.worst_case.complexity`)} &mdash; {t(`console.time_list.bubble.worst_case.description`)}
+                                                        </li>
+                                                        <li>
+                                                            <b>{t('console.complexity_labels.space_complexity')}:</b> {t(`console.time_list.bubble.space_complexity.complexity`)} &mdash; {t(`console.time_list.bubble.space_complexity.description`)}
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <div

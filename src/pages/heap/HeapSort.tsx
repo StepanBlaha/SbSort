@@ -177,10 +177,18 @@ const HeapSort = () => {
                                             <div className={styles.ExplanationItem}>
                                                 <div className={styles.ExplanationItemText}>
                                                     <ul>
-                                                        <li><b>Best Case:</b> O(n log n)</li>
-                                                        <li><b>Average Case:</b> O(n log n)</li>
-                                                        <li><b>Worst Case:</b> O(n log n)</li>
-                                                        <li><b>Space Complexity:</b> O(1)</li>
+                                                        <li>
+                                                            <b>{t('console.complexity_labels.best_case')}:</b> {t(`console.time_list.heap.best_case.complexity`)} &mdash; {t(`console.time_list.heap.best_case.description`)}
+                                                        </li>
+                                                        <li>
+                                                            <b>{t('console.complexity_labels.average_case')}:</b> {t(`console.time_list.heap.average_case.complexity`)} &mdash; {t(`console.time_list.heap.average_case.description`)}
+                                                        </li>
+                                                        <li>
+                                                            <b>{t('console.complexity_labels.worst_case')}:</b> {t(`console.time_list.heap.worst_case.complexity`)} &mdash; {t(`console.time_list.heap.worst_case.description`)}
+                                                        </li>
+                                                        <li>
+                                                            <b>{t('console.complexity_labels.space_complexity')}:</b> {t(`console.time_list.heap.space_complexity.complexity`)} &mdash; {t(`console.time_list.heap.space_complexity.description`)}
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <div

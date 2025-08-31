@@ -171,10 +171,18 @@ const SelectionSort = () => {
                                             <div className={styles.ExplanationItem}>
                                                 <div className={styles.ExplanationItemText}>
                                                     <ul>
-                                                        <li><b>Best Case:</b> O(n<sup>2</sup>)</li>
-                                                        <li><b>Average Case:</b> O(n<sup>2</sup>)</li>
-                                                        <li><b>Worst Case:</b> O(n<sup>2</sup>)</li>
-                                                        <li><b>Space Complexity:</b> O(1)</li>
+                                                        <li>
+                                                            <b>{t('console.complexity_labels.best_case')}:</b> {t(`console.time_list.selection.best_case.complexity`)} &mdash; {t(`console.time_list.selection.best_case.description`)}
+                                                        </li>
+                                                        <li>
+                                                            <b>{t('console.complexity_labels.average_case')}:</b> {t(`console.time_list.selection.average_case.complexity`)} &mdash; {t(`console.time_list.selection.average_case.description`)}
+                                                        </li>
+                                                        <li>
+                                                            <b>{t('console.complexity_labels.worst_case')}:</b> {t(`console.time_list.selection.worst_case.complexity`)} &mdash; {t(`console.time_list.selection.worst_case.description`)}
+                                                        </li>
+                                                        <li>
+                                                            <b>{t('console.complexity_labels.space_complexity')}:</b> {t(`console.time_list.selection.space_complexity.complexity`)} &mdash; {t(`console.time_list.selection.space_complexity.description`)}
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <div

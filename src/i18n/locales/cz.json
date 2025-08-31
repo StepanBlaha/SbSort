@@ -1,87 +1,305 @@
 {
+    "main":{
+        "title": "Vizualizátor Řazení",
+        "subtitle": "Učte se algoritmy řazení prostřednictvím krok za krokem vizuálních průvodců",
+        "sorts_title": "Algoritmy Řazení",
+        "sorts":{
+            "bubble": "Bubble Sort",
+            "merge": "Merge Sort",
+            "selection": "Selection Sort",
+            "quick": "Quick Sort",
+            "insertion": "Insertion Sort",
+            "heap": "Heap Sort",
+            "counting": "Counting Sort"
+        }
+    },"buttons":{
+        "play": "Start"
+    },
     "hero":{
-        "hello": "Ahoj, jsem Štěpán Bláha",
-        "role": "Software",
-        "role_texts": ["Vývojář", "Nadšenec", "Designér"],
-        "description": "Miluji převádění nápadů do kódu. Jsem vášnivý pro tvorbu chytrého, uživatelsky přívětivého, vysoce výkonného a škálovatelného softwaru.",
-        "work_status": "K dispozici pro práci"
-    },
-    "stats":{
-        "experience": "Let zkušeností",
-        "projects": "Dokončených projektů",
-        "monsters": "Vypitých monsterů"
-    },
-    "about":{
-        "title": "O mně",
-        "label": "ŠTĚPÁN BLÁHA",
-        "content":{
-            "part1": "Jsem <1>Štěpán Bláha</1>, webový vývojář a student informatiky s více než 2 lety zkušeností. Specializuji se na tvorbu čistých, responzivních a dynamických webových stránek pomocí HTML, CSS, JavaScript, TypeScript, React, NextJs, MySQL a MongoDB.",
-            "part2": "Momentálně studuji na <1>SPS Prosek</1> ve třetím ročníku.",
-            "part3": "Neustále se učím a zdokonaluji své dovednosti, protože věřím, že <1>bez ohledu na to, jak dobrý jsi, vždy se můžeš zlepšit</1>. Momentálně se více zabývám NextJs a backendem. Jsem vždy otevřený novým výzvám a příležitostem, díky kterým můžu tvořit skvělé věci a růst v tomto procesu.",
-            "part4": "Když nekóduji nebo nejsem ve škole, obvykle mě najdete v posilovně při cvičení, na hřišti při hraní basketbalu s přáteli nebo při sledování nejnovější epizody <1>Oɴᴇ PɪᴇᴄE</1>"
+        
+        "bubble": {
+            "title": "Bubble Sort",
+            "subtitle": "Krok za krokem vizuální vysvětlení Bubble Sortu."
+        },
+        "merge": {
+            "title": "Merge Sort",
+            "subtitle": "Krok za krokem vizuální vysvětlení Merge Sortu."
+        },
+        "Heap": {
+            "title": "Heap Sort",
+            "subtitle": "Krok za krokem vizuální vysvětlení Heap Sortu."
+        },
+        "quick": {
+            "title": "Quick Sort",
+            "subtitle": "Krok za krokem vizuální vysvětlení Quick Sortu."
+        },
+        "selection": {
+            "title": "Selection Sort",
+            "subtitle": "Krok za krokem vizuální vysvětlení Selection Sortu."
+        },
+        "insertion": {
+            "title": "Insertion Sort",
+            "subtitle": "Krok za krokem vizuální vysvětlení Insertion Sortu."
+        },
+        "counting": {
+            "title": "Counting Sort",
+            "subtitle": "Krok za krokem vizuální vysvětlení Counting Sortu."
         }
     },
-    "marquee": "✦ INTERAKTIVNÍ ✦ BEZPEČNÉ ✦ SPOLEHLIVÉ ✦ POUTAVÉ ✦ PŘÍSTUPNÉ ✦ RESPONZIVNÍ ✦ DYNAMICKÉ ✦ ŠKÁLOVATELNÉ ✦ OPTIMALIZOVANÉ PRO VYHLEDÁVAČE",
-    "github":{
-        "title": "GitHub příspěvky",
-        "label": "PRACOVNÍ MORÁLKA",
-        "calendar": {
-            "months": [
-                "Led", "Úno", "Bře", "Dub", "Kvě", "Čvn",
-                "Čvc", "Srp", "Zář", "Říj", "Lis", "Pro"
-            ],
-            "weekdays": [
-                "Pondělí", "Úterý", "Středa", "Čtvrtek", "Pátek", "Sobota", "Neděle"
-            ],
-            "totalCount": "{{count}} commitů za poslední rok",
-            "legend": {
-                "less": "Méně",
-                "more": "Více"
+    "sort_list": {
+        "title": "Algoritmy Řazení",
+        "algorithms": {
+            "bubble": {
+                "title": "Bubble Sort",
+                "description": "Opakovaně vyměňuje sousední prvky, dokud není seřazené"
+            },
+            "merge": {
+                "title": "Merge Sort", 
+                "description": "Rozdělí pole, seřadí poloviny a sloučí je"
+            },
+            "selection": {
+                "title": "Selection Sort",
+                "description": "Opakovaně vybírá nejmenší prvek a umisťuje ho"
+            },
+            "quick": {
+                "title": "Quick Sort",
+                "description": "Rozdělí pole kolem pivotu a rekurzivně řadí"
+            },
+            "insertion": {
+                "title": "Insertion Sort",
+                "description": "Vytváří seřazený seznam vkládáním prvků jeden po druhém"
+            },
+            "heap": {
+                "title": "Heap Sort",
+                "description": "Používá strukturu haldy k opakované extrakci max/min"
+            },
+            "counting": {
+                "title": "Counting Sort",
+                "description": "Počítá frekvence prvků pro jejich umístění v pořadí"
             }
         }
     },
-    "experience":{
-        "title": "Profesní zkušenosti",
-        "label": "PRACOVNÍ HISTORIE"
-    },
-    "stack":{
-        "title": "Technické dovednosti",
-        "label": "TECHNOLOGIE"
-    },
-    "projects":{
-        "title": "Projekty",
-        "label": "MÁ PRÁCE",
-        "description": "Zde jsou některé z projektů, na kterých jsem nedávno pracoval. Každý mi dal příležitost prozkoumat různé nástroje, frameworky a pracovní postupy v reálných scénářích. Vytvořil jsem vše od interaktivních frontendových rozhraní po backendová API, se zaměřením na čistý kód a dobré UX. Tyto projekty odrážejí jak to, co jsem se dosud naučil, tak to, co stále zdokonaluji.<2></2> Pro více navštivte můj ",
-        "github": "GitHub profil",
-        "demo": "Živá ukázka",
-        "more": "Pro více informací navštivte "
-    },
-    "contacts":{
-        "title": "Kontakty",
-        "label": "SPOJTE SE SE MNOU",
-        "in_touch": "Ozvěte se",
-        "description": "Vždy toužím prozkoumat nové příležitosti a ujmout se <1>vzrušujících projektů</1>. Pokud máte projekt na mysli, nebo se jen chcete pozdravit, neváhejte mi poslat <1>zprávu!</1>",
-        "social_media": "Sociální sítě",
-        "form":{
-            "errors":{
-                "name": "Jméno je povinné",
-                "email": "Email je povinný",
-                "subject": "Předmět je povinný",
-                "message": "Zpráva je povinná"
-            }, 
-            "labels":{
-                "name": "Vaše jméno",
-                "email": "Váš email",
-                "subject": "Předmět",
-                "message": "Zpráva"
+    "console": {
+        "input": "Vstupní pole",
+        "reset": "Resetovat",
+        "speed": "Rychlost",
+        "visualization": "Vizualizace",
+        "how": "Jak to funguje",
+        "time": "Časová složitost",
+        "when": "Kdy použít",
+            "complexity_labels": {
+            "best_case": "Nejlepší Případ",
+            "average_case": "Průměrný Případ", 
+            "worst_case": "Nejhorší Případ",
+            "space_complexity": "Prostorová Složitost"
+        },
+        "how_list":{
+            "bubble": {
+                "1": "Porovnejte každý pár sousedních prvků",
+                "2": "Vyměňte je, pokud jsou v nesprávném pořadí",
+                "3": "Po každém průchodu se největší prvek přesune na konec",
+                "4": "Opakujte proces pro zbývající neseřazenou část",
+                "5": "Zastavte, když nejsou potřeba žádné výměny (pole je seřazené)"
             },
-            "placeholders":{
-                "name": "Jan Novák",
-                "email": "jan@example.com",
-                "subject": "Dotaz na projekt",
-                "message": "Dobrý den, rád bych projednal projekt..."
+            "counting": {
+                "1": "Najděte rozsah vstupních hodnot",
+                "2": "Spočítejte výskyty každé hodnoty",
+                "3": "Vypočítejte kumulativní počty pro určení pozic",
+                "4": "Umístěte každý prvek na jeho seřazenou pozici ve výstupním poli"            
             },
-            "button": "Odeslat zprávu"
+            "heap": {
+                "1": "Vytvořte maximální haldu z pole",
+                "2": "Vyměňte kořen (maximum) s posledním prvkem",
+                "3": "Zmenšete velikost haldy a obnovte maximální haldu",
+                "4": "Opakujte, dokud nejsou všechny prvky seřazené"            
+            },
+            "insertion": {
+                "1": "Vezměte prvky jeden po druhém z neseřazené části",
+                "2": "Vložte každý na správnou pozici v seřazené části",
+                "3": "Posuňte větší prvky o jeden krok doprava, když je to potřeba"            
+            },
+            "merge": {
+                "1": "Rozdělte pole na dvě poloviny",
+                "2": "Rekurzivně seřaďte každou polovinu",
+                "3": "Sloučte dvě seřazené poloviny do jednoho seřazeného pole"
+            },
+            "quick": {
+                "1": "Vyberte pivot prvek",
+                "2": "Rozdělte pole tak, aby menší prvky šly vlevo, větší vpravo",
+                "3": "Rekurzivně aplikujte proces na levé a pravé části"
+            },
+            "selection": {
+                "1": "Najděte minimální prvek v neseřazené části",
+                "2": "Vyměňte ho s prvním neseřazeným prvkem",
+                "3": "Posuňte hranici seřazené/neseřazené části o jeden krok vpřed",
+                "4": "Opakujte, dokud nejsou všechny prvky seřazené"            
+            }
+        },
+        "time_list": {
+            "bubble": {
+                "best_case": {
+                    "complexity": "O(n)",
+                    "description": "když je pole již seřazené (s optimalizovanou verzí, která se zastaví, pokud nejsou provedeny žádné výměny)"
+                },
+                "average_case": {
+                    "complexity": "O(n²)",
+                    "description": "typický výkon, když jsou prvky v náhodném pořadí"
+                },
+                "worst_case": {
+                    "complexity": "O(n²)",
+                    "description": "když je pole seřazené v opačném pořadí"
+                },
+                "space_complexity": {
+                    "complexity": "O(1)",
+                    "description": "protože řadí na místě"
+                }
+            },
+            "merge": {
+                "best_case": {
+                    "complexity": "O(n log n)",
+                    "description": "konzistentní výkon bez ohledu na pořadí vstupu"
+                },
+                "average_case": {
+                    "complexity": "O(n log n)",
+                    "description": "spolehlivý přístup rozděl a panuj"
+                },
+                "worst_case": {
+                    "complexity": "O(n log n)",
+                    "description": "garantovaný výkon i s nejhorším vstupem"
+                },
+                "space_complexity": {
+                    "complexity": "O(n)",
+                    "description": "vyžaduje dodatečnou paměť pro dočasná pole během slučování"
+                }
+            },
+            "selection": {
+                "best_case": {
+                    "complexity": "O(n²)",
+                    "description": "vždy musí najít minimum ve zbývajícím poli"
+                },
+                "average_case": {
+                    "complexity": "O(n²)",
+                    "description": "konstantní počet porovnání bez ohledu na vstup"
+                },
+                "worst_case": {
+                    "complexity": "O(n²)",
+                    "description": "žádný rozdíl na základě uspořádání vstupních dat"
+                },
+                "space_complexity": {
+                    "complexity": "O(1)",
+                    "description": "řadí na místě pouze s několika proměnnými"
+                }
+            },
+            "quick": {
+                "best_case": {
+                    "complexity": "O(n log n)",
+                    "description": "když pivot rozdělí pole na stejné poloviny"
+                },
+                "average_case": {
+                    "complexity": "O(n log n)",
+                    "description": "s náhodným nebo median-of-three výběrem pivotu"
+                },
+                "worst_case": {
+                    "complexity": "O(n²)",
+                    "description": "když je pivot vždy nejmenší nebo největší prvek"
+                },
+                "space_complexity": {
+                    "complexity": "O(log n)",
+                    "description": "pro rekurzivní volání funkcí na zásobníku"
+                }
+            },
+            "insertion": {
+                "best_case": {
+                    "complexity": "O(n)",
+                    "description": "když je pole již seřazené"
+                },
+                "average_case": {
+                    "complexity": "O(n²)",
+                    "description": "když jsou prvky v náhodném pořadí"
+                },
+                "worst_case": {
+                    "complexity": "O(n²)",
+                    "description": "když je pole seřazené v opačném pořadí"
+                },
+                "space_complexity": {
+                    "complexity": "O(1)",
+                    "description": "řadí na místě pouze s konstantním množstvím extra prostoru"
+                }
+            },
+            "heap": {
+                "best_case": {
+                    "complexity": "O(n log n)",
+                    "description": "vytvoření haldy trvá O(n), extrakce všech prvků trvá O(n log n)"
+                },
+                "average_case": {
+                    "complexity": "O(n log n)",
+                    "description": "konzistentní výkon napříč různými vstupy"
+                },
+                "worst_case": {
+                    "complexity": "O(n log n)",
+                    "description": "garantovaný výkon bez ohledu na uspořádání vstupu"
+                },
+                "space_complexity": {
+                    "complexity": "O(1)",
+                    "description": "řadí na místě pomocí vstupního pole jako haldy"
+                }
+            },
+            "counting": {
+                "best_case": {
+                    "complexity": "O(n + k)",
+                    "description": "kde k je rozsah vstupních hodnot"
+                },
+                "average_case": {
+                    "complexity": "O(n + k)",
+                    "description": "lineární časová složitost nezávislá na pořadí vstupu"
+                },
+                "worst_case": {
+                    "complexity": "O(n + k)",
+                    "description": "stále lineární i s nejhorším vstupem"
+                },
+                "space_complexity": {
+                    "complexity": "O(k)",
+                    "description": "vyžaduje dodatečné pole pro počítání výskytů"
+                }
+            }
+        },
+        "when_list":{
+            "bubble": {
+                "1": "Při výuce nebo učení základů řazení (snadné na pochopení)",
+                "2": "Pro velmi malá pole, kde je jednoduchost důležitější než efektivita",
+                "3": "Když je pole téměř seřazené a je potřeba jen několik výměn",
+                "4": "Užitečné pro demonstraci konceptů algoritmů (výměny, porovnání, průchody)"
+            },
+            "counting": {
+                "1": "Při řazení celých čísel nebo diskrétních hodnot",
+                "2": "Když rozsah čísel (k) není mnohem větší než počet prvků (n)",
+                "3": "Pro stabilní a lineární řazení dat s malým rozsahem"
+            },
+            "heap": {
+                "1": "Když je vyžadováno O(n log n) v nejhorším případě",
+                "2": "Když je potřeba řazení na místě",
+                "3": "Dobré pro systémy s omezenou pamětí"
+            },
+            "insertion": {
+                "1": "Pro malé datové sady",
+                "2": "Když jsou data téměř seřazená",
+                "3": "Jako stavební blok pro pokročilejší algoritmy"
+            },
+            "merge": {
+                "1": "Pro velké datové sady",
+                "2": "Když je důležitá stabilita (zachování pořadí stejných prvků)",
+                "3": "Když je vyžadováno garantované O(n log n)"
+            },
+            "quick": {
+                "1": "Pro velké datové sady",
+                "2": "Když záleží na průměrném výkonu",
+                "3": "Když je preferováno řazení na místě"
+            },
+            "selection": {
+                "1": "Když jsou zápisy do paměti nákladné (málo výměn)",
+                "2": "Pro velmi malé datové sady",
+                "3": "Pro vzdělávací účely"
+            }
         }
     },
     "alert":{
@@ -105,16 +323,12 @@
     },
     "navbar":{
         "sections":{
-            "home": "DOMŮ",
-            "about": "O MNĚ",
-            "experience": "ZKUŠENOSTI",
+            "home": "Domů",
+            "about": "O nás",
+            "list": "Typy Řazení",
             "projects": "PROJEKTY",
             "contacts": "KONTAKTY"
         },
-        "pages":{
-            "home": "DOMŮ",
-            "projects": "PROJEKTY"
-        }
-    },
-    "likes": "Líbí se"
+        "language": "Změnit Jazyk"
+    }
 }
