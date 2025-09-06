@@ -11,6 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/*
 .dark{
     --contrast-color: #dedede !important;
     --contrast-secondary-color: #b5b5b5 !important;
@@ -27,11 +28,40 @@ code {
 
 
   --accent-color: #43b0f1 !important;
-  --accent-secondary-color: #3194ce !important;  /* Still vibrant but more balanced */
+  --accent-secondary-color: #3194ce !important;  
   --accent-tertiary-color: #2b8bc2 !important; 
   --accent-dark-color: #007527 !important;
   --shadow: 0 10px 30px rgba(12, 31, 66, .08);
       --ring: rgba(58, 168, 255, .35);
+}
+      */
+
+.dark {
+  /* Text / Contrast */
+  --contrast-color: #e5ecff !important;
+  --contrast-secondary-color: #b9c6e4 !important;
+  --contrast-tertiary-color: #94a3b8 !important;
+
+  /* Backgrounds */
+  --background-color: #0f1423 !important;            /* Deep navy background */
+  --background-secondary-color: #121a2c !important;  /* Slightly lighter panels */
+  --background-tertiary-color: #1a2236 !important;   /* Card backgrounds */
+  --sort-hover-color: #1d273d !important;            /* Hover state */
+  --background-blur-color: #0f1423cc !important;     /* Blurred glass panels */
+  --background-dark-color: #2a2f40 !important;       /* Border/contrast overlay */
+
+  /* Accents */
+  --accent-color: #4db8ff !important;      /* Bright cyan blue */
+  --accent-secondary-color: #3aa8ff !important;
+  --accent-tertiary-color: #6ee7d8 !important;  /* Teal variant */
+  --accent-dark-color: #007527 !important;      /* For success/green elements */
+
+  /* States */
+  --error-color: #ff4d4d !important;
+
+  /* Effects */
+  --shadow: 0 10px 30px rgba(0, 0, 0, .45);
+  --ring: rgba(77, 184, 255, .35);
 }
 /*
 .light{
