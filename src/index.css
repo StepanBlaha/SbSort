@@ -21,6 +21,8 @@ code {
     --background-tertiary-color: #4d4d4d !important;
     --sort-hover-color: #3b3b3b !important; 
     --background-blur-color: #212121b3 !important;
+      --background-dark-color: rgb(201, 201, 201)important;
+
     --error-color: #ff1616 !important;
 
 
@@ -28,7 +30,8 @@ code {
   --accent-secondary-color: #3194ce !important;  /* Still vibrant but more balanced */
   --accent-tertiary-color: #2b8bc2 !important; 
   --accent-dark-color: #007527 !important;
-
+  --shadow: 0 10px 30px rgba(12, 31, 66, .08);
+      --ring: rgba(58, 168, 255, .35);
 }
 /*
 .light{
@@ -57,5 +60,8 @@ code {
   --background-tertiary-color: #f4f6f9 !important;
   --sort-hover-color: #eeeeee !important; 
   --background-blur-color: #dededeb3 !important;
+  --background-dark-color: rgb(153, 153, 153)important;
   --error-color: #ff1616 !important;
+  --shadow: 0 10px 30px rgba(12, 31, 66, .08);
+      --ring: rgba(58, 168, 255, .35);
 }

@@ -22,8 +22,8 @@ const LanguageSwitch = ({ type }: LangSwitchProps) => {
         {type === "mobile" ? (
             <>
                 <div className={styles.Switch}>
-                    <button className={`${styles.SubmenuPickButton} ${selectedLanguage === "cz" ? styles.SelectedSubmenuItem: ""}`} onClick={()=>setSelectedLanguage("cz")}>CZ</button>
-                    <button className={`${styles.SubmenuPickButton} ${selectedLanguage === "en" ? styles.SelectedSubmenuItem: ""}`} onClick={()=>setSelectedLanguage("en")}>EN</button>
+                    <span className={`${styles.SubmenuPickButton} ${selectedLanguage === "cz" ? styles.SelectedSubmenuItem: ""}`} onClick={()=>setSelectedLanguage("cz")}>CZ</span>
+                    <span className={`${styles.SubmenuPickButton} ${selectedLanguage === "en" ? styles.SelectedSubmenuItem: ""}`} onClick={()=>setSelectedLanguage("en")}>EN</span>
                 </div>
             </>
         ) : (

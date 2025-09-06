@@ -12,6 +12,309 @@
     box-sizing: border-box;
 }
 
+*{
+    box-sizing: border-box;
+}
+
+
+.Content{
+    height: fit-content;
+    min-height: 200px;
+    box-sizing: border-box;
+    width: 84%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*gap: clamp(24px, 7vw, 128px);*/
+}
+.Hero{
+
+
+    padding: 72px 0 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.Bars{
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: .25;
+}
+.BarsTrack{
+        position: absolute;
+    left: -10%;
+    right: -10%;
+    top: -40px;
+    height: 220px;
+    display: flex;
+    gap: 10px;
+    transform: skewY(-6deg);
+    animation: float 14s ease-in-out infinite alternate;
+}
+.HeroContainer{
+        width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.HeroTitle{
+
+
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+        font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+
+
+    color: var(--contrast-color);
+    font-size: clamp(38px, 4.5vw, 56px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px;
+}
+.HeroSubtitle{
+    color: var(--contrast-secondary-color);
+    font-size: clamp(16px, 2vw, 20px);
+    color: var(--contrast-tertiary-color);
+    margin: 0 auto;
+    max-width: 740px;
+}
+.HeroActions{
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+.HeroAction{
+    display: inline-flex
+;
+    gap: 10px;
+    align-items: center;
+    padding: 12px 20px;
+    font-weight: 700;
+    border-radius: 12px;
+    border: 1px solid
+ color-mix(in srgb, var(--accent-color) 30%, transparent);
+    background: linear-gradient(180deg,
+ color-mix(in srgb, var(--accent-color) 18%, var(--background-tertiary-color)), var(--background-tertiary-color));
+    box-shadow: 0 8px 16px var(--ring);
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--contrast-secondary-color);
+    cursor: pointer;
+    transition: 0.3s ease-out;
+}
+.HeroAction:hover{
+    transform: translateY(-2px);
+    background: linear-gradient(180deg,
+ color-mix(in srgb, var(--accent-color) 38%, var(--background-tertiary-color)), var(--background-tertiary-color));
+}
+
+
+
+
+
+
+
+.Marquee{
+  border-top: 1px solid color-mix(in srgb, var(--contrast-color) 10%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--contrast-color) 10%, transparent);
+  background: color-mix(in srgb, var(--background-tertiary-color) 70%, transparent);
+  overflow: hidden;              /* important */
+}
+
+.MarqueeTrack{
+  display: flex;
+  gap: 14px;
+  padding: 12px 0;
+  width: max-content;
+  will-change: transform;
+  animation: marquee 50s linear infinite; /* use a defined keyframes name */
+}
+
+/* the actual animation */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* since you duplicate the items */
+}
+
+/* (optional) respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .MarqueeTrack { animation: none; transform: none; }
+}
+
+
+.MarqueeTag{
+    display: inline-flex
+;
+    gap: 8px;
+    align-items: center;
+    padding: 8px 12px;
+    color: var(--contrast-secondary-color);
+    border-radius: 999px;
+    background: var(--background-color);
+    border: 1px solid color-mix(in srgb, var(--contrast-color) 10%, transparent);
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+
+
+
+.SortSection{
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.SortSectionTitle{
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    color: var(--contrast-color);
+
+
+    font-size: clamp(24px, 3vw, 32px);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.Sorts{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 18px;
+}
+
+.Sort{
+    border: 1px solid color-mix(in srgb, var(--contrast-color) 10%, transparent);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: var(--shadow);
+    transition: transform .2s;
+    cursor: pointer;
+    grid-column: span 4;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 28px 20px;
+    background: linear-gradient(135deg, var(--background-tertiary-color),
+ color-mix(in srgb, var(--accent-color) 12%, var(--background-tertiary-color)));
+}
+@media (max-width: 980px) {
+    .Sort {
+        grid-column: span 6;
+    }
+}
+@media (max-width: 680px) {
+    .Sort {
+        grid-column: span 12;
+    }
+}
+
+.Sort:hover{
+    transform: translateY(-3px);
+}
+.SortImage{
+    font-size: 42px;
+}
+.SortTitle{
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    color: var(--contrast-color);
+
+    margin: 10px 0 6px;
+    font-size: 18px;
+}
+.SortText{
+    max-width: 220px;
+    margin: 0;
+    color: var(--contrast-tertiary-color);
+    font-size: 14px;
+}
+.SortTime{
+        margin-top: auto;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Footer{
+    width: 100%;
+    height: fit-content;
+    min-height: 200px;
+    box-sizing: border-box;
+    display: flex;
+    gap: 48px;
+}
+
+
+
+
+/*
+
+.Page{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(12px, 3.3vw, 64px);
+    background-color: #F6F5F1;
+    background-color: var(--background-color);
+    align-items: center;
+    overflow-y: visible;
+    overflow-x: clip;
+    box-sizing: border-box;
+}
+
 
 
 
@@ -38,6 +341,12 @@
     background-repeat: no-repeat;
     background-position: bottom right;
     background-size: contain;
+
+
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 .HeroTitle{
     font-size: 60px;
@@ -110,9 +419,7 @@
 }
 .Sort:hover{
     background-color: var(--sort-hover-color);
-    /*
-    box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.15);
-    */
+
 }
 .SortImage{
     width: 100%;
@@ -168,3 +475,6 @@
     display: flex;
     gap: 48px;
 }
+
+
+*/
