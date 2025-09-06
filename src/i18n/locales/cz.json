@@ -11,6 +11,15 @@
             "insertion": "Insertion Sort",
             "heap": "Heap Sort",
             "counting": "Counting Sort"
+        },
+        "sort_desc": {
+            "bubble": "Sledujte, jak si dvojice sloupců vyměňují místa, dokud vše nevyplave na své místo.",
+            "insertion": "Vkládejte každý prvek na jeho místo, jako byste skládali puzzle.",
+            "selection": "Vyberte nejmenší, umístěte ho na správné místo a rituál opakujte.",
+            "merge": "Rozdělte pole, ovládněte menší části a pak je bezchybně spojte.",
+            "quick": "Zvolte pivot, rozdělte pole a seřaďte obě strany rychle.",
+            "heap": "Použijte binární haldu k opakovanému výběru dalšího prvku ve správném pořadí.",
+            "counting": "Spočítejte výskyty každé hodnoty a umístěte je podle kumulativních součtů."
         }
     },"buttons":{
         "play": "Start"

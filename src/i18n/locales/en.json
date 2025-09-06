@@ -11,6 +11,15 @@
             "insertion": "Insertion Sort",
             "heap": "Heap Sort",
             "counting": "Counting Sort"
+        },
+        "sort_desc":{
+            "bubble": "Watch pairs of bars swap until everything floats into place.",
+            "insertion": "Slide each element into its place as if arranging puzzle pieces.",
+            "selection": "Pull out the smallest, lock it in place, and repeat the ritual.",
+            "merge": "Divide the array, conquer smaller parts, then merge them flawlessly.",
+            "quick": "Choose a pivot, partition the array, and sort each side fast.",
+            "heap":"Use a binary heap to repeatedly select the next element in order.",
+            "counting": "Count occurrences of each value and place them by cumulative counts."
         }
     },
     "buttons":{
