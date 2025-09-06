@@ -6,6 +6,40 @@ const Footer = () => {
     return(
         <>
             <footer className={styles.Footer}>
+                <div className={styles.FooterContainer}>
+                    <div className={styles.Main}>
+                        <span className={styles.Logo}>
+                            <span className={styles.LogoColumn}></span>
+                            <span className={styles.LogoColumn}></span>
+                            <span className={styles.LogoColumn}></span>
+                        </span>
+                        <span>© 2025 SBSORT</span>
+                    </div>
+                    <div className={styles.Links}>
+                        <a href="https://github.com/StepanBlaha/SbSort" target="_blank">Github</a>
+                        <a href="https://github.com/StepanBlaha" target="_blank">Contact</a>
+                    </div>
+                </div>
+                
+            </footer>
+        </>
+    )
+}
+export default Footer
+
+
+
+/*
+
+
+import styles from "./Footer.module.css"
+
+import { useTranslation } from "react-i18next";
+const Footer = () => {
+    const {t} = useTranslation();
+    return(
+        <>
+            <footer className={styles.Footer}>
                 <div className={styles.TopFooterSection}>
                     <div className={styles.SectionDivider}></div>
                     <div className={styles.Stack}>
@@ -42,9 +76,7 @@ const Footer = () => {
                 <div className={styles.FooterSection}>
                     <p>Copyright © 2025 <a href="https://github.com/StepanBlaha" target="_blank">Stepan Blaha</a>. {t("footer.right")}</p>
                     {
-                        /*
-                        <p>{t("footer.message")}❤️</p>
-                        */
+ 
                     }
                 </div>
             </footer>
@@ -52,3 +84,5 @@ const Footer = () => {
     )
 }
 export default Footer
+
+*/
