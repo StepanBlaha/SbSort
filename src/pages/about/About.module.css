@@ -105,6 +105,10 @@
     line-height: 1.1;
     margin: 16px 0 10px;
     letter-spacing: -0.02em;
+    color: var(--contrast-color);
+}
+.AboutHeroTitle em{
+    color:   color-mix(in srgb, var(--accent-color) 80%, transparent);
 }
 .AboutHeroSubtitle{
     font-size: clamp(16px, 2.2vw, 20px);
@@ -164,6 +168,7 @@
     margin: 8px 0 6px;
     font-size: 18px;
     letter-spacing: -0.01em;   
+    color: var(--contrast-color);
 }
 .AboutFeatureContent{
     margin: 0;
@@ -193,6 +198,7 @@
     margin-inline-end: 0px;
     font-weight: bold;
     unicode-bidi: isolate;
+    color: var(--contrast-color);
 }
 .AboutProcessContent{
 
@@ -215,6 +221,7 @@
     gap: 14px;
     align-items: start;
     padding: 16px;
+    color: var(--contrast-color);
 }
 .ProcessStepIcon{
     width: 44px;
@@ -226,6 +233,21 @@
     border: 2px solid var(--accent-color);
     box-shadow: var(--shadow);
     font-weight: 800;
+
+
+
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: grid
+;
+    place-items: center;
+    background: var(--background-color);
+    border: 2px solid var(--accent-color);
+    /* box-shadow: var(--shadow); */
+    font-weight: 800;
+    background:  color-mix(in srgb, var(--accent-color) 15%, var(--background-tertiary-color));
+    border: 1px solid color-mix(in srgb, var(--accent-color) 35%, transparent);
 }
 .ProcessStepTitle{
     display: block;
@@ -237,6 +259,7 @@
     unicode-bidi: isolate;
     margin: 2px 0 6px;
     letter-spacing: -.01em;
+    color: var(--contrast-color);
 }
 .ProcessStepText{
     margin: 0;
@@ -281,6 +304,7 @@
     margin-inline-end: 0px;
     font-weight: bold;
     unicode-bidi: isolate;
+    color: var(--contrast-color);
 }
 .AboutWhyContent{
     display: grid;
@@ -303,6 +327,7 @@
     font-size: 30px;
     display: block;
     letter-spacing: -.02em;
+    color: var(--contrast-color);
 }
 .AboutWhyCard span{
     color: var(--contrast-tertiary-color);
@@ -341,6 +366,7 @@
     margin-inline-end: 0px;
     font-weight: bold;
     unicode-bidi: isolate;
+    color: var(--contrast-color);
 }
 .AboutPeopleContent{
     display: grid;
@@ -383,6 +409,7 @@
     font-weight: bold;
     unicode-bidi: isolate;
     margin: 0;
+    color: var(--contrast-color);
 }
 .PeopleCardText{
     margin: 2px 0 0;
@@ -440,6 +467,7 @@
     margin-inline-end: 0px;
     font-weight: bold;
     unicode-bidi: isolate;
+    color: var(--contrast-color);
 }
 .AboutQuestionContent{
     display: grid;
@@ -467,6 +495,7 @@
     unicode-bidi: isolate;
     margin: 0 0 6px;
     line-height: 1.6;
+    color: var(--contrast-color);
 }
 .QuestionCardText{
     line-height: 1.6;

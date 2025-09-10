@@ -18,6 +18,7 @@ import counting from "../../assets/bgs/counting.png"
 
 import { useNavigate } from "react-router-dom"
 import { t } from "i18next"
+import ShinyText from "../../components/ShinyText/ShinyText"
 
 
 const About = () => {
@@ -36,7 +37,7 @@ const About = () => {
                     <div className={styles.About}>
                         <div className={styles.AboutHero}>
                             <span className={styles.AboutHeroBadge}>About SBSORT -- Sorting Visualizer</span>
-                            <h1 className={styles.AboutHeroTitle}>We make sorting algorithms <em>click.</em></h1>
+                            <h1 className={styles.AboutHeroTitle}>We make sorting algorithms <ShinyText speed={8}><em>click.</em></ShinyText></h1>
                             <p className={styles.AboutHeroSubtitle}>
                                 SBSORT turns textbook algorithms into visual, step‑by‑step animations. 
                                 Explore different strategies, compare their trade‑offs, and build intuition by watching them sort the very same array side‑by‑side.

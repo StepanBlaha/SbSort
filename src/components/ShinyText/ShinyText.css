@@ -1,0 +1,25 @@
+.shiny-text {
+  color: var(--accent-color);
+  background: linear-gradient(
+    120deg,
+    var(--accent-color) 40%, 
+    #b5e4ff 45%, 
+    var(--accent-color) 50%       
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 1s linear infinite;
+}
+@keyframes shine {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+.shiny-text.disabled {
+  animation: none;
+}
