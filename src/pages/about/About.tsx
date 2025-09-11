@@ -17,11 +17,12 @@ import quick from "../../assets/bgs/quick.png"
 import counting from "../../assets/bgs/counting.png"
 
 import { useNavigate } from "react-router-dom"
-import { t } from "i18next"
+import { useTranslation } from "react-i18next"
 import ShinyText from "../../components/ShinyText/ShinyText"
 
 
 const About = () => {
+    const {t} = useTranslation();
 
 
     const navigate = useNavigate();
@@ -36,67 +37,66 @@ const About = () => {
 
                     <div className={styles.About}>
                         <div className={styles.AboutHero}>
-                            <span className={styles.AboutHeroBadge}>About SBSORT -- Sorting Visualizer</span>
-                            <h1 className={styles.AboutHeroTitle}>We make sorting algorithms <ShinyText speed={8}><em>click.</em></ShinyText></h1>
+                            <span className={styles.AboutHeroBadge}>{t("about.badge")}</span>
+                            <h1 className={styles.AboutHeroTitle}>{t("about.title")}<ShinyText speed={8}><em>{t("about.title_highlight")}</em></ShinyText></h1>
                             <p className={styles.AboutHeroSubtitle}>
-                                SBSORT turns textbook algorithms into visual, step‑by‑step animations. 
-                                Explore different strategies, compare their trade‑offs, and build intuition by watching them sort the very same array side‑by‑side.
+                                {t("about.subtitle")}
                             </p>
                         </div>
 
                         <div className={styles.AboutFeatures}>
                             <div className={styles.AboutFeature}>
                                 <div className={styles.AboutFeatureIcon}>🔍</div>
-                                <p className={styles.AboutFeatureTitle}>Concepts you can see</p>
-                                <p className={styles.AboutFeatureContent}>Animations reveal comparisons, swaps, and partitions so the logic behind each algorithm becomes obvious.</p>
+                                <p className={styles.AboutFeatureTitle}>{t("about.concepts.title")}e</p>
+                                <p className={styles.AboutFeatureContent}>{t("about.concepts.subtitle")}</p>
                             </div>
 
                             <div className={styles.AboutFeature}>
                                 <div className={styles.AboutFeatureIcon}>⏱️</div>
-                                <p className={styles.AboutFeatureTitle}>Time & space intuition</p>
-                                <p className={styles.AboutFeatureContent}>Built‑in notes and complexity tables connect what you see to Big‑O analysis and real‑world constraints.</p>
+                                <p className={styles.AboutFeatureTitle}>{t("about.time.title")}</p>
+                                <p className={styles.AboutFeatureContent}>{t("about.time.subtitle")}</p>
                             </div>
 
                             <div className={styles.AboutFeature}>
                                 <div className={styles.AboutFeatureIcon}>🎛️</div>
-                                <p className={styles.AboutFeatureTitle}>Interactive controls</p>
-                                <p className={styles.AboutFeatureContent}>Change the input array, step through frames, or adjust speed to investigate best, average, and worst cases.</p>
+                                <p className={styles.AboutFeatureTitle}>{t("about.controls.title")}</p>
+                                <p className={styles.AboutFeatureContent}>{t("about.controls.subtitle")}</p>
                             </div>
 
                         </div>
 
                         <div className={styles.AboutProcess}>
-                            <p className={styles.AboutProcessTitle}>How SBSORT teaches</p>
+                            <p className={styles.AboutProcessTitle}>{t("about.how.title")}</p>
                             <div className={styles.AboutProcessContent}>
                                 <div className={styles.ProcessStep}>
                                     <div className={styles.ProcessStepIcon}>1</div>
                                     <div className={styles.ProcessStepContent}>
-                                        <p className={styles.ProcessStepTitle}>Pick an algorithm</p>
-                                        <p className={styles.ProcessStepText}>Select Bubble, Insertion, Selection, Merge, Quick, Heap and more — each with a concise explanation and typical use‑cases.</p>
+                                        <p className={styles.ProcessStepTitle}>{t("about.how.1.title")}</p>
+                                        <p className={styles.ProcessStepText}>{t("about.how.1.subtitle")}</p>
                                     </div>
                                 </div>
 
                                 <div className={styles.ProcessStep}>
                                     <div className={styles.ProcessStepIcon}>2</div>
                                     <div className={styles.ProcessStepContent}>
-                                        <p className={styles.ProcessStepTitle}>Set your experimnt</p>
-                                        <p className={styles.ProcessStepText}>Enter a custom array or randomize one. Choose visualization speed and whether to highlight swaps, pivots, or partitions.</p>
+                                        <p className={styles.ProcessStepTitle}>{t("about.how.2.title")}</p>
+                                        <p className={styles.ProcessStepText}>{t("about.how.2.subtitle")}</p>
                                     </div>
                                 </div>
 
                                 <div className={styles.ProcessStep}>
                                     <div className={styles.ProcessStepIcon}>3</div>
                                     <div className={styles.ProcessStepContent}>
-                                        <p className={styles.ProcessStepTitle}>Watch, pause, inspect</p>
-                                        <p className={styles.ProcessStepText}>Play the animation, pause at any frame, and read the side notes to understand the exact operation at each step.</p>
+                                        <p className={styles.ProcessStepTitle}>{t("about.how.3.title")}</p>
+                                        <p className={styles.ProcessStepText}>{t("about.how.3.subtitle")}</p>
                                     </div>
                                 </div>
 
                                 <div className={styles.ProcessStep}>
                                     <div className={styles.ProcessStepIcon}>4</div>
                                     <div className={styles.ProcessStepContent}>
-                                        <p className={styles.ProcessStepTitle}>Compare & conclude</p>
-                                        <p className={styles.ProcessStepText}>See how input order and size affect runtime. Learn when a simple algorithm is perfect — and when divide‑and‑conquer wins.</p>
+                                        <p className={styles.ProcessStepTitle}>{t("about.how.4.title")}</p>
+                                        <p className={styles.ProcessStepText}>{t("about.how.4.subtitle")}</p>
                                     </div>
                                 </div>
 
@@ -104,39 +104,39 @@ const About = () => {
                         </div>
 
                         <div className={styles.AboutWhy}>
-                            <p className={styles.AboutWhyTitle}>Why learners choose SBSORT</p>
+                            <p className={styles.AboutWhyTitle}>{t("about.why.title")}</p>
                             <div className={styles.AboutWhyContent}>
                                 <div className={styles.AboutWhyCard}>
-                                    <strong>12+</strong>
-                                    <span>algorithms visualized</span>
+                                    <strong>{t("about.why.algorithms.title")}</strong>
+                                    <span>{t("about.why.algorithms.subtitle")}</span>
                                 </div>
 
                                 <div className={styles.AboutWhyCard}>
-                                    <strong>Step-by-step</strong>
-                                    <span>explanations with Big-O</span>
+                                    <strong>{t("about.why.notation.title")}</strong>
+                                    <span>{t("about.why.notation.subtitle")}</span>
                                 </div>
 
                                 <div className={styles.AboutWhyCard}>
-                                    <strong>Accessible</strong>
-                                    <span>keyboard & screen-reader friendly</span>
+                                    <strong>{t("about.why.accessible.title")}</strong>
+                                    <span>{t("about.why.accessible.subtitle")}</span>
                                 </div>
 
                                 <div className={styles.AboutWhyCard}>
-                                    <strong>Multilingual</strong>
-                                    <span>EN / CZ ready</span>
+                                    <strong>{t("about.why.languages.title")}</strong>
+                                    <span>{t("about.why.languages.subtitle")}</span>
                                 </div>
 
                             </div>
                         </div>
 
                         <div className={styles.AboutPeople}>
-                            <p className={styles.AboutPeopleTitle}>Who’s behind the project</p>
+                            <p className={styles.AboutPeopleTitle}>{t("about.who.title")}</p>
                             <div className={styles.AboutPeopleContent}>
                                 <div className={styles.AboutPeopleCard}>
                                     <div className={styles.PeopleCardIcon}></div>
                                     <div className={styles.PeopleCardContent}>
-                                        <p className={styles.PeopleCardTitle}>Stepan Blaha</p>
-                                        <p className={styles.PeopleCardText}>Creator & Engineer — builds the visualizations and content.</p>
+                                        <p className={styles.PeopleCardTitle}>{t("about.who.name")}</p>
+                                        <p className={styles.PeopleCardText}>{t("about.who.role")}</p>
                                     </div>
                                 </div>
 
@@ -146,26 +146,26 @@ const About = () => {
                         </div>
 
                         <div className={styles.AboutQuestion}>
-                            <p className={styles.AboutQuestionTitle}>Frequently asked questions</p>
+                            <p className={styles.AboutQuestionTitle}>{t("about.faq.title")}</p>
                             <div className={styles.AboutQuestionContent}>
                                 <div className={styles.AboutQuestionCard}>
-                                    <p className={styles.QuestionCardTitle}>Can I use SBSORT in my course?</p>
-                                    <p className={styles.QuestionCardText}>Yes. It’s designed for classrooms and self‑study. You can embed lessons or project it live during lectures.</p>
+                                    <p className={styles.QuestionCardTitle}>{t("about.faq.1.title")}</p>
+                                    <p className={styles.QuestionCardText}>{t("about.faq.1.subtitle")}</p>
                                 </div>
 
                                 <div className={styles.AboutQuestionCard}>
-                                    <p className={styles.QuestionCardTitle}>Does it work on mobile?</p>
-                                    <p className={styles.QuestionCardText}>Absolutely. The UI scales down to phones and tablets with touch‑friendly controls.</p>
+                                    <p className={styles.QuestionCardTitle}>{t("about.faq.2.title")}</p>
+                                    <p className={styles.QuestionCardText}>{t("about.faq.2.subtitle")}</p>
                                 </div>
 
                                 <div className={styles.AboutQuestionCard}>
-                                    <p className={styles.QuestionCardTitle}>What about dark mode and languages?</p>
-                                    <p className={styles.QuestionCardText}>Dark/light themes are built‑in. English and Czech are supported, and more languages can be added.</p>
+                                    <p className={styles.QuestionCardTitle}>{t("about.faq.3.title")}</p>
+                                    <p className={styles.QuestionCardText}>{t("about.faq.3.subtitle")}</p>
                                 </div>
 
                                 <div className={styles.AboutQuestionCard}>
-                                    <p className={styles.QuestionCardTitle}>Is SBSORT open source?</p>
-                                    <p className={styles.QuestionCardText}>The visualizer core can be shared for educational use. Contact us for licensing or contributions.</p>
+                                    <p className={styles.QuestionCardTitle}>{t("about.faq.4.title")}</p>
+                                    <p className={styles.QuestionCardText}>{t("about.faq.4.subtitle")}</p>
                                 </div>
 
 

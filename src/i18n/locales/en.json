@@ -1,8 +1,10 @@
 {  
     "main":{
-        "title": "Sorting Visualizer",
-        "subtitle": "Learn sorting algorithms through step-by-step visual guides",
+        "title": "SBSORT — Where Algorithms Come to Life",
+        "subtitle": "Dynamic visualizations that transform the way we learn sorting algorithms. Explore 12+ algorithms through interactive animations, compare their performance on different datasets, and gain practical knowledge you can immediately apply in your projects.",
         "sorts_title": "Sorting Algorithms",
+        "visualize_button": "Try the Visualizer",
+        "learn_button": "Learn More",
         "sorts":{
             "bubble": "Bubble Sort",
             "merge": "Merge Sort",
@@ -24,6 +26,87 @@
     },
     "buttons":{
         "play": "Play"
+    },
+    "about":{
+        "badge": "About SBSORT -- Sorting Visualizer",
+        "title": "We make sorting algorithms ",
+        "title_highlight": "click.",
+        "subtitle": "SBSORT turns textbook algorithms into visual, step‑by‑step animations. Explore different strategies, compare their trade‑offs, and build intuition by watching them sort the very same array side‑by‑side.",
+        "concepts":{
+            "title":"Concepts you can see",
+            "subtitle": "Animations reveal comparisons, swaps, and partitions so the logic behind each algorithm becomes obvious."
+        },
+        "time":{
+            "title": "Time & space intuition",
+            "subtitle": "Built‑in notes and complexity tables connect what you see to Big‑O analysis and real‑world constraints."
+        },
+        "controls":{
+            "title": "Interactive controls",
+            "subtitle": "Change the input array, step through frames, or adjust speed to investigate best, average, and worst cases."
+        },
+        "how":{
+            "title": "How SBSORT teaches",
+            "1":{
+                "title": "Pick an algorithm",
+                "subtitle": "Select Bubble, Insertion, Selection, Merge, Quick, Heap and more — each with a concise explanation and typical use‑cases."
+            },
+            "2":{
+                "title": "Set your experiment",
+                "subtitle": "Enter a custom array or randomize one. Choose visualization speed and whether to highlight swaps, pivots, or partitions."
+            },
+            "3":{
+                "title": "Watch, pause, inspect",
+                "subtitle": "Play the animation, pause at any frame, and read the side notes to understand the exact operation at each step."
+            },
+            "4":{
+                "title": "Compare & conclude",
+                "subtitle": "See how input order and size affect runtime. Learn when a simple algorithm is perfect — and when divide‑and‑conquer wins."
+            }
+        },
+        "why":{
+            "title":"Why learners choose SBSORT",
+            "algorithms":{
+                "title":"12+",
+                "subtitle": "algorithms visualized"
+            },
+            "notation":{
+                "title":"Step-by-step",
+                "subtitle": "explanations with Big-O"
+            },
+            "accessible":{
+                "title":"Accessible",
+                "subtitle": "keyboard & screen-reader friendly"
+            },
+            "languages":{
+                "title":"Multilingual",
+                "subtitle": "EN / CZ ready"
+            }
+        },
+        "who":{
+            "title": "Who’s behind the project",
+            "name":"Stepan Blaha",
+            "role": "Creator & Engineer — builds the visualizations and content."
+        },
+        "faq":{
+            "title": "Frequently asked questions",
+            "1":{
+                "title": "Can I use SBSORT in my course?",
+                "subtitle": "Yes. It’s designed for classrooms and self‑study. You can embed lessons or project it live during lectures."
+            },
+            "2":{
+                "title": "Does it work on mobile?",
+                "subtitle": "Absolutely. The UI scales down to phones and tablets with touch‑friendly controls."
+            },
+            "3":{
+                "title": "What about dark mode and languages?",
+                "subtitle": "Dark/light themes are built‑in. English and Czech are supported, and more languages can be added."
+            },
+            "4":{
+                "title": "Is SBSORT open source?",
+                "subtitle": "The visualizer core can be shared for educational use. Contact us for licensing or contributions."
+            }
+        }
+
     },
     "hero":{
         
@@ -57,7 +140,10 @@
         }
     },
     "sort_list": {
-        "title": "Sorting Algorithms",
+        "badge":"Sort Types SBSORT -- Sorting Visualizer",
+        "title": "List of all sorting ",
+        "title_highlighted": "algorithms.",
+        "subtitle":"Curated list of all of our sorting algorithms ready for easy navigation. Simply pick the algorithm you want to learn, click the button to redirect you to the visualzer page and start learning.",
         "algorithms": {
             "bubble": {
                 "title": "Bubble Sort",

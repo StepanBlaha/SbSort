@@ -17,14 +17,14 @@ import quick from "../../assets/bgs/quick.png"
 import counting from "../../assets/bgs/counting.png"
 
 import { useNavigate } from "react-router-dom"
-import { t } from "i18next"
+
 import CallToActionButton from "../../components/Buttons/CallToActionButton/CallToAction"
 import { span } from "framer-motion/client"
-
+import { useTranslation } from "react-i18next"
 
 const Home = () => {
 
-
+    const { t } = useTranslation();
     const navigate = useNavigate();
 
     const items=[
@@ -48,8 +48,8 @@ const Home = () => {
                             <p className={styles.HeroSubtitle}>{t("main.subtitle")}</p>
                             <div className={styles.HeroActions}>
                                 {/*<a href="/bubble" className={styles.HeroAction}>▶ Try the Visualizer</a>*/}
-                                <CallToActionButton text="Try the Visualizer" onClick={()=>navigate("/bubble")}/>
-                                <a href="/about" className={styles.HeroAction}>Learn More</a>
+                                <CallToActionButton text={t("main.visualize_button")} onClick={()=>navigate("/bubble")}/>
+                                <a href="/about" className={styles.HeroAction}>{t("main.learn_button")}</a>
                             </div>
 
                         </div>

@@ -1,8 +1,10 @@
 {
     "main":{
-        "title": "Vizualizátor Řazení",
-        "subtitle": "Učte se algoritmy řazení prostřednictvím krok za krokem vizuálních průvodců",
+        "title": "SBSORT — Kde Algoritmy Ožívají",
+        "subtitle": "Dynamické vizualizace, které mění způsob, jak se učíme algoritmy řazení. Prozkoumejte více než 12 algoritmů prostřednictvím interaktivních animací, porovnejte jejich výkon na různých datech a získejte praktické znalosti, které můžete ihned aplikovat ve svých projektech.",
         "sorts_title": "Algoritmy Řazení",
+        "visualize_button": "Zkuste Vizualizátor",
+        "learn_button": "Zjistit Více",
         "sorts":{
             "bubble": "Bubble Sort",
             "merge": "Merge Sort",
@@ -24,6 +26,86 @@
     },"buttons":{
         "play": "Start"
     },
+    "about":{
+        "badge": "O SBSORT -- Vizualizér řazení",
+        "title": "Vytváříme algoritmy řazení ",
+        "title_highlight": "kliknutím.",
+        "subtitle": "SBSORT proměňuje učebnicové algoritmy ve vizuální animace krok za krokem. Prozkoumejte různé strategie, porovnejte jejich kompromisy a budujte intuici pozorováním, jak řadí stejné pole vedle sebe.",
+        "concepts":{
+            "title":"Koncepty, které můžete vidět",
+            "subtitle": "Animace odhalují porovnávání, výměny a rozdělování, takže logika za každým algoritmem se stává zřejmou."
+        },
+        "time":{
+            "title": "Intuice času a prostoru",
+            "subtitle": "Vestavěné poznámky a tabulky složitosti propojují to, co vidíte, s analýzou Big-O a skutečnými omezeními."
+        },
+        "controls":{
+            "title": "Interaktivní ovládání",
+            "subtitle": "Změňte vstupní pole, procházejte snímky nebo upravte rychlost k prozkoumání nejlepších, průměrných a nejhorších případů."
+        },
+        "how":{
+            "title": "Jak SBSORT učí",
+            "1":{
+            "title": "Vyberte algoritmus",
+            "subtitle": "Zvolte Bubble, Insertion, Selection, Merge, Quick, Heap a další — každý se stručným vysvětlením a typickými případy použití."
+            },
+            "2":{
+            "title": "Nastavte svůj experiment",
+            "subtitle": "Zadejte vlastní pole nebo ho randomizujte. Zvolte rychlost vizualizace a zda zvýraznit výměny, pivoty nebo rozdělování."
+            },
+            "3":{
+            "title": "Sledujte, pozastavte, prozkoumejte",
+            "subtitle": "Spusťte animaci, pozastavte v libovolném snímku a přečtěte si boční poznámky, abyste porozuměli přesné operaci v každém kroku."
+            },
+            "4":{
+            "title": "Porovnejte a vyvoďte závěr",
+            "subtitle": "Podívejte se, jak pořadí vstupu a velikost ovlivňují čas běhu. Naučte se, kdy je jednoduchý algoritmus perfektní — a kdy vyhrává rozděl a panuj."
+            }
+        },
+        "why":{
+            "title":"Proč si studenti volí SBSORT",
+            "algorithms":{
+            "title":"12+",
+            "subtitle": "vizualizovaných algoritmů"
+            },
+            "notation":{
+            "title":"Krok za krokem",
+            "subtitle": "vysvětlení s Big-O"
+            },
+            "accessible":{
+            "title":"Přístupné",
+            "subtitle": "přátelské ke klávesnici a čtečkám obrazovky"
+            },
+            "languages":{
+            "title":"Vícejazyčné",
+            "subtitle": "EN / CZ připraveno"
+            }
+        },
+        "who":{
+            "title": "Kdo stojí za projektem",
+            "name":"Štěpán Bláha",
+            "role": "Tvůrce a inženýr — vytváří vizualizace a obsah."
+        },
+        "faq":{
+            "title": "Často kladené otázky",
+            "1":{
+            "title": "Mohu použít SBSORT ve svém kurzu?",
+            "subtitle": "Ano. Je navržen pro učebny a samostudium. Můžete vložit lekce nebo je promítat živě během přednášek."
+            },
+            "2":{
+            "title": "Funguje to na mobilu?",
+            "subtitle": "Absolutně. UI se přizpůsobuje telefonům a tabletům s ovládáním přátelským k dotyku."
+            },
+            "3":{
+            "title": "A co tmavý režim a jazyky?",
+            "subtitle": "Tmavé/světlé téma jsou vestavěné. Angličtina a čeština jsou podporované a další jazyky lze přidat."
+            },
+            "4":{
+            "title": "Je SBSORT open source?",
+            "subtitle": "Jádro vizualizéru může být sdíleno pro vzdělávací použití. Kontaktujte nás ohledně licencování nebo příspěvků."
+            }
+        }
+        },
     "hero":{
         
         "bubble": {
@@ -56,7 +138,10 @@
         }
     },
     "sort_list": {
-        "title": "Algoritmy Řazení",
+        "badge":"Typy Řazení SBSORT -- Vizualizér řazení",
+        "title": "List všech řadících ",
+        "title_highlighted": "algoritmů.",
+        "subtitle":"Kurátorovaný seznam všech našich řadicích algoritmů připravený pro snadnou navigaci. Jednoduše vyberte algoritmus, který se chcete naučit, klikněte na tlačítko pro přesměrování na stránku vizualizéru a začněte se učit.",
         "algorithms": {
             "bubble": {
                 "title": "Bubble Sort",

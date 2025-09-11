@@ -35,10 +35,10 @@ const SortList = () => {
                             <div className={styles.BarsTrack}></div>
                         </div>
                         <div className={styles.HeroContainer}>
-                            <span className={styles.HeroBadge}>Sort Types SBSORT -- Sorting Visualizer</span>
-                            <h1 className={styles.HeroTitle}>List of all sorting <ShinyText className={styles.Shiny} speed={8}><em>algorithms.</em></ShinyText></h1>
+                            <span className={styles.HeroBadge}>{t("sort_list.badge")}</span>
+                            <h1 className={styles.HeroTitle}>{t("sort_list.title")}<ShinyText className={styles.Shiny} speed={8}><em>{t("sort_list.title_highlighted")}</em></ShinyText></h1>
                             <p className={styles.HeroSubtitle}>
-                                Curated list of all of our sorting algorithms ready for easy navigation. Simply pick the algorithm you want to learn, click the button to redirect you to the visualzer page and start learning.
+                                {t("sort_list.subtitle")}
                             </p>
                         </div>
                     </div>
