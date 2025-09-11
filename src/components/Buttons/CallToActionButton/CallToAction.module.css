@@ -1,0 +1,239 @@
+/* === Sparkle Button — theme-aware (uses your --accent-* / --contrast-* vars) === */
+.sparkle_button {
+  /* knobs / fallbacks */
+  --transition: .35s cubic-bezier(.2,.7,0,1);
+  --spark: 2.4s;
+  --cut: 0.35em;
+  --active: 0;
+
+  /* theme hooks (fallbacks provided) */
+  --accent: var(--accent-tertiiary-color, #4db8ff);
+  --accent-2: var(--accent-secondary-color, #3aa8ff);
+  --accent-3: var(--accent-tertiary-color, #6ee7d8);
+  --bg-base: var(--background-tertiary-color, #1a2236);
+  --contrast: var(--contrast-color, #e5ecff);
+  --contrast-2: var(--contrast-secondary-color, #b9c6e4);
+  --contrast-3: var(--contrast-tertiary-color, #94a3b8);
+
+  /* dynamic background built from your accents */
+  --bg:
+    linear-gradient(135deg, var(--background-tertiary-color), color-mix(in srgb, var(--accent-color) 12%, var(--background-tertiary-color)));
+
+--box-shadow: none;
+  z-index: 2;
+  background: var(--bg);
+  color: var(--contrast);
+  font-size: 1.2rem;
+  font-weight: 500;
+ border: 1px solid color-mix(in srgb, var(--contrast-color) 10%, transparent);
+  cursor: pointer;
+  padding: 1em 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  white-space: nowrap;
+  border-radius: 12px;
+  position: relative;
+
+  /* glow & bevels from your accents */
+  box-shadow:
+    var(--box-shadow);
+
+  transition: box-shadow var(--transition), scale var(--transition), background var(--transition);
+  scale: calc(1 + (var(--active) * 0.1));
+}
+.sparkle_button:active { scale: 1; transition: .3s; }
+
+.sparkle_button:before {
+  content: "";
+  position: absolute;
+  inset: -0.2em;
+  z-index: -1;
+  border: 0.25em solid color-mix(in oklch, var(--accent) 50%, transparent);
+  border-radius: 16px;
+  opacity: var(--active, 0);
+  transition: opacity var(--transition);
+}
+
+/* spark layer (unchanged behavior, theme colors applied) */
+.spark {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  rotate: 0deg;
+  overflow: hidden;
+  mask: linear-gradient(white, transparent 50%);
+  animation: flip calc(var(--spark) * 2) infinite steps(2, end);
+}
+@keyframes flip { to { rotate: 360deg; } }
+/*
+.spark:before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  aspect-ratio: 1;
+  top: 0%;
+  left: 50%;
+  z-index: -1;
+  translate: -50% -15%;
+  rotate: 0;
+  transform: rotate(-90deg);
+  opacity: calc(var(--active) + 0.4);
+  background: conic-gradient(from 0deg, transparent 0 340deg, white 360deg);
+  transition: opacity var(--transition);
+  animation: rotate var(--spark) linear infinite both;
+}
+.spark:after {
+  content: "";
+  position: absolute;
+  inset: var(--cut);
+  border-radius: 12px;
+}
+  */
+.backdrop {
+  position: absolute;
+  inset: var(--cut);
+  background: var(--bg);
+  border-radius: 12px;
+  transition: background var(--transition);
+}
+@keyframes rotate { to { transform: rotate(90deg); } }
+
+/* sparkle icon paths pick up contrast shades */
+.sparkle path {
+  color: color-mix(in oklch, var(--contrast) calc((var(--active, 0) * 70%) + 30%), var(--contrast-2));
+  transform-box: fill-box;
+  transform-origin: center;
+  fill: currentColor;
+  stroke: currentColor;
+  animation-delay: calc((var(--transition) * 1.5) + (var(--delay) * 1s));
+  animation-duration: 0.6s;
+  transition: color var(--transition);
+}
+.sparkle_button:is(:hover, :focus-visible) path { animation-name: bounce; }
+@keyframes bounce { 35%, 65% { scale: var(--scale); } }
+.sparkle path:nth-of-type(1) { --scale: 0.5;  --delay: 0.1;  --base: 40%; }
+.sparkle path:nth-of-type(2) { --scale: 1.5;  --delay: 0.2;  --base: 20%; }
+.sparkle path:nth-of-type(3) { --scale: 2.5;  --delay: 0.35; --base: 30%; }
+
+/* hover / focus activation (typo fixed: running) */
+@supports(selector(:has(:is(+ *)))) {
+  body:has(button:is(:hover, :focus-visible)) {
+    --active: 1;
+    --play-state: running;
+    --bg:
+    radial-gradient(40% 50% at center 100%,
+      color-mix(in oklch, var(--accent) calc(var(--active) * 100%), transparent),
+      transparent),
+    radial-gradient(80% 100% at center 120%,
+      color-mix(in oklch, var(--accent-2) calc(var(--active) * 100%), transparent),
+      transparent),
+    color-mix(
+      in oklch,
+      var(--accent) calc(20% + (var(--active) * 40%)),
+      var(--bg-base)
+    );
+    --box-shadow: 0 0 calc(var(--active) * 3em) calc(var(--active) * 1em)
+      color-mix(in oklch, var(--accent-2) 75%, transparent),
+    0 0 0 0 color-mix(in oklch, var(--accent) calc(30% + (var(--active) * 50%)), transparent) inset,
+    0 -0.05em 0 0 color-mix(in oklch, var(--accent-2) calc(var(--active) * 60%), transparent) inset;
+  }
+  .bodydrop { display: none; }
+}
+.sparkle_button:is(:hover, :focus-visible) ~ :is(.bodydrop, .particle_pen) {
+  --active: 1;
+  --play-state: running;
+  --bg:
+    radial-gradient(40% 50% at center 100%,
+      color-mix(in oklch, var(--accent) calc(var(--active) * 100%), transparent),
+      transparent),
+    radial-gradient(80% 100% at center 120%,
+      color-mix(in oklch, var(--accent-2) calc(var(--active) * 100%), transparent),
+      transparent),
+    color-mix(
+      in oklch,
+      var(--accent) calc(20% + (var(--active) * 40%)),
+      var(--bg-base)
+    );
+    --box-shadow: 0 0 calc(var(--active) * 3em) calc(var(--active) * 1em)
+      color-mix(in oklch, var(--accent-2) 75%, transparent),
+    0 0 0 0 color-mix(in oklch, var(--accent) calc(30% + (var(--active) * 50%)), transparent) inset,
+    0 -0.05em 0 0 color-mix(in oklch, var(--accent-2) calc(var(--active) * 60%), transparent) inset;
+}
+.sparkle_button:is(:hover, :focus-visible) {
+  --active: 1;
+  --play-state: running;
+  --bg:
+    radial-gradient(40% 50% at center 100%,
+      color-mix(in oklch, var(--accent) calc(var(--active) * 100%), transparent),
+      transparent),
+    radial-gradient(80% 100% at center 120%,
+      color-mix(in oklch, var(--accent-2) calc(var(--active) * 100%), transparent),
+      transparent),
+    color-mix(
+      in oklch,
+      var(--accent) calc(20% + (var(--active) * 40%)),
+      var(--bg-base)
+    );
+    --box-shadow: 0 0 calc(var(--active) * 3em) calc(var(--active) * 1em)
+      color-mix(in oklch, var(--accent-2) 75%, transparent),
+    0 0 0 0 color-mix(in oklch, var(--accent) calc(30% + (var(--active) * 50%)), transparent) inset,
+    0 -0.05em 0 0 color-mix(in oklch, var(--accent-2) calc(var(--active) * 60%), transparent) inset;
+}
+.sparkle_button:hover .text{
+    color: var(--contrast-color);
+}
+
+.sp { position: relative; }
+
+/* particles tuned to theme */
+.particle_pen {
+  position: absolute;
+  width: 200%;
+  aspect-ratio: 1;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  -webkit-mask: radial-gradient(white, transparent 65%);
+  z-index: -1;
+  opacity: var(--active, 0);
+  transition: opacity var(--transition);
+}
+.particle {
+  fill: white;
+  width: calc(var(--size, 0.25) * 1rem);
+  aspect-ratio: 1;
+  position: absolute;
+  top: calc(var(--y) * 1%);
+  left: calc(var(--x) * 1%);
+  opacity: var(--alpha, 1);
+  animation: float-out calc(var(--duration, 1) * 1s) calc(var(--delay) * -1s) infinite linear;
+  transform-origin: var(--origin-x, 1000%) var(--origin-y, 1000%);
+  z-index: -1;
+  animation-play-state: var(--play-state, paused);
+}
+.particle path { fill: var(--contrast-2); stroke: none; }
+.particle:nth-of-type(even) { animation-direction: reverse; }
+@keyframes float-out { to { rotate: 360deg; } }
+
+/* text gradient uses your contrast tokens */
+.text {
+  translate: 2% -6%;
+  letter-spacing: 0.01ch;
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in oklch, var(--contrast) calc((var(--active) * 100%) + 65%), transparent),
+      color-mix(in oklch, var(--contrast-3) calc((var(--active) * 100%) + 26%), transparent)
+    );
+  -webkit-background-clip: text;
+  color: transparent;
+
+  color: var(--contrast-secondary-color);
+  transition: background var(--transition);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* icon sizing */
+.sparkle_button svg { inline-size: 1.25em; translate: -25% -5%; }

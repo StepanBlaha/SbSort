@@ -34,6 +34,7 @@
     text-align: center;
     position: relative;
     overflow: hidden;
+        overflow: visible;
 }
 .Bars{
     position: absolute;
@@ -94,6 +95,7 @@
     justify-content: center;
 }
 .HeroAction{
+    --active:0;
     display: inline-flex
 ;
     gap: 10px;
@@ -101,26 +103,41 @@
     padding: 12px 20px;
     font-weight: 700;
     border-radius: 12px;
+    /*
     border: 1px solid
  color-mix(in srgb, var(--accent-color) 30%, transparent);
     background: linear-gradient(180deg,
  color-mix(in srgb, var(--accent-color) 18%, var(--background-tertiary-color)), var(--background-tertiary-color));
     box-shadow: 0 8px 16px var(--ring);
+
+    */
+    scale: calc(1 + (var(--active) * 0.1));
     cursor: pointer;
     text-decoration: none;
     color: var(--contrast-secondary-color);
     cursor: pointer;
-    transition: all 0.3s ease-out;
-
+    transition: 0.3s ease-out;
     background: linear-gradient(135deg, var(--background-tertiary-color), color-mix(in srgb, var(--accent-color) 12%, var(--background-tertiary-color)));
+
+
+
+
+background: linear-gradient(135deg, var(--background-tertiary-color), color-mix(in srgb, var(--accent-color) 12%, var(--background-tertiary-color)));
+border: 1px solid color-mix(in srgb, var(--contrast-color) 10%, transparent);
+
 }
 .HeroAction:hover{
+    /*
     transform: translateY(-2px);
+    */
+    --active: 1;
+    /*
     background: linear-gradient(180deg,
  color-mix(in srgb, var(--accent-color) 38%, var(--background-tertiary-color)), var(--background-tertiary-color));
 
 
  background: linear-gradient(135deg, var(--background-tertiary-color), color-mix(in srgb, var(--accent-color) 42%, var(--background-tertiary-color)));
+ */
 }
 
 

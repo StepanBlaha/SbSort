@@ -17,6 +17,147 @@ import quick from "../../assets/bgs/quick.png"
 import counting from "../../assets/bgs/counting.png"
 import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router-dom"
+import ShinyText from "../../components/ShinyText/ShinyText"
+
+const SortList = () => {
+    const { t } = useTranslation();
+    const navigate = useNavigate();
+
+
+    return (
+        <>
+            <div className={styles.Page}>
+                <Navbar/>
+
+                <div className={styles.Content}>
+                    <div className={styles.Hero} >
+                        <div className={styles.Bars}>
+                            <div className={styles.BarsTrack}></div>
+                        </div>
+                        <div className={styles.HeroContainer}>
+                            <span className={styles.HeroBadge}>Sort Types SBSORT -- Sorting Visualizer</span>
+                            <h1 className={styles.HeroTitle}>List of all sorting <ShinyText className={styles.Shiny} speed={8}><em>algorithms.</em></ShinyText></h1>
+                            <p className={styles.HeroSubtitle}>
+                                Curated list of all of our sorting algorithms ready for easy navigation. Simply pick the algorithm you want to learn, click the button to redirect you to the visualzer page and start learning.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className={styles.SortSection}>
+                        <div className={styles.Sorts}>
+                            
+                            <div className={styles.Sort} onClick={() => navigate("/bubble")}>
+                                <div className={styles.SortIcon}>🔁</div>
+                                <div className={styles.SortMainContent}>
+                                    <div className={styles.SortTags}>
+                                        <span className={styles.SortTag}>O(n²)</span>
+                                    </div>
+                                    <p className={styles.SortTitle}>{t('sort_list.algorithms.bubble.title')}</p>
+                                    <p className={styles.SortContent}>{t('sort_list.algorithms.bubble.description')}</p>
+                                </div>
+                            </div>
+
+                            <div className={styles.Sort} onClick={() => navigate("/merge")}>
+                                <div className={styles.SortIcon}>🪄</div>
+                                <div className={styles.SortMainContent}>
+                                    <div className={styles.SortTags}>
+                                        <span className={styles.SortTag}>O(n log n)</span>
+                                    </div>
+                                    <p className={styles.SortTitle}>{t('sort_list.algorithms.merge.title')}</p>
+                                    <p className={styles.SortContent}>{t('sort_list.algorithms.merge.description')}</p>
+                                </div>
+                            </div>
+
+                            <div className={styles.Sort} onClick={() => navigate("/selection")}>
+                                <div className={styles.SortIcon}>🧲</div>
+                                <div className={styles.SortMainContent}>
+                                    <div className={styles.SortTags}>
+                                        <span className={styles.SortTag}>O(n²)</span>
+                                    </div>
+                                    <p className={styles.SortTitle}>{t('sort_list.algorithms.selection.title')}</p>
+                                    <p className={styles.SortContent}>{t('sort_list.algorithms.selection.description')}</p>
+                                </div>
+                            </div>
+
+                            <div className={styles.Sort} onClick={() => navigate("/quick")}>
+                                <div className={styles.SortIcon}>⚡</div>
+                                <div className={styles.SortMainContent}>
+                                    <div className={styles.SortTags}>
+                                        <span className={styles.SortTag}>O(n log n)</span>
+                                    </div>
+                                    <p className={styles.SortTitle}>{t('sort_list.algorithms.quick.title')}</p>
+                                    <p className={styles.SortContent}>{t('sort_list.algorithms.quick.description')}</p>
+                                </div>
+                            </div>
+
+                            <div className={styles.Sort} onClick={() => navigate("/insertion")}>
+                                <div className={styles.SortIcon}>🧩</div>
+                                <div className={styles.SortMainContent}>
+                                    <div className={styles.SortTags}>
+                                        <span className={styles.SortTag}>O(n²)</span>
+                                    </div>
+                                    <p className={styles.SortTitle}>{t('sort_list.algorithms.insertion.title')}</p>
+                                    <p className={styles.SortContent}>{t('sort_list.algorithms.insertion.description')}</p>
+                                </div>
+                            </div>
+
+                            <div className={styles.Sort} onClick={() => navigate("/heap")}>
+                                <div className={styles.SortIcon}>⛰️</div>
+                                <div className={styles.SortMainContent}>
+                                    <div className={styles.SortTags}>
+                                        <span className={styles.SortTag}>O(n log n)</span>
+                                    </div>
+                                    <p className={styles.SortTitle}>{t('sort_list.algorithms.heap.title')}</p>
+                                    <p className={styles.SortContent}>{t('sort_list.algorithms.heap.description')}</p>
+                                </div>
+                            </div>
+
+                            <div className={styles.Sort} onClick={() => navigate("/counting")}>
+                                <div className={styles.SortIcon}>🔢</div>
+                                <div className={styles.SortMainContent}>
+                                    <div className={styles.SortTags}>
+                                        <span className={styles.SortTag}>O(n + k)</span>
+                                    </div>
+                                    <p className={styles.SortTitle}>{t('sort_list.algorithms.counting.title')}</p>
+                                    <p className={styles.SortContent}>{t('sort_list.algorithms.counting.description')}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <Footer/>
+            </div>
+        </>
+    )
+}
+export default SortList
+
+
+/*
+
+
+
+import React from "react"
+import styles from "./SortList.module.css"
+import hero from "../../assets/bgs/hero-trans.png"
+
+import logo from "../../assets/logos/SBSORT.png"
+import { ChevronRight } from "lucide-react"
+import ThemeSwitch from "../../components/ThemeSwitch/ThemeSwitch"
+import Navbar from "../../components/Navbar/Navbar"
+import Footer from "../../components/Footer/Footer"
+
+import bubble from "../../assets/bgs/bubble.png"
+import selection from "../../assets/bgs/selection.png"
+import insertion from "../../assets/bgs/insertion.png"
+import merge from "../../assets/bgs/merge.png"
+import heap from "../../assets/bgs/heap.png"
+import quick from "../../assets/bgs/quick.png"
+import counting from "../../assets/bgs/counting.png"
+import { useTranslation } from "react-i18next"
+import { useNavigate } from "react-router-dom"
 
 const SortList = () => {
     const { t } = useTranslation();
@@ -126,6 +267,12 @@ const SortList = () => {
                                 </div>
                                 <ChevronRight/>
                             </div>
+
+                            <div className={styles.AboutFeature}>
+                                <div className={styles.AboutFeatureIcon}>🔍</div>
+                                <p className={styles.AboutFeatureTitle}>Concepts you can see</p>
+                                <p className={styles.AboutFeatureContent}>Animations reveal comparisons, swaps, and partitions so the logic behind each algorithm becomes obvious.</p>
+                            </div>
                         </div>
 
                     </div>
@@ -137,3 +284,4 @@ const SortList = () => {
     )
 }
 export default SortList
+*/

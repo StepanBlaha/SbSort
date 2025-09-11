@@ -18,6 +18,7 @@ import counting from "../../assets/bgs/counting.png"
 
 import { useNavigate } from "react-router-dom"
 import { t } from "i18next"
+import CallToActionButton from "../../components/Buttons/CallToActionButton/CallToAction"
 import { span } from "framer-motion/client"
 
 
@@ -46,7 +47,8 @@ const Home = () => {
                             <p className={styles.HeroTitle}>{t("main.title")}</p>
                             <p className={styles.HeroSubtitle}>{t("main.subtitle")}</p>
                             <div className={styles.HeroActions}>
-                                <a href="/bubble" className={styles.HeroAction}>▶ Try the Visualizer</a>
+                                {/*<a href="/bubble" className={styles.HeroAction}>▶ Try the Visualizer</a>*/}
+                                <CallToActionButton text="Try the Visualizer" onClick={()=>navigate("/bubble")}/>
                                 <a href="/about" className={styles.HeroAction}>Learn More</a>
                             </div>
 
