@@ -37,7 +37,15 @@ const Home = () => {
     return (
         <>
             <div className={styles.Page}>
-                <Navbar/>
+                <Navbar
+                logo={logo}
+                logoAlt="SBsort logo"
+                baseColor="#fff"
+                menuColor="#000"
+                buttonBgColor="#111"
+                buttonTextColor="#fff"
+                ease="power3.out"
+                />
 
                 <div className={styles.Content}>
                     <div className={styles.Hero} >

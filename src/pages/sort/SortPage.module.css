@@ -11,6 +11,7 @@
     box-sizing: border-box;
     min-height: 100%;
     justify-content: space-between;
+    padding-top: 50px;
 }
 .Header{
     max-width: 100%;
