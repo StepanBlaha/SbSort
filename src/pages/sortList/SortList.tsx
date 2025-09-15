@@ -18,6 +18,10 @@ import counting from "../../assets/bgs/counting.png"
 import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router-dom"
 import ShinyText from "../../components/ShinyText/ShinyText"
+import SpotlightCard from "../../components/SpotlightCard/SpotlightCard"
+
+
+
 
 const SortList = () => {
     const { t } = useTranslation();
@@ -46,7 +50,7 @@ const SortList = () => {
                     <div className={styles.SortSection}>
                         <div className={styles.Sorts}>
                             
-                            <div className={styles.Sort} onClick={() => navigate("/bubble")}>
+                            <SpotlightCard className={styles.Sort} onClick={() => navigate("/bubble")}>
                                 <div className={styles.SortIcon}>🔁</div>
                                 <div className={styles.SortMainContent}>
                                     <div className={styles.SortTags}>
@@ -55,9 +59,9 @@ const SortList = () => {
                                     <p className={styles.SortTitle}>{t('sort_list.algorithms.bubble.title')}</p>
                                     <p className={styles.SortContent}>{t('sort_list.algorithms.bubble.description')}</p>
                                 </div>
-                            </div>
+                            </SpotlightCard>
 
-                            <div className={styles.Sort} onClick={() => navigate("/merge")}>
+                            <SpotlightCard className={styles.Sort} onClick={() => navigate("/merge")}>
                                 <div className={styles.SortIcon}>🪄</div>
                                 <div className={styles.SortMainContent}>
                                     <div className={styles.SortTags}>
@@ -66,9 +70,9 @@ const SortList = () => {
                                     <p className={styles.SortTitle}>{t('sort_list.algorithms.merge.title')}</p>
                                     <p className={styles.SortContent}>{t('sort_list.algorithms.merge.description')}</p>
                                 </div>
-                            </div>
-
-                            <div className={styles.Sort} onClick={() => navigate("/selection")}>
+                            </SpotlightCard>
+                            
+                            <SpotlightCard className={styles.Sort} onClick={() => navigate("/selection")}>
                                 <div className={styles.SortIcon}>🧲</div>
                                 <div className={styles.SortMainContent}>
                                     <div className={styles.SortTags}>
@@ -77,9 +81,9 @@ const SortList = () => {
                                     <p className={styles.SortTitle}>{t('sort_list.algorithms.selection.title')}</p>
                                     <p className={styles.SortContent}>{t('sort_list.algorithms.selection.description')}</p>
                                 </div>
-                            </div>
+                            </SpotlightCard>
 
-                            <div className={styles.Sort} onClick={() => navigate("/quick")}>
+                            <SpotlightCard className={styles.Sort} onClick={() => navigate("/quick")}>
                                 <div className={styles.SortIcon}>⚡</div>
                                 <div className={styles.SortMainContent}>
                                     <div className={styles.SortTags}>
@@ -88,9 +92,9 @@ const SortList = () => {
                                     <p className={styles.SortTitle}>{t('sort_list.algorithms.quick.title')}</p>
                                     <p className={styles.SortContent}>{t('sort_list.algorithms.quick.description')}</p>
                                 </div>
-                            </div>
+                            </SpotlightCard>
 
-                            <div className={styles.Sort} onClick={() => navigate("/insertion")}>
+                            <SpotlightCard className={styles.Sort} onClick={() => navigate("/insertion")}>
                                 <div className={styles.SortIcon}>🧩</div>
                                 <div className={styles.SortMainContent}>
                                     <div className={styles.SortTags}>
@@ -99,9 +103,9 @@ const SortList = () => {
                                     <p className={styles.SortTitle}>{t('sort_list.algorithms.insertion.title')}</p>
                                     <p className={styles.SortContent}>{t('sort_list.algorithms.insertion.description')}</p>
                                 </div>
-                            </div>
+                            </SpotlightCard>
 
-                            <div className={styles.Sort} onClick={() => navigate("/heap")}>
+                            <SpotlightCard className={styles.Sort} onClick={() => navigate("/heap")}>
                                 <div className={styles.SortIcon}>⛰️</div>
                                 <div className={styles.SortMainContent}>
                                     <div className={styles.SortTags}>
@@ -110,9 +114,9 @@ const SortList = () => {
                                     <p className={styles.SortTitle}>{t('sort_list.algorithms.heap.title')}</p>
                                     <p className={styles.SortContent}>{t('sort_list.algorithms.heap.description')}</p>
                                 </div>
-                            </div>
+                            </SpotlightCard>
 
-                            <div className={styles.Sort} onClick={() => navigate("/counting")}>
+                            <SpotlightCard className={styles.Sort} onClick={() => navigate("/counting")}>
                                 <div className={styles.SortIcon}>🔢</div>
                                 <div className={styles.SortMainContent}>
                                     <div className={styles.SortTags}>
@@ -121,7 +125,9 @@ const SortList = () => {
                                     <p className={styles.SortTitle}>{t('sort_list.algorithms.counting.title')}</p>
                                     <p className={styles.SortContent}>{t('sort_list.algorithms.counting.description')}</p>
                                 </div>
-                            </div>
+                            </SpotlightCard>
+
+
                         </div>
 
                     </div>

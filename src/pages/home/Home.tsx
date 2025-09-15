@@ -21,6 +21,7 @@ import { useNavigate } from "react-router-dom"
 import CallToActionButton from "../../components/Buttons/CallToActionButton/CallToAction"
 import { span } from "framer-motion/client"
 import { useTranslation } from "react-i18next"
+import SpotlightCard from "../../components/SpotlightCard/SpotlightCard"
 
 const Home = () => {
 
@@ -49,7 +50,9 @@ const Home = () => {
                             <div className={styles.HeroActions}>
                                 {/*<a href="/bubble" className={styles.HeroAction}>▶ Try the Visualizer</a>*/}
                                 <CallToActionButton text={t("main.visualize_button")} onClick={()=>navigate("/bubble")}/>
-                                <a href="/about" className={styles.HeroAction}>{t("main.learn_button")}</a>
+                                    <SpotlightCard className={styles.HeroAction} onClick={()=>navigate("/about")}>
+                                        <p>{t("main.learn_button")}</p>
+                                    </SpotlightCard>
                             </div>
 
                         </div>
@@ -68,55 +71,55 @@ const Home = () => {
                     <div className={styles.SortSection}>
                         <p className={styles.SortSectionTitle}>{t("main.sorts_title")}</p>
                         <div className={styles.Sorts}>
-                            
-                            <div className={styles.Sort} onClick={()=>navigate("/bubble")}>
+
+                            <SpotlightCard className={styles.Sort} onClick={()=>navigate("/bubble")}>
                                 <div className={styles.SortImage}>🔁</div>
                                 <p className={styles.SortTitle}>{t("main.sorts.bubble")}</p>
                                 <p className={styles.SortText}>{t("main.sort_desc.bubble")}</p>
                                 <span className={styles.SortTime}>O(n²)</span>
-                            </div>
+                            </SpotlightCard>
 
-                            <div className={styles.Sort} onClick={()=>navigate("/merge")}>
+                            <SpotlightCard className={styles.Sort} onClick={()=>navigate("/merge")}>
                                 <div className={styles.SortImage}>🪄</div>
                                 <p className={styles.SortTitle}>{t("main.sorts.merge")}</p>
                                 <p className={styles.SortText}>{t("main.sort_desc.merge")}</p>
                                 <span className={styles.SortTime}>O(n log n)</span>
-                            </div>
+                            </SpotlightCard>
 
-                            <div className={styles.Sort} onClick={()=>navigate("/selection")}>
+                            <SpotlightCard className={styles.Sort} onClick={()=>navigate("/selection")}>
                                 <div className={styles.SortImage}>🧲</div>
                                 <p className={styles.SortTitle}>{t("main.sorts.selection")}</p>
                                 <p className={styles.SortText}>{t("main.sort_desc.selection")}</p>
                                 <span className={styles.SortTime}>O(n²)</span>
-                            </div>
-
-                            <div className={styles.Sort} onClick={()=>navigate("/quick")}>
+                            </SpotlightCard>
+                            
+                            <SpotlightCard className={styles.Sort} onClick={()=>navigate("/quick")}>
                                 <div className={styles.SortImage}>⚡</div>
                                 <p className={styles.SortTitle}>{t("main.sorts.quick")}</p>
                                 <p className={styles.SortText}>{t("main.sort_desc.quick")}</p>
                                 <span className={styles.SortTime}>O(n log n)</span>
-                            </div>
+                            </SpotlightCard>
 
-                            <div className={styles.Sort} onClick={()=>navigate("/insertion")}>
+                            <SpotlightCard className={styles.Sort} onClick={()=>navigate("/insertion")}>
                                 <div className={styles.SortImage}>🧩</div>
                                 <p className={styles.SortTitle}>{t("main.sorts.insertion")}</p>
                                 <p className={styles.SortText}>{t("main.sort_desc.insertion")}</p>
                                 <span className={styles.SortTime}>O(n²)</span>
-                            </div>
+                            </SpotlightCard>
 
-                            <div className={styles.Sort} onClick={()=>navigate("/heap")}>
+                            <SpotlightCard className={styles.Sort} onClick={()=>navigate("/heap")}>
                                 <div className={styles.SortImage}>⛰️</div>
                                 <p className={styles.SortTitle}>{t("main.sorts.heap")}</p>
                                 <p className={styles.SortText}>{t("main.sort_desc.heap")}</p>
                                 <span className={styles.SortTime}>O(n log n)</span>
-                            </div>
+                            </SpotlightCard>
 
-                            <div className={styles.Sort} onClick={()=>navigate("/counting")}>
+                            <SpotlightCard className={styles.Sort} onClick={()=>navigate("/counting")}>
                                 <div className={styles.SortImage}>🔢</div>
                                 <p className={styles.SortTitle}>{t("main.sorts.counting")}</p>
                                 <p className={styles.SortText}>{t("main.sort_desc.counting")}</p>
                                 <span className={styles.SortTime}>O(n + k)</span>
-                            </div>
+                            </SpotlightCard>
 
                         </div>
 

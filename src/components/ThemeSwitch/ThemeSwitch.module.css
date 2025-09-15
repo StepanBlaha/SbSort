@@ -108,3 +108,36 @@
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+
+
+.toggle {
+    position: relative;
+    width: 63px;
+    height: 34px;
+    border-radius: 36px;
+    background: var(--background-tertiary-color);
+    border: 1px solid var(--background-blur-color);
+    cursor: pointer;
+}
+.toggle.active {
+    background:  color-mix(in srgb, var(--accent-color) 15%, var(--background-tertiary-color));
+    border: 1px solid color-mix(in srgb, var(--accent-color) 35%, transparent);
+}
+
+.toggle::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background: var(--background-color);
+    box-shadow: var(--shadow);
+
+        box-shadow: 0 10px 30px rgba(12, 31, 66, .48);
+    transition: transform .25s ease;
+}
+.toggle.active::after {
+    transform: translateX(28px);
+}
